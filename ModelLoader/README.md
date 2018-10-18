@@ -1,1 +1,0 @@
-Code created by Group 20 for the H62PEP project for the 3D Model Loader
