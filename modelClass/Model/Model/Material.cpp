@@ -10,3 +10,19 @@ Material::Material()
 Material::~Material()
 {
 }
+
+int Material::getMaterialDensity()
+{
+	return density;
+}
+
+string Material::getMaterialColour()
+{
+	return colour;
+}
+
+string Material::getMaterialName()
+{
+	return name;
+}
+

@@ -9,7 +9,7 @@
 m 0 8960 b87333 copper
 
 # material 1 has a density of 2700 and is called aluminium
-m 1 2700 aluminium 
+m 1 2700 bcbcbc aluminium 
 
 # Any line starting with a 'v' is a vertex (a vector)
 # the 1st, 2nd and 3rd are the x, y and z coordinates
