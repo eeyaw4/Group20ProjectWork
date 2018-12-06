@@ -2,68 +2,46 @@
 
 Model::Model()
 {
-	count();
-
-	mArray = new Material[mCount];
-	vArray = new Vector[vCount];
-	cArray = new Cell[cCount];
-
 	readFile();
 
 	
-	for (int i = 0; i < 2;i++)
+	for (int i = 0; i < mVector.size();i++)
 	{
-		int d = mArray[i].getMaterialDensity();
-		string c = mArray[i].getMaterialColour();
-		string n = mArray[i].getMaterialName();
+		int d = mVector[i].getMaterialDensity();
+		string c = mVector[i].getMaterialColour();
+		string n = mVector[i].getMaterialName();
 
 		cout << "ID: "<< i <<", Density: " << d << ", Colour: " << c << ", Name: " << n << endl;
 	}
 
-	for (int i = 0; i < 12; i++)
+	for (int i = 0; i < vVector.size(); i++)
 	{
-		float x = vArray[i].getVectorX();
-		float y = vArray[i].getVectorY();
-		float z = vArray[i].getVectorZ();
+		float x = vVector[i].getVectorX();
+		float y = vVector[i].getVectorY();
+		float z = vVector[i].getVectorZ();
 
 		cout << "ID: " << i << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
+	}
+
+	for (int i = 0; i < cVector.size(); i++)
+	{
+		string s  = cVector[i].getCellShape();
+		int m = cVector[i].getCellMaterial();
+		vector<int> v = cVector[i].getCellVerticies();
+
+		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Verticies: ";
+
+		for (int j : v)
+		{
+			cout << j << ", ";
+		}
+		cout << endl;
+		
 	}
 }
 
 Model::~Model()
 {
-	delete [] mArray;
-	delete [] vArray;
-	delete [] cArray;
-}
-
-void Model::count(void)
-{
-	ifstream dataFile;
-	dataFile.open("ExampleModel1.MOD");
-	if (!dataFile)
-	{
-		cerr << "Unable to find MOD file";
-		exit(1);
-	}
-	while (getline(dataFile, str))
-	{
-		switch (str[0])
-		{
-		case 'm':
-			mCount++;
-			break;
-
-		case 'v':
-			vCount++;
-			break;
-
-		case 'c':
-			cCount++;
-			break;
-		}
-	}
-	dataFile.close();
 }
 
 void Model::readFile(void)
@@ -83,7 +61,7 @@ void Model::readFile(void)
 			readMaterial(str);
 			break;
 		case 'v':
-			readVector(str);
+			readVerticies(str);
 			break;
 		case 'c':
 			readCell(str);
@@ -98,28 +76,60 @@ void Model::readMaterial(string str)
 {
 	string type, id, density, colour, name;
 	istringstream iss(str);
-	while (iss >> type >> id >> density >> colour >> name)
+	Material m;
+	if (iss >> type >> id >> density >> colour >> name)
 	{
-		int num = stoi(id);
-		mArray[num].density = stoi(density);
-		mArray[num].colour = colour;
-		mArray[num].name = name;
+		m.density = stoi(density);
+		m.colour = colour;
+		m.name = name;
+
+		mVector.push_back(m);
+	}
+	else
+	{
+		cout << "Error Reading Material" << endl;
 	}
 }
 
-void Model::readVector(string str)
+void Model::readVerticies(string str)
 {
 	string type, id, x, y, z;
 	istringstream iss(str);
-	while (iss >> type >> id >> x >> y >> z)
+	Vector v;
+	if (iss >> type >> id >> x >> y >> z)
 	{
-		int num = stoi(id);
-		vArray[num].x = stof(x);
-		vArray[num].y = stof(y);
-		vArray[num].z = stof(z);
+		v.x = stof(x);
+		v.y = stof(y);
+		v.z = stof(z);
+
+		vVector.push_back(v);
+	}
+	else
+	{
+		cout << "Error Reading Verticies" << endl;
 	}
 }
 
 void Model::readCell(string str)
 {
+	string type, id, shape;
+	istringstream iss(str);
+	Cell c;
+	int point, material;
+	if (iss >> type >> id >> shape >> material)
+	{
+		c.shape = shape;
+		c.material = material;
+
+		while (iss >> point)
+		{
+			c.verticies.push_back(point);
+		}
+
+		cVector.push_back(c);
+	}
+	else
+	{
+		cout << "Error Reading Cells" << endl;
+	}
 }
