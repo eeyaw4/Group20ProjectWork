@@ -52,7 +52,7 @@ void Model::displayCell()
 	}
 }
 
-void Model::readFile(void)
+void Model::readFile()
 {
 	ifstream dataFile;
 	dataFile.open("ExampleModel1.MOD");
