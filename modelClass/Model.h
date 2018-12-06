@@ -15,12 +15,6 @@ using namespace std;
 class Model
 {
 private:
-	vector<Material> mVector;
-	vector<Vector> vVector;
-	vector<Cell> cVector;
-
-
-	int mCount = 0, vCount = 0, cCount = 0;
 	string str;
 
 	void readFile();
@@ -30,7 +24,15 @@ private:
 	void readCell(string str);
 
 public:
+	vector<Material> mVector;
+	vector<Vector> vVector;
+	vector<Cell> cVector;
+
 	Model();
 	~Model();
+
+	void displayMaterial();
+	void displayVerticies();
+	void displayCell();
 };
 
