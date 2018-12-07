@@ -40,6 +40,7 @@ public:
 	string cellShape;
 	int cellMaterial;
 	vector<vector<float>> cellVector;
+	vector<float> cellCOG;
 
 	Model();
 	~Model();

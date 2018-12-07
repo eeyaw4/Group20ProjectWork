@@ -41,9 +41,10 @@ void Model::displayCell()
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
 		vector<vector<float>> v = cVector[i].getCellVertices();
+		vector<float> g = cVector[i].getCentreOfGravity();
 
 
-		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Vertices: ";
+		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
 
 		for (vector<float> j : v)
 		{
@@ -53,10 +54,6 @@ void Model::displayCell()
 			cout << j[2] << ", ";
 		}
 		cout << endl;
-		vector<float> g = cVector[i].getCentreOfGravity();
-		cout << "Centre of Gravity vector: "  << g[0] << ", " << g[1] << ", " << g[2] << ", ";
-		cout << endl;
-
 	}
 }
 
@@ -77,12 +74,13 @@ void Model::getCellData(int id)
 	cellShape = cVector[id].getCellShape();
 	cellMaterial = cVector[id].getCellMaterial();
 	cellVector = cVector[id].getCellVertices();
+	cellCOG = cVector[id].getCentreOfGravity();
 }
 
 void Model::readFile()
 {
 	ifstream dataFile;
-	dataFile.open("../ExampleModel1.MOD");
+	dataFile.open("ExampleModel1.MOD");
 	if (!dataFile)
 	{
 		cerr << "Unable to find MOD file";
