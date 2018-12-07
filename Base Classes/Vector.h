@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,20 +15,24 @@ class Vector
 {
 public:
 	Vector();
-	Vector(float, float, float);
+	Vector(float x, float y, float z);
 	~Vector();
 
-	float getvalue_x() const;
-	float getvalue_y() const;
-	float getvalue_z() const;
-	float getvalue_a() const;
-	float getvalue_b() const;
-	float getvalue_c() const;
+
+	void add( Vector v );
+	void print();
+	
+	Vector operator+(Vector v);
+	Vector operator-(Vector v);
+	float operator*(Vector v);
+	Vector operator/(Vector v);
 
 private:
-	float value1;
-	float value2;
-	float value3;
+
+	float x;
+	float y;
+	float z;
+
 };
 
 #endif // !Vector_H

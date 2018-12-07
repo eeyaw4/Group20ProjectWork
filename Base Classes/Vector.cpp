@@ -2,35 +2,71 @@
 #include "Vector.h"
 
 
-
-Vector::Vector()
-{
-	value1 = 0.0;
-	value2 = 0.0;
-	value3 = 0.0;
-}
-
-
 Vector::~Vector()
 {
 }
 
+Vector::Vector() {
+}
+
+
 Vector::Vector(float x, float y, float z) {
-	value1 = x;
-	value2 = y;
-	value3 = z;
+	this->x = x;
+	this->y = y;
+	this->z = z;
+}
+
+void Vector :: add(Vector v) {
+	this->x += v.x;
+	this->y += v.y;
+	this->z += v.z;
+}
+
+Vector Vector::operator+(Vector v) {
+	Vector result;
+
+	result.x = this->x + v.x;
+	result.y = this->y + v.y;
+	result.z = this->z + v.z;
+
+	return result;
+}
+
+Vector Vector::operator-(Vector v) {
+	Vector result;
+
+	result.x = this->x - v.x;
+	result.y = this->y - v.y;
+	result.z = this->z - v.z;
 	
+	return result;
 }
 
-float Vector::getvalue_x() const {
-	return value1;
+float Vector::operator*(Vector v) {
+	Vector result;
+	float final;
+
+	result.x = this->x * v.x;
+	result.y = this->y * v.y;
+	result.z = this->z * v.z;
+	
+	final = (float)(result.x + result.y + result.z);
+
+	return final;
 }
 
-float Vector::getvalue_y() const {
-	return value2;
+Vector Vector::operator/(Vector v) {
+	Vector result;
+	
+
+	result.x = this->y * v.z - z * v.y;
+	result.y = this->z * v.x - x * v.z;
+	result.z = this->x * v.y - y * v.x;
+
+
+	return result;
 }
 
-float Vector::getvalue_z() const {
-	return value3;
+void Vector::print() {
+	cout << "[" << x << "," << y << "," << z << "]" << endl;
 }
-
