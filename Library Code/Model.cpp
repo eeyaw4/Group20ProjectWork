@@ -25,9 +25,10 @@ void Model::displayVerticies()
 {
 	for (int i = 0; i < vVector.size(); i++)
 	{
-		float x = vVector[i].getVectorX();
-		float y = vVector[i].getVectorY();
-		float z = vVector[i].getVectorZ();
+		vector<float> data = vVector[i].getVector();
+		float x = data[0];
+		float y = data[1];
+		float z = data[2];
 
 		cout << "ID: " << i << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
 	}
@@ -39,20 +40,23 @@ void Model::displayCell()
 	{
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
-		vector<int> v = cVector[i].getCellVerticies();
+		vector<vector<float>> v = cVector[i].getCellVertices();
 
 		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Verticies: ";
 
-		for (int j : v)
+		for (vector<float> j : v)
 		{
-			cout << j << ", ";
+			cout << "Vector: ";
+			cout << j[0] << ", ";
+			cout << j[1] << ", ";
+			cout << j[2] << ", ";
 		}
 		cout << endl;
 
 	}
 }
 
-void Model::readFile(void)
+void Model::readFile()
 {
 	ifstream dataFile;
 	dataFile.open("ExampleModel1.MOD");
@@ -110,9 +114,9 @@ void Model::readVerticies(string str)
 	Vector v;
 	if (iss >> type >> id >> x >> y >> z)
 	{
-		v.x = x;
-		v.y = y;
-		v.z = z;
+		v.xyz.push_back(x);
+		v.xyz.push_back(y);
+		v.xyz.push_back(z);
 
 		vVector.push_back(v);
 	}
@@ -135,7 +139,7 @@ void Model::readCell(string str)
 
 		while (iss >> point)
 		{
-			c.verticies.push_back(point);
+			c.vertices.push_back(vVector[point].getVector());
 		}
 
 		cVector.push_back(c);

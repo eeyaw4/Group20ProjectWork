@@ -10,12 +10,12 @@ class Cell
 public:
 	string shape;
 	int material;
-	vector<int> verticies;
+	vector<vector<float>> vertices;
 
 	Cell();
 	~Cell();
 
 	string getCellShape();
 	int getCellMaterial();
-	vector<int> getCellVerticies();
+	vector<vector<float>> getCellVertices();
 };
