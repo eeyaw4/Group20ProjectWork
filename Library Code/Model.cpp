@@ -21,7 +21,7 @@ void Model::displayMaterial()
 	}
 }
 
-void Model::displayVerticies()
+void Model::displayVertices()
 {
 	for (int i = 0; i < vVector.size(); i++)
 	{
@@ -42,7 +42,8 @@ void Model::displayCell()
 		int m = cVector[i].getCellMaterial();
 		vector<vector<float>> v = cVector[i].getCellVertices();
 
-		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Verticies: ";
+
+		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Vertices: ";
 
 		for (vector<float> j : v)
 		{
@@ -52,6 +53,9 @@ void Model::displayCell()
 			cout << j[2] << ", ";
 		}
 		cout << endl;
+		vector<float> g = cVector[i].getCentreOfGravity();
+		cout << "Centre of Gravity vector: "  << g[0] << ", " << g[1] << ", " << g[2] << ", ";
+		cout << endl;
 
 	}
 }
@@ -59,7 +63,7 @@ void Model::displayCell()
 void Model::readFile()
 {
 	ifstream dataFile;
-	dataFile.open("ExampleModel1.MOD");
+	dataFile.open("../ExampleModel1.MOD");
 	if (!dataFile)
 	{
 		cerr << "Unable to find MOD file";
@@ -73,7 +77,7 @@ void Model::readFile()
 			readMaterial(str);
 			break;
 		case 'v':
-			readVerticies(str);
+			readVertices(str);
 			break;
 		case 'c':
 			readCell(str);
@@ -105,7 +109,7 @@ void Model::readMaterial(string str)
 	}
 }
 
-void Model::readVerticies(string str)
+void Model::readVertices(string str)
 {
 	string type;
 	int id;

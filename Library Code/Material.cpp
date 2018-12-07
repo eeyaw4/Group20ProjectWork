@@ -27,7 +27,13 @@ int Material::getMaterialDensity()
 
 string Material::getMaterialColour()
 {
-	
+/*
+    struct colour = "0xRRGGBB"{
+        colour.r = hexValue << 16;  // RR byte
+        colour.g = hexValue << 8;   // GG byte
+        colour.b = hexValue;        // BB byte
+    }
+*/
     return colour;
 }
 
