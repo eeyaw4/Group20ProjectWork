@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Material.h"
-#include "Vector.h"
+#include "Vertex.h"
 #include "Cell.h"
 
 #include <iostream>
@@ -11,6 +11,9 @@
 #include <vector>
 
 using namespace std;
+
+#ifndef Model_H
+#define Model_H
 
 class Model
 {
@@ -25,7 +28,7 @@ private:
 
 public:
 	vector<Material> mVector;
-	vector<Vector> vVector;
+	vector<Vertex> vVector;
 	vector<Cell> cVector;
 
 	Model();
@@ -36,3 +39,4 @@ public:
 	void displayCell();
 };
 
+#endif

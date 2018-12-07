@@ -5,20 +5,14 @@
 
 using namespace std;
 
+#ifndef Vertex_H
+#define Vertex_H
 
-#ifndef Vector_H
-#define Vector_H
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-class Vector
+class Vertex
 {
 public:
-	Vector();
-	~Vector();
+	Vertex();
+	~Vertex();
 
 	vector<float> xyz;
 
@@ -32,4 +26,4 @@ public:
 
 };
 
-#endif // !Vector_H
+#endif

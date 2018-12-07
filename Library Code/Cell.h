@@ -5,6 +5,9 @@
 
 using namespace std;
 
+#ifndef Cell_H
+#define Cell_H
+
 class Cell
 {
 public:
@@ -19,3 +22,5 @@ public:
 	int getCellMaterial();
 	vector<vector<float>> getCellVertices();
 };
+
+#endif

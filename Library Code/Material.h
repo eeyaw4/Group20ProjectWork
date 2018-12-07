@@ -4,6 +4,9 @@
 
 using namespace std;
 
+#ifndef Material_H
+#define Material_H
+
 class Material
 {
 public:
@@ -20,3 +23,5 @@ public:
 	string getMaterialColour();
 	string getMaterialName();
 };
+
+#endif

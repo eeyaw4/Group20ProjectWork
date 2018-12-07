@@ -1,21 +1,21 @@
-#include "Vector.h"
+#include "Vertex.h"
 
 
-Vector::~Vector()
+Vertex::~Vertex()
 {
 }
 
 
-Vector::Vector()
+Vertex::Vertex()
 {
 }
 
-vector<float> Vector::getVector()
+vector<float> Vertex::getVector()
 {
 	return xyz;
 }
 
-vector<float> Vector::operator+(vector<float> v)
+vector<float> Vertex::operator+(vector<float> v)
 {
 	vector<float> result;
 	float x = xyz[0];
@@ -29,7 +29,7 @@ vector<float> Vector::operator+(vector<float> v)
 	return result;
 }
 
-vector<float> Vector::operator-(vector<float> v)
+vector<float> Vertex::operator-(vector<float> v)
 {
 	vector<float> result;
 	float x = xyz[0];
@@ -43,7 +43,7 @@ vector<float> Vector::operator-(vector<float> v)
 	return result;
 }
 
-float Vector::operator*(vector<float> v)
+float Vertex::operator*(vector<float> v)
 {
 	vector<float> result;
 	float final;
@@ -60,7 +60,7 @@ float Vector::operator*(vector<float> v)
 	return final;
 }
 
-vector<float> Vector::operator/(vector<float> v)
+vector<float> Vertex::operator/(vector<float> v)
 {
 	vector<float> result;
 	float x = xyz[0];
@@ -75,6 +75,6 @@ vector<float> Vector::operator/(vector<float> v)
 	return result;
 }
 
-void Vector::print() {
+void Vertex::print() {
 	cout << "[" << xyz[0] << "," << xyz[1] << "," << xyz[2] << "]" << endl;
 }

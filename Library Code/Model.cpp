@@ -111,7 +111,7 @@ void Model::readVerticies(string str)
 	int id;
 	float x, y, z;
 	istringstream iss(str);
-	Vector v;
+	Vertex v;
 	if (iss >> type >> id >> x >> y >> z)
 	{
 		v.xyz.push_back(x);
