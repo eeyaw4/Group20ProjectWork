@@ -19,6 +19,11 @@ int Material::getMaterialID()
     return id;
 }
 
+int Material::getMaterialID()
+{
+	return id;
+}
+
 int Material::getMaterialDensity()
 {
     return density;

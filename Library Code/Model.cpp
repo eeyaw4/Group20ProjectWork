@@ -3,48 +3,60 @@
 Model::Model()
 {
 	readFile();
-
-	
-	for (int i = 0; i < mVector.size();i++)
-	{
-		int d = mVector[i].getMaterialDensity();
-		string c = mVector[i].getMaterialColour();
-		string n = mVector[i].getMaterialName();
-
-		cout << "ID: "<< i <<", Density: " << d << ", Colour: " << c << ", Name: " << n << endl;
-	}
-
-	for (int i = 0; i < vVector.size(); i++)
-	{
-		float x = vVector[i].getVectorX();
-		float y = vVector[i].getVectorY();
-		float z = vVector[i].getVectorZ();
-
-		cout << "ID: " << i << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
-	}
-
-	for (int i = 0; i < cVector.size(); i++)
-	{
-		string s  = cVector[i].getCellShape();
-		int m = cVector[i].getCellMaterial();
-		vector<int> v = cVector[i].getCellVerticies();
-
-		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Verticies: ";
-
-		for (int j : v)
-		{
-			cout << j << ", ";
-		}
-		cout << endl;
-		
-	}
 }
 
 Model::~Model()
 {
 }
 
-void Model::readFile(void)
+void Model::displayMaterial()
+{
+	for (int i = 0; i < mVector.size(); i++)
+	{
+		int d = mVector[i].getMaterialDensity();
+		string c = mVector[i].getMaterialColour();
+		string n = mVector[i].getMaterialName();
+
+		cout << "ID: " << i << ", Density: " << d << ", Colour: " << c << ", Name: " << n << endl;
+	}
+}
+
+void Model::displayVerticies()
+{
+	for (int i = 0; i < vVector.size(); i++)
+	{
+		vector<float> data = vVector[i].getVector();
+		float x = data[0];
+		float y = data[1];
+		float z = data[2];
+
+		cout << "ID: " << i << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
+	}
+}
+
+void Model::displayCell()
+{
+	for (int i = 0; i < cVector.size(); i++)
+	{
+		string s = cVector[i].getCellShape();
+		int m = cVector[i].getCellMaterial();
+		vector<vector<float>> v = cVector[i].getCellVertices();
+
+		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", Verticies: ";
+
+		for (vector<float> j : v)
+		{
+			cout << "Vector: ";
+			cout << j[0] << ", ";
+			cout << j[1] << ", ";
+			cout << j[2] << ", ";
+		}
+		cout << endl;
+
+	}
+}
+
+void Model::readFile()
 {
 	ifstream dataFile;
 	dataFile.open("ExampleModel1.MOD");
@@ -74,12 +86,14 @@ void Model::readFile(void)
 
 void Model::readMaterial(string str)
 {
-	string type, id, density, colour, name;
+	int id, density;
+	string type, colour, name;
 	istringstream iss(str);
 	Material m;
 	if (iss >> type >> id >> density >> colour >> name)
 	{
-		m.density = stoi(density);
+		m.id = id;
+		m.density = density;
 		m.colour = colour;
 		m.name = name;
 
@@ -93,14 +107,16 @@ void Model::readMaterial(string str)
 
 void Model::readVerticies(string str)
 {
-	string type, id, x, y, z;
+	string type;
+	int id;
+	float x, y, z;
 	istringstream iss(str);
 	Vector v;
 	if (iss >> type >> id >> x >> y >> z)
 	{
-		v.x = stof(x);
-		v.y = stof(y);
-		v.z = stof(z);
+		v.xyz.push_back(x);
+		v.xyz.push_back(y);
+		v.xyz.push_back(z);
 
 		vVector.push_back(v);
 	}
@@ -112,10 +128,10 @@ void Model::readVerticies(string str)
 
 void Model::readCell(string str)
 {
-	string type, id, shape;
+	int id, point, material;
+	string type, shape;
 	istringstream iss(str);
 	Cell c;
-	int point, material;
 	if (iss >> type >> id >> shape >> material)
 	{
 		c.shape = shape;
@@ -123,7 +139,7 @@ void Model::readCell(string str)
 
 		while (iss >> point)
 		{
-			c.verticies.push_back(point);
+			c.vertices.push_back(vVector[point].getVector());
 		}
 
 		cVector.push_back(c);
