@@ -126,7 +126,7 @@ void Model::readVertices(string str)
 	}
 	else
 	{
-		cout << "Error Reading Verticies" << endl;
+		cout << "Error Reading Vertices" << endl;
 	}
 }
 
