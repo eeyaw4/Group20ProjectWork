@@ -46,11 +46,14 @@ void Display::openWindow()
 
 		glPushMatrix();
 		glTranslatef(halfScreenWidth, halfScreenHeight, -500);
-		glRotatef(rotationX, 1, 0, 0);
+		glRotatef(rotationX - 15, 1, 0, 0);
 		glRotatef(rotationY, 0, 1, 0);
 		glTranslatef(-halfScreenWidth, -halfScreenHeight, 500);
 
 		drawCube(halfScreenWidth, halfScreenHeight, -500, 200);
+
+		rotationY -= 1;
+
 
 		glPopMatrix();
 
@@ -70,7 +73,7 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 {
 	//std::cout << key << std::endl;
 
-	const GLfloat rotationSpeed = 10;
+	const GLfloat rotationSpeed = 5;
 
 	// actions are GLFW_PRESS, GLFW_RELEASE or GLFW_REPEAT
 	if (action == GLFW_PRESS || action == GLFW_REPEAT)
@@ -136,7 +139,7 @@ void Display::drawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPos
 		centerPosX + halfSideLength, centerPosY - halfSideLength, centerPosZ + halfSideLength  //Bottom Right
 	};
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 

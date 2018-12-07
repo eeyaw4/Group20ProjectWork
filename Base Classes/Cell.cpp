@@ -21,7 +21,7 @@ int Cell::getCellMaterial()
 	return material;
 }
 
-vector<int> Cell::getCellVerticies()
+vector<vector<float>> Cell::getCellVerticies()
 {
 	return verticies;
 }
