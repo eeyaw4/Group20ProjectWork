@@ -20,6 +20,10 @@ class Model
 private:
 	string str;
 
+	vector<Material> mVector;
+	vector<Vertex> vVector;
+	vector<Cell> cVector;
+
 	void readFile();
 
 	void readMaterial(string str);
@@ -27,9 +31,15 @@ private:
 	void readCell(string str);
 
 public:
-	vector<Material> mVector;
-	vector<Vertex> vVector;
-	vector<Cell> cVector;
+	int materialDensity;
+	string materialColour;
+	string materialName;
+
+	vector<float> vertexXYZ;
+
+	string cellShape;
+	int cellMaterial;
+	vector<vector<float>> cellVector;
 
 	Model();
 	~Model();
@@ -37,6 +47,10 @@ public:
 	void displayMaterial();
 	void displayVerticies();
 	void displayCell();
+
+	void getMaterialData(int id);
+	void getVertexData(int id);
+	void getCellData(int id);
 };
 
 #endif

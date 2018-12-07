@@ -56,6 +56,25 @@ void Model::displayCell()
 	}
 }
 
+void Model::getMaterialData(int id)
+{
+	materialDensity = mVector[id].getMaterialDensity();
+	materialColour = mVector[id].getMaterialColour();
+	materialName = mVector[id].getMaterialName();
+}
+
+void Model::getVertexData(int id)
+{
+	vertexXYZ = vVector[id].getVector();
+}
+
+void Model::getCellData(int id)
+{
+	cellShape = cVector[id].getCellShape();
+	cellMaterial = cVector[id].getCellMaterial();
+	cellVector = cVector[id].getCellVertices();
+}
+
 void Model::readFile()
 {
 	ifstream dataFile;
