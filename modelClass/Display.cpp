@@ -5,6 +5,9 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 GLfloat rotationX = 0.0f;
 GLfloat rotationY = 0.0f;
 
+int colour[3];
+vector<int*> colourVector;
+
 Display::Display()
 {
 	glfwInit();
@@ -50,7 +53,7 @@ void Display::openWindow()
 		glRotatef(rotationY, 0, 1, 0);
 		glTranslatef(-halfScreenWidth, -halfScreenHeight, 500);
 
-		drawCube(halfScreenWidth, halfScreenHeight, -500, 200);
+		cubeTemplate(halfScreenWidth, halfScreenHeight, -500, 200,GL_FILL);
 
 		rotationY -= 1;
 
@@ -96,7 +99,7 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 	}
 }
 
-void Display::drawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength)
+void Display::cubeTemplate(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength,double type)
 {
 	GLfloat halfSideLength = edgeLength * 0.5f;
 
@@ -139,7 +142,8 @@ void Display::drawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPos
 		centerPosX + halfSideLength, centerPosY - halfSideLength, centerPosZ + halfSideLength  //Bottom Right
 	};
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glPolygonMode(GL_FRONT_AND_BACK, type);
+	glColor3f();
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 

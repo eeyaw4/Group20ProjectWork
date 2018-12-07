@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 //GLEW
 #define GLEW_STATIC
@@ -24,6 +25,6 @@ public:
 	~Display();
 	
 	void openWindow();
-	void drawCube(GLfloat centerPosX,GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength);
+	void cubeTemplate(GLfloat centerPosX,GLfloat centerPosY, GLfloat centerPosZ, GLfloat edgeLength,double type);
 };
 
