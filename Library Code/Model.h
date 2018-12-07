@@ -27,7 +27,7 @@ private:
 	void readFile();
 
 	void readMaterial(string str);
-	void readVerticies(string str);
+	void readVertices(string str);
 	void readCell(string str);
 
 public:
@@ -45,7 +45,7 @@ public:
 	~Model();
 
 	void displayMaterial();
-	void displayVerticies();
+	void displayVertices();
 	void displayCell();
 
 	void getMaterialData(int id);
