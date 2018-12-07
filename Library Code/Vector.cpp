@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Vector.h"
 
 
@@ -6,67 +5,76 @@ Vector::~Vector()
 {
 }
 
-Vector::Vector() {
+
+Vector::Vector()
+{
 }
 
-
-Vector::Vector(float x, float y, float z) {
-	this->x = x;
-	this->y = y;
-	this->z = z;
+vector<float> Vector::getVector()
+{
+	return xyz;
 }
 
-void Vector :: add(Vector v) {
-	this->x += v.x;
-	this->y += v.y;
-	this->z += v.z;
-}
+vector<float> Vector::operator+(vector<float> v)
+{
+	vector<float> result;
+	float x = xyz[0];
+	float y = xyz[1];
+	float z = xyz[2];
 
-Vector Vector::operator+(Vector v) {
-	Vector result;
-
-	result.x = this->x + v.x;
-	result.y = this->y + v.y;
-	result.z = this->z + v.z;
+	result[0] = x + v[0];
+	result[1] = y + v[1];
+	result[2] = z + v[2];
 
 	return result;
 }
 
-Vector Vector::operator-(Vector v) {
-	Vector result;
+vector<float> Vector::operator-(vector<float> v)
+{
+	vector<float> result;
+	float x = xyz[0];
+	float y = xyz[1];
+	float z = xyz[2];
 
-	result.x = this->x - v.x;
-	result.y = this->y - v.y;
-	result.z = this->z - v.z;
+	result[0] = x - v[0];
+	result[1] = y - v[1];
+	result[2] = z - v[2];
 	
 	return result;
 }
 
-float Vector::operator*(Vector v) {
-	Vector result;
+float Vector::operator*(vector<float> v)
+{
+	vector<float> result;
 	float final;
+	float x = xyz[0];
+	float y = xyz[1];
+	float z = xyz[2];
 
-	result.x = this->x * v.x;
-	result.y = this->y * v.y;
-	result.z = this->z * v.z;
+	result[0] = x * v[0];
+	result[1] = y * v[1];
+	result[2] = z * v[2];
 	
-	final = (float)(result.x + result.y + result.z);
+	final = (float)(result[0] + result[1] + result[2]);
 
 	return final;
 }
 
-Vector Vector::operator/(Vector v) {
-	Vector result;
-	
+vector<float> Vector::operator/(vector<float> v)
+{
+	vector<float> result;
+	float x = xyz[0];
+	float y = xyz[1];
+	float z = xyz[2];
 
-	result.x = this->y * v.z - z * v.y;
-	result.y = this->z * v.x - x * v.z;
-	result.z = this->x * v.y - y * v.x;
+	result[0] = y * v[2] - z * v[1];
+	result[1] = z* v[0] - x * v[2];
+	result[2] = x * v[1] - y * v[0];
 
 
 	return result;
 }
 
 void Vector::print() {
-	cout << "[" << x << "," << y << "," << z << "]" << endl;
+	cout << "[" << xyz[0] << "," << xyz[1] << "," << xyz[2] << "]" << endl;
 }

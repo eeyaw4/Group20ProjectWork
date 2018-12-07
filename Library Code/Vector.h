@@ -9,29 +9,26 @@ using namespace std;
 #ifndef Vector_H
 #define Vector_H
 
+#include <iostream>
+#include <vector>
 
+using namespace std;
 
 class Vector
 {
 public:
 	Vector();
-	Vector(float x, float y, float z);
 	~Vector();
 
+	vector<float> xyz;
 
-	void add( Vector v );
 	void print();
+	vector<float> getVector();
 	
-	Vector operator+(Vector v);
-	Vector operator-(Vector v);
-	float operator*(Vector v);
-	Vector operator/(Vector v);
-
-private:
-
-	float x;
-	float y;
-	float z;
+	vector<float> operator+(vector<float> v);
+	vector<float> operator-(vector<float> v);
+	float operator*(vector<float> v);
+	vector<float> operator/(vector<float> v);
 
 };
 
