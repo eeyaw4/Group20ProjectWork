@@ -103,11 +103,13 @@ float Cell::calcTetrahedronVolume() {
     CA.xyz = C.operator-(A.xyz);
     DA.xyz = D.operator-(A.xyz);
 
+
+
     DC.push_back(CA.xyz[0] * DA.xyz[0]);
     DC.push_back(CA.xyz[1] * DA.xyz[1]);
     DC.push_back(CA.xyz[2] * DA.xyz[2]);
 
-    volume = ((float)1/ (float)36) * BA.operator*(DC);
+    volume = ((float)1/(float)6) * (BA.operator*(DC));
 
     return volume;
 }
