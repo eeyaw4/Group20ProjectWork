@@ -24,7 +24,7 @@ int Cell::getCellMaterial() {
 }
 
 // Returns the material class saved to the Cell class
-Material Cell::getCellMaterialClass() {
+	Material Cell::getCellMaterialClass() {
 	return materialClass;
 }
 

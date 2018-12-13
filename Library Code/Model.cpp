@@ -49,9 +49,8 @@ void Model::displayCell()
 		int m = cVector[i].getCellMaterial();
 		vector<int> vID = cVector[i].getCellVerticesID();
 		vector<float> g = cVector[i].getCentreOfGravity();
-        cout << "Centre of Gravity vector: "  << g[0] << ", " << g[1] << ", " << g[2] << ", ";
 
-        cout << "ID: " << id << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
+		cout << "ID: " << id << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
 
 		for (int j : vID)
 		{

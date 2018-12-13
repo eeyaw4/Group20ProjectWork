@@ -1,8 +1,8 @@
 #pragma once
+#include "Vertex.h"
+#include "Material.h"
 #include <cmath>
 #include <vector>
-#include <Vertex.h>
-#include <Material.h>
 #include <string>
 
 using namespace std;
