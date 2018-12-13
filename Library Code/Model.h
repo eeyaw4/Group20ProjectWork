@@ -29,12 +29,15 @@ private:
 	void readCell(string str);
 
 public:
+	int materialID;
 	int materialDensity;
 	string materialColour;
 	string materialName;
 
+	int vertexID;
 	vector<float> vertexXYZ;
 
+	int cellID;
 	string cellShape;
 	int cellMaterial;
 	vector<vector<float>> cellVector;

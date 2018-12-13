@@ -1,48 +1,56 @@
 #include "Model.h"
 
+// Model class constructor
 Model::Model()
 {
 }
 
+// Model class deconstructor
 Model::~Model()
 {
 }
 
+// Displays all of the data for every material that has been stored in the mVector Material vector
 void Model::displayMaterial()
 {
 	for (int i = 0; i < mVector.size(); i++)
 	{
+		int id = mVector[i].getMaterialID();
 		int d = mVector[i].getMaterialDensity();
 		string c = mVector[i].getMaterialColour();
 		string n = mVector[i].getMaterialName();
 
-		cout << "ID: " << i << ", Density: " << d << ", Colour: " << c << ", Name: " << n << endl;
+		cout << "ID: " << id << ", Density: " << d << ", Colour: " << c << ", Name: " << n << endl;
 	}
 }
 
+// Displays all of the data for every vertex that has been stored in the vVector Vertex vector
 void Model::displayVertices()
 {
 	for (int i = 0; i < vVector.size(); i++)
 	{
+		int id = vVector[i].getVertexID();
 		vector<float> data = vVector[i].getVertexVector();
 		float x = data[0];
 		float y = data[1];
 		float z = data[2];
 
-		cout << "ID: " << i << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
+		cout << "ID: " << id << ", X: " << x << ", Y: " << y << ", Z: " << z << endl;
 	}
 }
 
+// Displays all of the data for every cell that has been stored in the cVector Cell vector
 void Model::displayCell()
 {
 	for (int i = 0; i < cVector.size(); i++)
 	{
+		int id = cVector[i].getCellID();
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
 		vector<int> vID = cVector[i].getCellVerticesID();
 		vector<float> g = cVector[i].getCentreOfGravity();
 
-		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
+		cout << "ID: " << id << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
 
 		for (int j : vID)
 		{
@@ -53,20 +61,25 @@ void Model::displayCell()
 	}
 }
 
+// Sets the material variables to data from the selected mVector Material depending on the id passed to the function
 void Model::getMaterialData(int id)
 {
+	materialID = mVector[id].getMaterialID();
 	materialDensity = mVector[id].getMaterialDensity();
 	materialColour = mVector[id].getMaterialColour();
 	materialName = mVector[id].getMaterialName();
 }
 
+// Sets the vertex variables to data from the selected vVector Vertex depending on the id passed to the function
 void Model::getVertexData(int id)
 {
+	vertexID = vVector[id].getVertexID();
 	vertexXYZ = vVector[id].getVertexVector();
 }
 
 void Model::getCellData(int id)
 {
+	cellID = cVector[id].getCellID();
 	cellShape = cVector[id].getCellShape();
 	cellMaterial = cVector[id].getCellMaterial();
 	cellVector = cVector[id].getCellVertices();

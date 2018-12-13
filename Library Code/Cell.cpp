@@ -2,10 +2,11 @@
 #include <cmath>
 #include <vector>
 
-
+// Cell class constructor
 Cell::Cell() {
 }
 
+// Cell class deconstructor
 Cell::~Cell() {
 }
 
