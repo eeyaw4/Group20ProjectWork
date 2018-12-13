@@ -33,6 +33,7 @@ vector<vector<float>> Cell::getCellVertices() {
     return vertices;
 }
 
+// returns the ID of the vertex
 vector<int> Cell::getCellVerticesID() {
 	return verticesID;
 }
@@ -71,7 +72,7 @@ vector<float> Cell::calcCentreOfGravity(int count) {
     return xyz;
 }
 
-// Calculates the volume of the model
+// Calculates the volume of the model by what shape it has
 float Cell::getVolume() {
     if (shape == "t") {
         volume = Cell::calcTetrahedronVolume();
@@ -83,6 +84,7 @@ float Cell::getVolume() {
     return volume;
 }
 
+// Calculates volume of a tetrahedron
 float Cell::calcTetrahedronVolume() {
 /* To calculate the volume of a tetrahedron:
  * V = 1/6 * |(B - A) . ((C - A) * (D - A))|
@@ -110,7 +112,7 @@ float Cell::calcTetrahedronVolume() {
     return volume;
 }
 
-
+// Calculates volume of a hexahedron using pyramids
 float Cell::calcHexahedronVolume() {
     /* Calculate hexahedron volume from 3 pyramids about the same apex
      * Hexahedron 0,1,2,3,4,5,6,7 Apex 7
@@ -139,6 +141,7 @@ float Cell::calcHexahedronVolume() {
     return volume;
 }
 
+// Calculates volume of 5 vertex
 float Cell::calcPyramidVolume()
 {
     /* To calculate the volume of a pyramid:
@@ -170,6 +173,7 @@ float Cell::calcPyramidVolume()
 // Uses volume to calculate the weight of the model
 float Cell::getWeight()
 {
+    /*  Weight = Density x Volume */
     float density = materialClass.getMaterialDensity();
     float volume = this->getVolume();
     float weight = volume * density;
