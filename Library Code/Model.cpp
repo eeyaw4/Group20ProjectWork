@@ -77,6 +77,7 @@ void Model::getVertexData(int id)
 	vertexXYZ = vVector[id].getVertexVector();
 }
 
+// Sets the cell variables to data from the selected cVector Cell depending on the id passed to the function
 void Model::getCellData(int id)
 {
 	cellID = cVector[id].getCellID();
@@ -86,6 +87,7 @@ void Model::getCellData(int id)
 	cellCOG = cVector[id].getCentreOfGravity();
 }
 
+// Calculates the center of the model using all of the vertices
 vector<float> Model::calcModelCenter()
 {
 	Vertex data;
@@ -100,6 +102,7 @@ vector<float> Model::calcModelCenter()
 	return center;
 }
 
+// Writes all of the data from the mVector, vVector and cVector vectors to a file passed to the function
 void Model::writeToFile(string str)
 {
 	ofstream file;
@@ -158,6 +161,7 @@ void Model::writeToFile(string str)
 	file.close();
 }
 
+// Reads all of the data from a file passed to the function and stores the data into the mVector, vVector and cVector vectors
 void Model::readFile(string fileName)
 {
 	ifstream dataFile;
@@ -186,6 +190,7 @@ void Model::readFile(string fileName)
 
 }
 
+// Reads all data from the a line passed to the function into a Material class which is stored in the mVector vector
 void Model::readMaterial(string str)
 {
 	int id, density;
@@ -207,6 +212,7 @@ void Model::readMaterial(string str)
 	}
 }
 
+// Reads all data from the a line passed to the function into a Vertex class which is stored in the vVector vector
 void Model::readVertices(string str)
 {
 	string type;
@@ -229,6 +235,7 @@ void Model::readVertices(string str)
 	}
 }
 
+// Reads all data from the a line passed to the function into a Cell class which is stored in the cVector vector
 void Model::readCell(string str)
 {
 	int id, point, material;
