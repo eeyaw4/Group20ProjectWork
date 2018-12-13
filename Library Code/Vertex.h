@@ -15,15 +15,19 @@ public:
 	~Vertex();
 
 	vector<float> xyz;
+	int id;
 
 	void print();
-	vector<float> getVector();
+	vector<float> getVertexVector();
+	int getVertexID();
 	
 	vector<float> operator+(vector<float> v);
 	vector<float> operator-(vector<float> v);
 	float operator*(vector<float> v);
 	vector<float> operator/(vector<float> v);
 
+	vector<float> timesByNum(float n);
+	vector<float> divideByNum(float n);
 };
 
 #endif

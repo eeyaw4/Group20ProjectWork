@@ -24,8 +24,6 @@ private:
 	vector<Vertex> vVector;
 	vector<Cell> cVector;
 
-	void readFile();
-
 	void readMaterial(string str);
 	void readVertices(string str);
 	void readCell(string str);
@@ -44,6 +42,11 @@ public:
 
 	Model();
 	~Model();
+
+	void readFile(string fileName);
+	void writeToFile(string str);
+
+	vector<float> calcModelCenter();
 
 	void displayMaterial();
 	void displayVertices();

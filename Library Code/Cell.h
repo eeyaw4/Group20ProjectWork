@@ -11,9 +11,11 @@ using namespace std;
 class Cell
 {
 public:
+	int id;
 	string shape;
 	int material;
 	vector<vector<float>> vertices;
+	vector<vector<int>> verticesID;
     vector<float> centreOfGravity;
     float volume;
     float weight;
@@ -21,10 +23,11 @@ public:
 	Cell();
 	~Cell();
 
-
+	int getCellID();
 	string getCellShape();
 	int getCellMaterial();
 	vector<vector<float>> getCellVertices();
+	vector<vector<int>> getCellVerticesID();
     vector<float> getCentreOfGravity();
     vector<float> calcCentreOfGravity(int count);
     float getVolume();

@@ -2,7 +2,6 @@
 
 Model::Model()
 {
-	readFile();
 }
 
 Model::~Model()
@@ -25,7 +24,7 @@ void Model::displayVertices()
 {
 	for (int i = 0; i < vVector.size(); i++)
 	{
-		vector<float> data = vVector[i].getVector();
+		vector<float> data = vVector[i].getVertexVector();
 		float x = data[0];
 		float y = data[1];
 		float z = data[2];
@@ -40,18 +39,15 @@ void Model::displayCell()
 	{
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
-		vector<vector<float>> v = cVector[i].getCellVertices();
+		vector<vector<int>> vID = cVector[i].getCellVerticesID();
 		vector<float> g = cVector[i].getCentreOfGravity();
-
 
 		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
 
-		for (vector<float> j : v)
+		for (vector<int> j : vID)
 		{
-			cout << "Vector: ";
-			cout << j[0] << ", ";
-			cout << j[1] << ", ";
-			cout << j[2] << ", ";
+			for (int i = 0; i < j.size(); i++)
+				cout << j[i] << " ";
 		}
 		cout << endl;
 	}
@@ -66,7 +62,7 @@ void Model::getMaterialData(int id)
 
 void Model::getVertexData(int id)
 {
-	vertexXYZ = vVector[id].getVector();
+	vertexXYZ = vVector[id].getVertexVector();
 }
 
 void Model::getCellData(int id)
@@ -77,10 +73,83 @@ void Model::getCellData(int id)
 	cellCOG = cVector[id].getCentreOfGravity();
 }
 
-void Model::readFile()
+vector<float> Model::calcModelCenter()
+{
+	Vertex data;
+	data.xyz = { 0.0,0.0,0.0 };
+	for (int i = 0; i < vVector.size(); i++)
+	{
+		data.xyz = data.operator+(vVector[i].getVertexVector());
+	}
+
+	vector<float> center = data.divideByNum((float)vVector.size());
+
+	return center;
+}
+
+void Model::writeToFile(string str)
+{
+	ofstream file;
+	file.open(str);
+	if (!file)
+	{
+		cerr << "Unable to find create file";
+		exit(1);
+	}
+
+	file << "# Materials" << endl;
+	for (int i = 0; i < mVector.size(); i++)
+	{
+		int id = mVector[i].getMaterialID();
+		int d = mVector[i].getMaterialDensity();
+		string c = mVector[i].getMaterialColour();
+		string n = mVector[i].getMaterialName();
+
+		file << "m " << id << " " << d << " " << c << " " << n << endl;
+	}
+	file << "" << endl;
+
+	file << "# Vectors" << endl;
+	for (int i = 0; i < vVector.size(); i++)
+	{
+		vector<float> data = vVector[i].getVertexVector();
+		float x = data[0];
+		float y = data[1];
+		float z = data[2];
+
+		file << "v " << i << " " << x << " " << y << " " << z << endl;
+	}
+	file << "" << endl;
+
+	file << "# Cells" << endl;
+	for (int i = 0; i < cVector.size(); i++)
+	{
+		int id = cVector[i].getCellID();
+		string s = cVector[i].getCellShape();
+		int m = cVector[i].getCellMaterial();
+		vector<vector<int>> vID = cVector[i].getCellVerticesID();
+		vector<float> g = cVector[i].getCentreOfGravity();
+
+
+		file << "c " << id << " " << s << " " << m << " ";
+
+		for (vector<int> j : vID)
+		{
+			for (int i = 0; i < j.size(); i++)
+				file << j[i] << " ";
+		}
+		file << endl;
+
+	}
+	file << "" << endl;
+
+	file.close();
+}
+
+void Model::readFile(string fileName)
 {
 	ifstream dataFile;
-	dataFile.open("ExampleModel1.MOD");
+	dataFile.open(fileName);
 	if (!dataFile)
 	{
 		cerr << "Unable to find MOD file";
@@ -135,6 +204,7 @@ void Model::readVertices(string str)
 	Vertex v;
 	if (iss >> type >> id >> x >> y >> z)
 	{
+		v.id = id;
 		v.xyz.push_back(x);
 		v.xyz.push_back(y);
 		v.xyz.push_back(z);
@@ -153,15 +223,19 @@ void Model::readCell(string str)
 	string type, shape;
 	istringstream iss(str);
 	Cell c;
+	vector<int> vID;
 	if (iss >> type >> id >> shape >> material)
 	{
+		c.id = id;
 		c.shape = shape;
 		c.material = material;
 
 		while (iss >> point)
 		{
-			c.vertices.push_back(vVector[point].getVector());
+			c.vertices.push_back(vVector[point].getVertexVector());
+			vID.push_back(point);
 		}
+		c.verticesID.push_back(vID);
 
 		cVector.push_back(c);
 	}

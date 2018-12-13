@@ -9,6 +9,11 @@ Cell::Cell() {
 Cell::~Cell() {
 }
 
+// Returns the id saved to the Cell class
+int Cell::getCellID() {
+	return id;
+}
+
 // Returns the shape saved to the Cell class
 string Cell::getCellShape() {
     return shape;
@@ -22,6 +27,10 @@ int Cell::getCellMaterial() {
 // Returns the vertices' coordinates as a 2d array saved to the Cell class
 vector<vector<float>> Cell::getCellVertices() {
     return vertices;
+}
+
+vector<vector<int>> Cell::getCellVerticesID() {
+	return verticesID;
 }
 
 // Takes an average of each vertex coordinate and outputs the centre of the model
