@@ -107,7 +107,7 @@ float Cell::calcTetrahedronVolume() {
     DC.push_back(CA.xyz[1] * DA.xyz[1]);
     DC.push_back(CA.xyz[2] * DA.xyz[2]);
 
-    volume = (float)1/(float)6 * BA.operator*(DC);
+    volume = ((float)1/ (float)36) * BA.operator*(DC);
 
     return volume;
 }
@@ -165,7 +165,7 @@ float Cell::calcPyramidVolume()
     DC.push_back(CA.xyz[1] * DA.xyz[1]);
     DC.push_back(CA.xyz[2] * DA.xyz[2]);
 
-    volume = (float)1/(float)3 * BA.operator*(DC);
+    volume = ((float)1/ (float)3) * BA.operator*(DC);
 
     return volume;
 }
