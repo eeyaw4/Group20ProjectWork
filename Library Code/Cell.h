@@ -1,7 +1,9 @@
 #pragma once
-
-#include <string>
+#include <cmath>
 #include <vector>
+#include <Vertex.h>
+#include <Material.h>
+#include <string>
 
 using namespace std;
 
@@ -11,9 +13,12 @@ using namespace std;
 class Cell
 {
 public:
+	int id;
 	string shape;
 	int material;
+	Material materialClass;
 	vector<vector<float>> vertices;
+	vector<vector<int>> verticesID;
     vector<float> centreOfGravity;
     float volume;
     float weight;
@@ -22,9 +27,12 @@ public:
 	~Cell();
 
 	// These functions simply return the values saved to the Cell class
-	string getCellShape();
+	int getCellID();
+    string getCellShape();
 	int getCellMaterial();
 	vector<vector<float>> getCellVertices();
+    vector<vector<int>> getCellVerticesID();
+
 
 	// These functions are used to calculate the centre of gravity for a given set of vertices
 	vector<float> getCentreOfGravity();
@@ -37,7 +45,9 @@ public:
     float calcPyramidVolume();
 
     // Calculates Weight from Volume x Density
-	float getWeight();
+    float getWeight();
+
+    // Calculates Weight from Volume x Density
 };
 
 #endif
