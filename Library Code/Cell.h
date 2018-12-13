@@ -18,7 +18,7 @@ public:
 	int material;
 	Material materialClass;
 	vector<vector<float>> vertices;
-	vector<vector<int>> verticesID;
+	vector<int> verticesID;
     vector<float> centreOfGravity;
     float volume;
     float weight;
@@ -30,12 +30,10 @@ public:
 	int getCellID();
     string getCellShape();
 	int getCellMaterial();
+	Material getCellMaterialClass();
 	vector<vector<float>> getCellVertices();
-    vector<vector<int>> getCellVerticesID();
-
-
-	// These functions are used to calculate the centre of gravity for a given set of vertices
-	vector<float> getCentreOfGravity();
+	vector<int> getCellVerticesID();
+    vector<float> getCentreOfGravity();
     vector<float> calcCentreOfGravity(int count);
 
     // Calculates the volume of

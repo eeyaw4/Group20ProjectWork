@@ -20,23 +20,44 @@ class Model
 private:
 	string str;
 
-	void readFile();
+	vector<Material> mVector;
+	vector<Vertex> vVector;
+	vector<Cell> cVector;
 
 	void readMaterial(string str);
 	void readVertices(string str);
 	void readCell(string str);
 
 public:
-	vector<Material> mVector;
-	vector<Vertex> vVector;
-	vector<Cell> cVector;
+	int materialID;
+	int materialDensity;
+	string materialColour;
+	string materialName;
+
+	int vertexID;
+	vector<float> vertexXYZ;
+
+	int cellID;
+	string cellShape;
+	int cellMaterial;
+	vector<vector<float>> cellVector;
+	vector<float> cellCOG;
 
 	Model();
 	~Model();
 
+	void readFile(string fileName);
+	void writeToFile(string str);
+
+	vector<float> calcModelCenter();
+
 	void displayMaterial();
 	void displayVertices();
 	void displayCell();
+
+	void getMaterialData(int id);
+	void getVertexData(int id);
+	void getCellData(int id);
 };
 
 #endif
