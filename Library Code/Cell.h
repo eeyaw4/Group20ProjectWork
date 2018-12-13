@@ -15,7 +15,7 @@ public:
 	string shape;
 	int material;
 	vector<vector<float>> vertices;
-	vector<vector<int>> verticesID;
+	vector<int> verticesID;
     vector<float> centreOfGravity;
     float volume;
     float weight;
@@ -27,7 +27,7 @@ public:
 	string getCellShape();
 	int getCellMaterial();
 	vector<vector<float>> getCellVertices();
-	vector<vector<int>> getCellVerticesID();
+	vector<int> getCellVerticesID();
     vector<float> getCentreOfGravity();
     vector<float> calcCentreOfGravity(int count);
     float getVolume();

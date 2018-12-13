@@ -29,7 +29,7 @@ vector<vector<float>> Cell::getCellVertices() {
     return vertices;
 }
 
-vector<vector<int>> Cell::getCellVerticesID() {
+vector<int> Cell::getCellVerticesID() {
 	return verticesID;
 }
 

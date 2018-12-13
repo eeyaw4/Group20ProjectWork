@@ -39,16 +39,16 @@ void Model::displayCell()
 	{
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
-		vector<vector<int>> vID = cVector[i].getCellVerticesID();
+		vector<int> vID = cVector[i].getCellVerticesID();
 		vector<float> g = cVector[i].getCentreOfGravity();
 
 		cout << "ID: " << i << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
 
-		for (vector<int> j : vID)
+		for (int j : vID)
 		{
-			for (int i = 0; i < j.size(); i++)
-				cout << j[i] << " ";
+			cout << j << " ";
 		}
+		cout << endl;
 		cout << endl;
 	}
 }
@@ -127,16 +127,15 @@ void Model::writeToFile(string str)
 		int id = cVector[i].getCellID();
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
-		vector<vector<int>> vID = cVector[i].getCellVerticesID();
+		vector<int> vID = cVector[i].getCellVerticesID();
 		vector<float> g = cVector[i].getCentreOfGravity();
 
 
 		file << "c " << id << " " << s << " " << m << " ";
 
-		for (vector<int> j : vID)
+		for (int j : vID)
 		{
-			for (int i = 0; i < j.size(); i++)
-				file << j[i] << " ";
+				file << j << " ";
 		}
 		file << endl;
 
@@ -223,7 +222,7 @@ void Model::readCell(string str)
 	string type, shape;
 	istringstream iss(str);
 	Cell c;
-	vector<int> vID;
+	int vID;
 	if (iss >> type >> id >> shape >> material)
 	{
 		c.id = id;
@@ -233,9 +232,8 @@ void Model::readCell(string str)
 		while (iss >> point)
 		{
 			c.vertices.push_back(vVector[point].getVertexVector());
-			vID.push_back(point);
+			c.verticesID.push_back(point);
 		}
-		c.verticesID.push_back(vID);
 
 		cVector.push_back(c);
 	}
