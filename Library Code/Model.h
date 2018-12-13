@@ -42,6 +42,8 @@ public:
 	int cellMaterial;
 	vector<vector<float>> cellVector;
 	vector<float> cellCOG;
+	float cellVolume;
+	float cellWeight;
 
 	Model();
 	~Model();

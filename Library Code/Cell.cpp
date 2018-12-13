@@ -75,7 +75,7 @@ vector<float> Cell::calcCentreOfGravity(int count) {
 // Calculates the volume of the model by what shape it has
 float Cell::getVolume() {
     if (shape == "t") {
-        volume = Cell::calcTetrahedronVolume();
+        volume = calcTetrahedronVolume();
     } else if (shape == "p") {
         volume = calcPyramidVolume();
     } else if (shape == "h") {

@@ -48,9 +48,11 @@ void Model::displayCell()
 		string s = cVector[i].getCellShape();
 		int m = cVector[i].getCellMaterial();
 		vector<int> vID = cVector[i].getCellVerticesID();
-		vector<float> g = cVector[i].getCentreOfGravity();
+		vector<float> cG = cVector[i].getCentreOfGravity();
+		float cV = cVector[i].getVolume();
+		float cW = cVector[i].getWeight();
 
-		cout << "ID: " << id << ", Shape: " << s << ", Material: " << m << ", COG: " << g[0] << ", " << g[1] << ", " << g[2] << ", Vertices: ";
+		cout << "ID: " << id << ", Shape: " << s << ", Material: " << m << ", Volume: " << cV << ", Weight: " << cW << ", COG: " << cG[0] << ", " << cG[1] << ", " << cG[2] << ", Vertices: ";
 
 		for (int j : vID)
 		{
@@ -85,6 +87,8 @@ void Model::getCellData(int id)
 	cellMaterial = cVector[id].getCellMaterial();
 	cellVector = cVector[id].getCellVertices();
 	cellCOG = cVector[id].getCentreOfGravity();
+	cellVolume = cVector[id].getVolume();
+	cellWeight = cVector[id].getWeight();
 }
 
 // Calculates the center of the model using all of the vertices
@@ -242,7 +246,6 @@ void Model::readCell(string str)
 	string type, shape;
 	istringstream iss(str);
 	Cell c;
-	int vID;
 	if (iss >> type >> id >> shape >> material)
 	{
 		c.id = id;
@@ -255,7 +258,6 @@ void Model::readCell(string str)
 			c.vertices.push_back(vVector[point].getVertexVector());
 			c.verticesID.push_back(point);
 		}
-		c.verticesID.push_back(vID);
 
 		cVector.push_back(c);
 	}
