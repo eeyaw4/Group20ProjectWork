@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Material.h"
 #include <string>
 #include <vector>
 
@@ -14,6 +14,7 @@ public:
 	int id;
 	string shape;
 	int material;
+	Material materialClass;
 	vector<vector<float>> vertices;
 	vector<int> verticesID;
     vector<float> centreOfGravity;
@@ -26,6 +27,7 @@ public:
 	int getCellID();
 	string getCellShape();
 	int getCellMaterial();
+	Material getCellMaterialClass();
 	vector<vector<float>> getCellVertices();
 	vector<int> getCellVerticesID();
     vector<float> getCentreOfGravity();

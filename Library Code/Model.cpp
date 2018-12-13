@@ -228,6 +228,7 @@ void Model::readCell(string str)
 		c.id = id;
 		c.shape = shape;
 		c.material = material;
+		c.materialClass = mVector[material];
 
 		while (iss >> point)
 		{

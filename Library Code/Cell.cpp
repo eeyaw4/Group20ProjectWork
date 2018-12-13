@@ -24,6 +24,11 @@ int Cell::getCellMaterial() {
     return material;
 }
 
+// Returns the material class saved to the Cell class
+Material Cell::getCellMaterialClass() {
+	return materialClass;
+}
+
 // Returns the vertices' coordinates as a 2d array saved to the Cell class
 vector<vector<float>> Cell::getCellVertices() {
     return vertices;
