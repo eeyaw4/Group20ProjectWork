@@ -62,9 +62,9 @@ vector<float> Cell::calcCentreOfGravity(int count) {
             Total[i] = Total[i] + vertices[j][i];
         }
     }
-    float x = Total[0] / count;
-    float y = Total[1] / count;
-    float z = Total[2] / count;
+    float x = Total[0] / (float)count;
+    float y = Total[1] / (float)count;
+    float z = Total[2] / (float)count;
     xyz.push_back(x);
     xyz.push_back(y);
     xyz.push_back(z);
@@ -173,7 +173,6 @@ float Cell::getWeight()
     float density = materialClass.getMaterialDensity();
     float volume = this->getVolume();
     float weight = volume * density;
-
 
     return weight;
 }
