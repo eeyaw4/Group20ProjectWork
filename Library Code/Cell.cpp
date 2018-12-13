@@ -1,6 +1,7 @@
 #include "Cell.h"
 #include <cmath>
 #include <vector>
+#include <Vertex.h>
 
 
 Cell::Cell() {
@@ -48,7 +49,6 @@ vector<float> Cell::calcCentreOfGravity(int count) {
         {
             Total[i] = Total[i] + vertices[j][i];
         }
-
     }
     float x = Total[0] / count;
     float y = Total[1] / count;
@@ -61,12 +61,59 @@ vector<float> Cell::calcCentreOfGravity(int count) {
 
 // Calculates the volume of the model
 float Cell::getVolume() {
+    if (shape == "t") {
+        volume = Cell::calcTetrahedronVolume();
+    } else if (shape == "p") {
+        volume = calcPyramidVolume();
+    } else if (shape == "h") {
+        volume = calcHexahedronVolume();
+    }
+    return volume;
+}
+
+float Cell::calcTetrahedronVolume() {
+/* To calculate the volume of a tetrahedron:
+ * V = 1/6 * |(B - A) . ((C - A) * (D - A))|
+ * Dot product of a multiplication of vectors.
+ */
+    Vertex A, B, C, D;
+    Vertex BA, CA, DA, CDA;
+    vector<float> DC;
+    float x, volume;
+    A.xyz = vertices[0];
+    B.xyz = vertices[1];
+    C.xyz = vertices[2];
+    D.xyz = vertices[3];
+
+    BA.xyz = B.operator-(A.xyz);
+    CA.xyz = C.operator-(A.xyz);
+    DA.xyz = D.operator-(A.xyz);
+
+    DC[0] = CA.xyz[0] * DA.xyz[0];
+    DC[1] = CA.xyz[1] * DA.xyz[1];
+    DC[2] = CA.xyz[2] * DA.xyz[2];
+
+    volume = (float)1/(float)6 * BA.operator*(DC);
 
     return volume;
 }
 
+
+float Cell::calcHexahedronVolume()
+{
+    Vertex A, B, C, D, E, F;
+}
+
+float Cell::calcPyramidVolume()
+{
+
+}
+
 // Uses volume to calculate the weight of the model
-float Cell::getWeight() {
+float Cell::getWeight()
+{
+    float volume = this->getVolume();
+
 
     return weight;
 }
