@@ -3,6 +3,7 @@
 int main(void)
 {
 	Model testModel;
+
 	testModel.readFile("ExampleModel1.MOD");
 
 	testModel.displayMaterial();
