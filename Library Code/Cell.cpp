@@ -87,35 +87,39 @@ float Cell::getVolume() {
 // Calculates volume of a tetrahedron
 float Cell::calcTetrahedronVolume() {
 /* To calculate the volume of a tetrahedron:
- * V = 1/6 * |(B - A) . ((C - A) * (D - A))|
- * Dot product of a multiplication of vectors.
+ * V = 1/6 * |((A - D) * (B - D)) . (C - D)|
  */
+    /*
+     * (x4-x1)[(y2-y1)(z3-z1) - (z2-z1)(y3-y1)] +
+     * (y4-y1)[(z2-z1)(x3-x1) - (x2-x1)(z3-z1)] +
+     * (z4-z1)[(x2-x1)(y3-y1) - (y2-y1)(x3-x1)]
+     * _______________________________________
+     *                   6
+     */
     Vertex A, B, C, D;
-    Vertex BA, CA, DA, CDA;
-    vector<float> DC;
+    // Variable to store base area
+    float total;
     float volume;
     A.xyz = vertices[0];
     B.xyz = vertices[1];
     C.xyz = vertices[2];
     D.xyz = vertices[3];
 
-    BA.xyz = B.operator-(A.xyz);
-    CA.xyz = C.operator-(A.xyz);
-    DA.xyz = D.operator-(A.xyz);
+    total = {
+            (D.xyz[0]-A.xyz[0])* ( (B.xyz[1]-A.xyz[1])*(C.xyz[2]-A.xyz[2]) - (B.xyz[2]-A.xyz[2])*(C.xyz[1]-A.xyz[1]) ) +
+            (D.xyz[1]-A.xyz[1])* ( (B.xyz[2]-A.xyz[2])*(C.xyz[0]-A.xyz[0]) - (B.xyz[0]-A.xyz[0])*(C.xyz[2]-A.xyz[2]) ) +
+            (D.xyz[2]-A.xyz[2])* ( (B.xyz[0]-A.xyz[0])*(C.xyz[1]-A.xyz[1]) - (B.xyz[1]-A.xyz[1])*(C.xyz[0]-A.xyz[0]) )
+    };
+    volume = fabs(total / (float)6);
 
 
-
-    DC.push_back(CA.xyz[0] * DA.xyz[0]);
-    DC.push_back(CA.xyz[1] * DA.xyz[1]);
-    DC.push_back(CA.xyz[2] * DA.xyz[2]);
-
-    volume = ((float)1/(float)6) * (BA.operator*(DC));
 
     return volume;
 }
 
 // Calculates volume of a hexahedron using pyramids
-float Cell::calcHexahedronVolume() {
+float Cell::calcHexahedronVolume()
+{
     /* Calculate hexahedron volume from 3 pyramids about the same apex
      * Hexahedron 0,1,2,3,4,5,6,7 Apex 7
      * Pyramid 1: 0,1,2,3,7
@@ -123,13 +127,13 @@ float Cell::calcHexahedronVolume() {
      * Pyramid 3: 1,2,5,6,7
      * Add volumes together
      */
-    Vertex A, B, C, D, E, F, G, H;
     Cell P;
     float volume = 0;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 4; i++)
     {
     P.vertices.push_back(vertices[i]);
     }
+    P.vertices.push_back(vertices[7]);
     volume += P.calcPyramidVolume();
     P.vertices[2] = vertices[4];
     P.vertices[3] = vertices[5];
@@ -147,27 +151,23 @@ float Cell::calcHexahedronVolume() {
 float Cell::calcPyramidVolume()
 {
     /* To calculate the volume of a pyramid:
- * V = 1/3 * |(B - A) . ((C - A) * (D - A))|
- * Dot product of a multiplication of vectors.
- */
-    Vertex A, B, C, D, E;
-    Vertex BA, CA, DA, CDA;
-    vector<float> DC;
-    float volume;
-    A.xyz = vertices[0];
-    B.xyz = vertices[1];
-    C.xyz = vertices[3];
-    D.xyz = vertices[4];
+     * Volume of 2 tetrahedrons of either side of the apex
+     * Pyramid 0, 1, 2, 3, 4, apex at 4
+     * Tetrahedron 1: 0, 1, 3, 4
+     * Tetrahedron 2: 1, 2, 3, 4
+     * Add volumes together
+    */
+    float volume = 0;
+    Cell T;
+    T.vertices.push_back(vertices[0]);
+    T.vertices.push_back(vertices[1]);
+    T.vertices.push_back(vertices[3]);
+    T.vertices.push_back(vertices[4]);
 
-    BA.xyz = B.operator-(A.xyz);
-    CA.xyz = C.operator-(A.xyz);
-    DA.xyz = D.operator-(A.xyz);
-
-    DC.push_back(CA.xyz[0] * DA.xyz[0]);
-    DC.push_back(CA.xyz[1] * DA.xyz[1]);
-    DC.push_back(CA.xyz[2] * DA.xyz[2]);
-
-    volume = ((float)1/ (float)3) * BA.operator*(DC);
+    volume += T.calcTetrahedronVolume();
+    T.vertices[0] = vertices[1];
+    T.vertices[1] = vertices[2];
+    volume += T.calcTetrahedronVolume();
 
     return volume;
 }
