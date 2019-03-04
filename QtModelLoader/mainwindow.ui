@@ -42,7 +42,20 @@
            </widget>
           </item>
           <item>
-           <widget class="QSlider" name="sliderR">
+           <widget class="QSpinBox" name="spinR">
+            <property name="minimum">
+             <number>2</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="slideR">
+            <property name="maximum">
+             <number>255</number>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -63,7 +76,10 @@
            </widget>
           </item>
           <item>
-           <widget class="QSlider" name="sliderG">
+           <widget class="QSlider" name="slideG">
+            <property name="maximum">
+             <number>255</number>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -84,7 +100,10 @@
            </widget>
           </item>
           <item>
-           <widget class="QSlider" name="sliderB">
+           <widget class="QSlider" name="slideB">
+            <property name="maximum">
+             <number>255</number>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>

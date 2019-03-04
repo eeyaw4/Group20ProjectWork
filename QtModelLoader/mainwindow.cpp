@@ -46,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         renderer->GetActiveCamera()->Elevation(30);
         renderer->ResetCameraClippingRange();
 
-        ui->lineEditR->setText("0");
+        ui->lineEditR->setText("225");
         ui->lineEditG->setText("0");
         ui->lineEditB->setText("0");
 
@@ -63,10 +63,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_sliderR_sliderMoved(int position)
 {
-    float num = position;
-    colourR = ((num / 100) * 2.576);
-    int display = qRound(colourR * 100);
+    position;
+    colourR = (position);
+    int display = qRound(colourR);
     ui->lineEditR->setText(QString::number(display));
+    ui->spinR->setValue(position);
 
     actor->GetProperty()->SetColor( colourR,colourG,colourB );
     ui->qvtkWidget->GetRenderWindow()->Render();
@@ -75,8 +76,8 @@ void MainWindow::on_sliderR_sliderMoved(int position)
 void MainWindow::on_sliderG_sliderMoved(int position)
 {
     float num = position;
-    colourG = ((num / 100) * 2.576);
-    int display = qRound(colourG * 100);
+    colourG = (num);
+    int display = qRound(colourG);
     ui->lineEditG->setText(QString::number(display));
 
     actor->GetProperty()->SetColor( colourR,colourG,colourB );
@@ -86,8 +87,8 @@ void MainWindow::on_sliderG_sliderMoved(int position)
 void MainWindow::on_sliderB_sliderMoved(int position)
 {
     float num = position;
-    colourB = ((num / 100) * 2.576);
-    int display = qRound(colourB * 100);
+    colourB = (num);
+    int display = qRound(colourB);
     ui->lineEditB->setText(QString::number(display));
 
     actor->GetProperty()->SetColor( colourR,colourG,colourB );
