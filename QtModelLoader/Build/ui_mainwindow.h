@@ -126,6 +126,7 @@ public:
 
         sliderR = new QSlider(centralwidget);
         sliderR->setObjectName(QStringLiteral("sliderR"));
+        sliderR->setMaximum(100);
         sliderR->setOrientation(Qt::Horizontal);
 
         horizontalLayout_5->addWidget(sliderR);
@@ -143,6 +144,7 @@ public:
 
         sliderG = new QSlider(centralwidget);
         sliderG->setObjectName(QStringLiteral("sliderG"));
+        sliderG->setMaximum(100);
         sliderG->setOrientation(Qt::Horizontal);
 
         horizontalLayout_3->addWidget(sliderG);
@@ -160,6 +162,7 @@ public:
 
         sliderB = new QSlider(centralwidget);
         sliderB->setObjectName(QStringLiteral("sliderB"));
+        sliderB->setMaximum(100);
         sliderB->setOrientation(Qt::Horizontal);
 
         horizontalLayout_6->addWidget(sliderB);

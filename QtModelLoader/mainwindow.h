@@ -23,6 +23,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
 #include <QMainWindow>
 #include <QString>
@@ -50,6 +51,8 @@ public:
     vtkSmartPointer<vtkRenderer> renderer;
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
 
+    vector<vector<float>> shapeColors;
+
     float colourR = 0;
     float colourG = 0;
     float colourB = 0;
@@ -70,9 +73,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    void PyramidRender(vector<vector<float>> position);
-    void TetRender(vector<vector<float>> pos);
-    void HexRender(vector<vector<float>> pos);
+    void PyramidRender(vector<vector<float>> position,vector<float> c);
+    void TetRender(vector<vector<float>> pos,vector<float> c);
+    void HexRender(vector<vector<float>> pos,vector<float> c);
     void stlRender(QString filename);
     void loadModel(string filename);
     void resetColors(void);

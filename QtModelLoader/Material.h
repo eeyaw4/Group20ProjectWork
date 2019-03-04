@@ -1,6 +1,9 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -22,6 +25,7 @@ public:
     int getMaterialDensity();
     string getMaterialColour();
     string getMaterialName();
+    vector<float> getRGB();
 };
 
 #endif

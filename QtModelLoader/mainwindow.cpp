@@ -48,18 +48,23 @@ void MainWindow::loadModel(string fileName)
         string shape = Data.cellShape;
         vector<vector<float>> points = Data.cellVector;
 
+        Data.getMaterialData(Data.cellMaterial);
+        vector<float> c = Data.materialRGB;
+
         if(shape == "p")
         {
-            PyramidRender(points);
+            PyramidRender(points,c);
         }
         else if(shape == "t")
         {
-            TetRender(points);
+            TetRender(points,c);
         }
         else if(shape == "h")
         {
-            HexRender(points);
+            HexRender(points,c);
         }
+
+        shapeColors.push_back(c);
     }
 
        for(vtkSmartPointer<vtkActor> l : actors)
@@ -96,7 +101,7 @@ void MainWindow::stlRender(QString fileName)
       ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
-void MainWindow::PyramidRender(vector<vector<float>> pos)
+void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 
@@ -134,7 +139,7 @@ void MainWindow::PyramidRender(vector<vector<float>> pos)
     actors.push_back(actor);
 }
 
-void MainWindow::TetRender(vector<vector<float>> pos)
+void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 
@@ -165,7 +170,7 @@ void MainWindow::TetRender(vector<vector<float>> pos)
     actors.push_back(actor);
 }
 
-void MainWindow::HexRender(vector<vector<float>> pos)
+void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
 {
       // Create the points.
       vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -224,9 +229,10 @@ void MainWindow::resetColors(void)
     colourG = 0;
     colourB = 0;
 
-    for(vtkSmartPointer<vtkActor> l : actors)
+    for (int i = 0; i < actors.size(); i++)
     {
-        l->GetProperty()->SetColor( colourR,colourG,colourB );
+        vector<float> c = shapeColors[i];
+        actors[i]->GetProperty()->SetColor( c[0],c[1],c[2] );
     }
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
@@ -234,7 +240,7 @@ void MainWindow::resetColors(void)
 void MainWindow::on_sliderR_valueChanged(int position)
 {
     float num = position;
-    colourR = ((num / 100) * 2.576);
+    colourR = ((num / 100) * 2.55);
     int display = qRound(colourR * 100);
     ui->lineEditR->setText(QString::number(display));
 
@@ -249,7 +255,7 @@ void MainWindow::on_sliderR_valueChanged(int position)
 void MainWindow::on_sliderG_valueChanged(int position)
 {
     float num = position;
-    colourG = ((num / 100) * 2.576);
+    colourG = ((num / 100) * 2.55);
     int display = qRound(colourG * 100);
     ui->lineEditG->setText(QString::number(display));
 
@@ -263,7 +269,7 @@ void MainWindow::on_sliderG_valueChanged(int position)
 void MainWindow::on_sliderB_valueChanged(int position)
 {
     float num = position;
-    colourB = ((num / 100) * 2.576);
+    colourB = ((num / 100) * 2.55);
     int display = qRound(colourB * 100);
     ui->lineEditB->setText(QString::number(display));
 
@@ -282,6 +288,7 @@ void MainWindow::on_loadSTLButton_clicked()
     }
 
     actors.clear();
+    shapeColors.clear();
 
     QString file = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("STL Files(*.stl)"));
 
@@ -303,6 +310,7 @@ void MainWindow::on_loadModelButton_clicked()
     }
 
     actors.clear();
+    shapeColors.clear();
 
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("Model Files(*.mod)"));
 

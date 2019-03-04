@@ -33,6 +33,7 @@ public:
 	int materialDensity;
 	string materialColour;
 	string materialName;
+        vector<float> materialRGB;
 
 	int vertexID;
 	vector<float> vertexXYZ;

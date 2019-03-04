@@ -29,14 +29,23 @@ int Material::getMaterialDensity()
 // Returns the colour saved to the Material class
 string Material::getMaterialColour()
 {
-/*
-    struct colour = "0xRRGGBB"{
-        colour.r = hexValue << 16;  // RR byte
-        colour.g = hexValue << 8;   // GG byte
-        colour.b = hexValue;        // BB byte
-    }
-*/
     return colour;
+}
+
+vector<float> Material::getRGB()
+{
+    vector<float> RGB;
+    int rI,gI,bI;
+
+    stringstream(colour.substr(0,2)) >> hex >> rI;
+    stringstream(colour.substr(2,2)) >> hex >> gI;
+    stringstream(colour.substr(4,2)) >> hex >> bI;
+
+    RGB.push_back(rI/255.0);
+    RGB.push_back(gI/255.0);
+    RGB.push_back(bI/255.0);
+
+    return RGB;
 }
 
 // Returns the name saved to the Material class

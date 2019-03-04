@@ -70,6 +70,7 @@ void Model::getMaterialData(int id)
 	materialDensity = mVector[id].getMaterialDensity();
 	materialColour = mVector[id].getMaterialColour();
 	materialName = mVector[id].getMaterialName();
+        materialRGB = mVector[id].getRGB();
 }
 
 // Sets the vertex variables to data from the selected vVector Vertex depending on the id passed to the function
