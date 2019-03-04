@@ -9,8 +9,8 @@ The output was:
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:15.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:15:57.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
   Creating directory "Debug\CompilerIdC.tlog\".
@@ -21,7 +21,7 @@ ClCompile:
   CMakeCCompilerId.c
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
-  CompilerIdC.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\.\CompilerIdC.exe
+  CompilerIdC.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\.\CompilerIdC.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
   :VCEnd
@@ -29,20 +29,20 @@ PostBuildEvent:
 FinalizeBuildStatus:
   Deleting file "Debug\CompilerIdC.tlog\unsuccessfulbuild".
   Touching "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\CompilerIdC.vcxproj" (default targets).
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdC\CompilerIdC.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.70
+Time Elapsed 00:00:01.82
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
 
-The C compiler identification is MSVC, found in "C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/3.13.0-rc1/CompilerIdC/CompilerIdC.exe"
+The C compiler identification is MSVC, found in "C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/3.13.0-rc1/CompilerIdC/CompilerIdC.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler:  
@@ -54,8 +54,8 @@ The output was:
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:17.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:16:00.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
   Creating directory "Debug\CompilerIdCXX.tlog\".
@@ -66,7 +66,7 @@ ClCompile:
   CMakeCXXCompilerId.cpp
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
-  CompilerIdCXX.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\.\CompilerIdCXX.exe
+  CompilerIdCXX.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\.\CompilerIdCXX.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
   :VCEnd
@@ -74,253 +74,253 @@ PostBuildEvent:
 FinalizeBuildStatus:
   Deleting file "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
   Touching "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\3.13.0-rc1\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.49
+Time Elapsed 00:00:01.53
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
 
-The CXX compiler identification is MSVC, found in "C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/3.13.0-rc1/CompilerIdCXX/CompilerIdCXX.exe"
+The CXX compiler identification is MSVC, found in "C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/3.13.0-rc1/CompilerIdCXX/CompilerIdCXX.exe"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_b01ed.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_f9627.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:20.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_b01ed.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:16:02.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_f9627.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_b01ed.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_b01ed.dir\Debug\cmTC_b01ed.tlog\".
+  Creating directory "cmTC_f9627.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_f9627.dir\Debug\cmTC_f9627.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_b01ed.dir\Debug\cmTC_b01ed.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_f9627.dir\Debug\cmTC_f9627.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b01ed.dir\Debug\\" /Fd"cmTC_b01ed.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f9627.dir\Debug\\" /Fd"cmTC_f9627.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCCompiler.c"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
   testCCompiler.c
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b01ed.dir\Debug\\" /Fd"cmTC_b01ed.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f9627.dir\Debug\\" /Fd"cmTC_f9627.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCCompiler.c"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_b01ed.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_b01ed.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_b01ed.lib" /MACHINE:X64  /machine:x64 cmTC_b01ed.dir\Debug\testCCompiler.obj
-  cmTC_b01ed.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_b01ed.exe
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_f9627.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_f9627.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_f9627.lib" /MACHINE:X64  /machine:x64 cmTC_f9627.dir\Debug\testCCompiler.obj
+  cmTC_f9627.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_f9627.exe
 FinalizeBuildStatus:
-  Deleting file "cmTC_b01ed.dir\Debug\cmTC_b01ed.tlog\unsuccessfulbuild".
-  Touching "cmTC_b01ed.dir\Debug\cmTC_b01ed.tlog\cmTC_b01ed.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_b01ed.vcxproj" (default targets).
+  Deleting file "cmTC_f9627.dir\Debug\cmTC_f9627.tlog\unsuccessfulbuild".
+  Touching "cmTC_f9627.dir\Debug\cmTC_f9627.tlog\cmTC_f9627.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_f9627.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.71
+Time Elapsed 00:00:01.98
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_dd767.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c1126.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:22.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_dd767.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:16:04.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_c1126.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_dd767.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_dd767.dir\Debug\cmTC_dd767.tlog\".
+  Creating directory "cmTC_c1126.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_c1126.dir\Debug\cmTC_c1126.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_dd767.dir\Debug\cmTC_dd767.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_c1126.dir\Debug\cmTC_c1126.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dd767.dir\Debug\\" /Fd"cmTC_dd767.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c1126.dir\Debug\\" /Fd"cmTC_c1126.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
   CMakeCCompilerABI.c
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dd767.dir\Debug\\" /Fd"cmTC_dd767.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c1126.dir\Debug\\" /Fd"cmTC_c1126.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_dd767.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_dd767.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_dd767.lib" /MACHINE:X64  /machine:x64 cmTC_dd767.dir\Debug\CMakeCCompilerABI.obj
-  cmTC_dd767.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_dd767.exe
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_c1126.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_c1126.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_c1126.lib" /MACHINE:X64  /machine:x64 cmTC_c1126.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_c1126.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_c1126.exe
 FinalizeBuildStatus:
-  Deleting file "cmTC_dd767.dir\Debug\cmTC_dd767.tlog\unsuccessfulbuild".
-  Touching "cmTC_dd767.dir\Debug\cmTC_dd767.tlog\cmTC_dd767.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_dd767.vcxproj" (default targets).
+  Deleting file "cmTC_c1126.dir\Debug\cmTC_c1126.tlog\unsuccessfulbuild".
+  Touching "cmTC_c1126.dir\Debug\cmTC_c1126.tlog\cmTC_c1126.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_c1126.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.79
+Time Elapsed 00:00:01.64
 
 
 
 
 Detecting C [] compiler features compiled with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_9e579.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_99361.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:24.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_9e579.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:16:06.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_99361.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_9e579.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_9e579.dir\Debug\cmTC_9e579.tlog\".
+  Creating directory "cmTC_99361.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_99361.dir\Debug\cmTC_99361.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_9e579.dir\Debug\cmTC_9e579.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_99361.dir\Debug\cmTC_99361.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9e579.dir\Debug\\" /Fd"cmTC_9e579.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\feature_tests.c"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_99361.dir\Debug\\" /Fd"cmTC_99361.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\feature_tests.c"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
   feature_tests.c
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9e579.dir\Debug\\" /Fd"cmTC_9e579.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\feature_tests.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_99361.dir\Debug\\" /Fd"cmTC_99361.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\feature_tests.c"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_9e579.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_9e579.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_9e579.lib" /MACHINE:X64  /machine:x64 cmTC_9e579.dir\Debug\feature_tests.obj
-  cmTC_9e579.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_9e579.exe
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_99361.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_99361.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_99361.lib" /MACHINE:X64  /machine:x64 cmTC_99361.dir\Debug\feature_tests.obj
+  cmTC_99361.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_99361.exe
 FinalizeBuildStatus:
-  Deleting file "cmTC_9e579.dir\Debug\cmTC_9e579.tlog\unsuccessfulbuild".
-  Touching "cmTC_9e579.dir\Debug\cmTC_9e579.tlog\cmTC_9e579.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_9e579.vcxproj" (default targets).
+  Deleting file "cmTC_99361.dir\Debug\cmTC_99361.tlog\unsuccessfulbuild".
+  Touching "cmTC_99361.dir\Debug\cmTC_99361.tlog\cmTC_99361.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_99361.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.66
+Time Elapsed 00:00:01.62
 
 
     Feature record: C_FEATURE:1c_function_prototypes
     Feature record: C_FEATURE:1c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_1b37a.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_e1778.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 05/02/2019 10:32:27.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_1b37a.vcxproj" on node 1 (default targets).
+Build started 05/02/2019 12:16:08.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_e1778.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_1b37a.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_1b37a.dir\Debug\cmTC_1b37a.tlog\".
+  Creating directory "cmTC_e1778.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_e1778.dir\Debug\cmTC_e1778.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_1b37a.dir\Debug\cmTC_1b37a.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_e1778.dir\Debug\cmTC_e1778.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1b37a.dir\Debug\\" /Fd"cmTC_1b37a.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e1778.dir\Debug\\" /Fd"cmTC_e1778.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
   testCXXCompiler.cxx
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1b37a.dir\Debug\\" /Fd"cmTC_1b37a.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e1778.dir\Debug\\" /Fd"cmTC_e1778.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_1b37a.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_1b37a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_1b37a.lib" /MACHINE:X64  /machine:x64 cmTC_1b37a.dir\Debug\testCXXCompiler.obj
-  cmTC_1b37a.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_1b37a.exe
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_e1778.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_e1778.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_e1778.lib" /MACHINE:X64  /machine:x64 cmTC_e1778.dir\Debug\testCXXCompiler.obj
+  cmTC_e1778.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_e1778.exe
 FinalizeBuildStatus:
-  Deleting file "cmTC_1b37a.dir\Debug\cmTC_1b37a.tlog\unsuccessfulbuild".
-  Touching "cmTC_1b37a.dir\Debug\cmTC_1b37a.tlog\cmTC_1b37a.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_1b37a.vcxproj" (default targets).
+  Deleting file "cmTC_e1778.dir\Debug\cmTC_e1778.tlog\unsuccessfulbuild".
+  Touching "cmTC_e1778.dir\Debug\cmTC_e1778.tlog\cmTC_e1778.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_e1778.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.72
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_cf083.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 05/02/2019 12:16:10.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_cf083.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_cf083.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_cf083.dir\Debug\cmTC_cf083.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_cf083.dir\Debug\cmTC_cf083.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf083.dir\Debug\\" /Fd"cmTC_cf083.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  CMakeCXXCompilerABI.cpp
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf083.dir\Debug\\" /Fd"cmTC_cf083.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_cf083.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_cf083.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_cf083.lib" /MACHINE:X64  /machine:x64 cmTC_cf083.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_cf083.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_cf083.exe
+FinalizeBuildStatus:
+  Deleting file "cmTC_cf083.dir\Debug\cmTC_cf083.tlog\unsuccessfulbuild".
+  Touching "cmTC_cf083.dir\Debug\cmTC_cf083.tlog\cmTC_cf083.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_cf083.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.64
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_3cb10.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 05/02/2019 12:16:12.
+Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_3cb10.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_3cb10.dir\Debug\".
+  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_3cb10.dir\Debug\cmTC_3cb10.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_3cb10.dir\Debug\cmTC_3cb10.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3cb10.dir\Debug\\" /Fd"cmTC_3cb10.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\feature_tests.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  feature_tests.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3cb10.dir\Debug\\" /Fd"cmTC_3cb10.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\feature_tests.cxx"
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_3cb10.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_3cb10.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Model Loader/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_3cb10.lib" /MACHINE:X64  /machine:x64 cmTC_3cb10.dir\Debug\feature_tests.obj
+  cmTC_3cb10.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_3cb10.exe
+FinalizeBuildStatus:
+  Deleting file "cmTC_3cb10.dir\Debug\cmTC_3cb10.tlog\unsuccessfulbuild".
+  Touching "cmTC_3cb10.dir\Debug\cmTC_3cb10.tlog\cmTC_3cb10.lastbuildstate".
+Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_3cb10.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
 Time Elapsed 00:00:01.67
-
-
-Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
-
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_e92e1.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
-Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Build started 05/02/2019 10:32:29.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_e92e1.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "cmTC_e92e1.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_e92e1.dir\Debug\cmTC_e92e1.tlog\".
-InitializeBuildStatus:
-  Creating "cmTC_e92e1.dir\Debug\cmTC_e92e1.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e92e1.dir\Debug\\" /Fd"cmTC_e92e1.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp"
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  
-  CMakeCXXCompilerABI.cpp
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e92e1.dir\Debug\\" /Fd"cmTC_e92e1.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp"
-  
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_e92e1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_e92e1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_e92e1.lib" /MACHINE:X64  /machine:x64 cmTC_e92e1.dir\Debug\CMakeCXXCompilerABI.obj
-  cmTC_e92e1.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_e92e1.exe
-FinalizeBuildStatus:
-  Deleting file "cmTC_e92e1.dir\Debug\cmTC_e92e1.tlog\unsuccessfulbuild".
-  Touching "cmTC_e92e1.dir\Debug\cmTC_e92e1.tlog\cmTC_e92e1.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_e92e1.vcxproj" (default targets).
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:01.68
-
-
-
-
-Detecting CXX [] compiler features compiled with the following output:
-Change Dir: C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp
-
-Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_05e8f.vcxproj" "/p:Configuration=Debug" "/p:Platform=x64" "/p:VisualStudioVersion=15.0"
-Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Build started 05/02/2019 10:32:31.
-Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_05e8f.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "cmTC_05e8f.dir\Debug\".
-  Creating directory "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_05e8f.dir\Debug\cmTC_05e8f.tlog\".
-InitializeBuildStatus:
-  Creating "cmTC_05e8f.dir\Debug\cmTC_05e8f.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_05e8f.dir\Debug\\" /Fd"cmTC_05e8f.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\feature_tests.cxx"
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26730 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  
-  feature_tests.cxx
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_05e8f.dir\Debug\\" /Fd"cmTC_05e8f.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\feature_tests.cxx"
-  
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_05e8f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_05e8f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pc/Documents/Year 2/Computer Group Project/Group20ProjectWork/QtModelLoader/Build/CMakeFiles/CMakeTmp/Debug/cmTC_05e8f.lib" /MACHINE:X64  /machine:x64 cmTC_05e8f.dir\Debug\feature_tests.obj
-  cmTC_05e8f.vcxproj -> C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\Debug\cmTC_05e8f.exe
-FinalizeBuildStatus:
-  Deleting file "cmTC_05e8f.dir\Debug\cmTC_05e8f.tlog\unsuccessfulbuild".
-  Touching "cmTC_05e8f.dir\Debug\cmTC_05e8f.tlog\cmTC_05e8f.lastbuildstate".
-Done Building Project "C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\CMakeFiles\CMakeTmp\cmTC_05e8f.vcxproj" (default targets).
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:01.70
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers

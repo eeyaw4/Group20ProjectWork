@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>783</width>
-    <height>627</height>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,6 +31,37 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="loadSTLButton">
+            <property name="text">
+             <string>Load STL</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="loadModelButton">
+            <property name="text">
+             <string>Load Model</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
            <widget class="QLineEdit" name="lineEditR">
             <property name="maximumSize">
@@ -72,7 +103,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
            <widget class="QLineEdit" name="lineEditB">
             <property name="maximumSize">
@@ -87,6 +118,17 @@
            <widget class="QSlider" name="sliderB">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="resetColorButton">
+            <property name="text">
+             <string>Reset Colors</string>
             </property>
            </widget>
           </item>
@@ -117,21 +159,6 @@
    <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionFileOpen"/>
-   <addaction name="actionFileSave"/>
-   <addaction name="actionHelp"/>
-   <addaction name="actionPrint"/>
-  </widget>
   <action name="actionFileOpen">
    <property name="icon">
     <iconset resource="Icons/icons.qrc">

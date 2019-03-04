@@ -17,9 +17,10 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qvtkopenglwidget.h"
@@ -39,24 +40,29 @@ public:
     QVTKOpenGLWidget *qvtkWidget;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout;
+    QPushButton *loadSTLButton;
+    QPushButton *loadModelButton;
+    QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_5;
     QLineEdit *lineEditR;
     QSlider *sliderR;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *lineEditG;
     QSlider *sliderG;
-    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *horizontalLayout_6;
     QLineEdit *lineEditB;
     QSlider *sliderB;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *resetColorButton;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
-    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(783, 627);
+        MainWindow->resize(783, 728);
         actionFileOpen = new QAction(MainWindow);
         actionFileOpen->setObjectName(QStringLiteral("actionFileOpen"));
         QIcon icon;
@@ -93,20 +99,39 @@ public:
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        loadSTLButton = new QPushButton(centralwidget);
+        loadSTLButton->setObjectName(QStringLiteral("loadSTLButton"));
+
+        horizontalLayout->addWidget(loadSTLButton);
+
+        loadModelButton = new QPushButton(centralwidget);
+        loadModelButton->setObjectName(QStringLiteral("loadModelButton"));
+
+        horizontalLayout->addWidget(loadModelButton);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         lineEditR = new QLineEdit(centralwidget);
         lineEditR->setObjectName(QStringLiteral("lineEditR"));
         lineEditR->setMaximumSize(QSize(60, 16777215));
 
-        horizontalLayout->addWidget(lineEditR);
+        horizontalLayout_5->addWidget(lineEditR);
 
         sliderR = new QSlider(centralwidget);
         sliderR->setObjectName(QStringLiteral("sliderR"));
         sliderR->setOrientation(Qt::Horizontal);
 
-        horizontalLayout->addWidget(sliderR);
+        horizontalLayout_5->addWidget(sliderR);
 
 
-        verticalLayout_3->addLayout(horizontalLayout);
+        verticalLayout_3->addLayout(horizontalLayout_5);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -125,19 +150,29 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_3);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         lineEditB = new QLineEdit(centralwidget);
         lineEditB->setObjectName(QStringLiteral("lineEditB"));
         lineEditB->setMaximumSize(QSize(60, 16777215));
 
-        horizontalLayout_2->addWidget(lineEditB);
+        horizontalLayout_6->addWidget(lineEditB);
 
         sliderB = new QSlider(centralwidget);
         sliderB->setObjectName(QStringLiteral("sliderB"));
         sliderB->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_2->addWidget(sliderB);
+        horizontalLayout_6->addWidget(sliderB);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_6);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        resetColorButton = new QPushButton(centralwidget);
+        resetColorButton->setObjectName(QStringLiteral("resetColorButton"));
+
+        horizontalLayout_2->addWidget(resetColorButton);
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
@@ -158,17 +193,10 @@ public:
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         MainWindow->setStatusBar(statusbar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QStringLiteral("toolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menuFile->menuAction());
         menuFile->addAction(actionFileOpen);
         menuFile->addAction(actionFileSave);
-        toolBar->addAction(actionFileOpen);
-        toolBar->addAction(actionFileSave);
-        toolBar->addAction(actionHelp);
-        toolBar->addAction(actionPrint);
 
         retranslateUi(MainWindow);
 
@@ -182,8 +210,10 @@ public:
         actionFileSave->setText(QApplication::translate("MainWindow", "Save", nullptr));
         actionHelp->setText(QApplication::translate("MainWindow", "Help", nullptr));
         actionPrint->setText(QApplication::translate("MainWindow", "Print", nullptr));
+        loadSTLButton->setText(QApplication::translate("MainWindow", "Load STL", nullptr));
+        loadModelButton->setText(QApplication::translate("MainWindow", "Load Model", nullptr));
+        resetColorButton->setText(QApplication::translate("MainWindow", "Reset Colors", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
-        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
 };
