@@ -176,7 +176,7 @@ float Cell::calcPyramidVolume()
 float Cell::getWeight()
 {
     /*  Weight = Density x Volume */
-    float density = materialClass.getMaterialDensity();
+    float density = (float)materialClass.getMaterialDensity();
     float volume = this->getVolume();
     float weight = volume * density;
 

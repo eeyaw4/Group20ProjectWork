@@ -18,48 +18,49 @@ using namespace std;
 class Model
 {
 private:
-	string str;
+        string str;
 
-	void readMaterial(string str);
-	void readVertices(string str);
-	void readCell(string str);
+        void readMaterial(string str);
+        void readVertices(string str);
+        void readCell(string str);
 
 public:
         vector<Material> mVector;
         vector<Vertex> vVector;
         vector<Cell> cVector;
 
-	int materialID;
-	int materialDensity;
-	string materialColour;
-	string materialName;
+        int materialID;
+        int materialDensity;
+        string materialColour;
+        string materialName;
 
-	int vertexID;
-	vector<float> vertexXYZ;
+        int vertexID;
+        vector<float> vertexXYZ;
 
-	int cellID;
-	string cellShape;
-	int cellMaterial;
-	vector<vector<float>> cellVector;
-	vector<float> cellCOG;
-	float cellVolume;
-	float cellWeight;
+        int cellID;
+        string cellShape;
+        int cellMaterial;
+        vector<vector<float>> cellVector;
+        vector<float> cellCOG;
+        float cellVolume;
+        float cellWeight;
+        int countNum;
 
-	Model();
-	~Model();
+        Model();
+        ~Model();
 
-	void readFile(string fileName);
-	void writeToFile(string str);
+        void readFile(string fileName);
+        void writeToFile(string str);
 
-	vector<float> calcModelCenter();
+        vector<float> calcModelCenter();
 
-	void displayMaterial();
-	void displayVertices();
-	void displayCell();
+        void displayMaterial();
+        void displayVertices();
+        void displayCell();
 
-	void getMaterialData(int id);
-	void getVertexData(int id);
-	void getCellData(int id);
+        void getMaterialData(int id);
+        void getVertexData(int id);
+        void getCellData(int id);
 };
 
 #endif

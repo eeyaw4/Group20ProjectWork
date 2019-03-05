@@ -21,8 +21,11 @@
 #include <vtkSTLReader.h>
 #include <vtkPolyDataMapper.h>
 
+#include <array>
 #include <vector>
 #include <string>
+#include <iostream>
+#include <regex>
 
 #include <QMainWindow>
 #include <QString>
@@ -30,6 +33,9 @@
 #include <QMessageBox>
 
 #include <Model.h>
+#include <Cell.h>
+#include <Material.h>
+#include <Vertex.h>
 
 using namespace std;
 
@@ -68,6 +74,12 @@ private slots:
 
     void on_resetColorButton_clicked();
 
+    void on_spinR_valueChanged(int arg1);
+
+    void on_spinG_valueChanged(int arg1);
+
+    void on_spinB_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     void PyramidRender(vector<vector<float>> position);
@@ -76,6 +88,7 @@ private:
     void stlRender(QString filename);
     void loadModel(string filename);
     void resetColors(void);
+    vector<float> getRGB(string c);
 };
 
 #endif // MAINWINDOW_H

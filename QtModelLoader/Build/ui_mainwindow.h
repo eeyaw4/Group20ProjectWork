@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -44,23 +45,40 @@ public:
     QPushButton *loadModelButton;
     QSpacerItem *horizontalSpacer;
     QTabWidget *tabWidget;
+    QWidget *tabInfo;
+    QVBoxLayout *verticalLayout_5;
+    QHBoxLayout *horizontalLayout_4;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *lblObjects;
+    QLabel *lblObjCount;
+    QSpacerItem *horizontalSpacer_3;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *LblMaterial;
+    QLabel *lblMat;
+    QSpacerItem *horizontalSpacer_4;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *lblDensity;
+    QLabel *lblDensValue;
+    QSpacerItem *horizontalSpacer_5;
     QWidget *tabColour;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_5;
     QSpinBox *spinR;
+    QLabel *lblR;
     QSlider *slideR;
     QHBoxLayout *horizontalLayout_3;
     QSpinBox *spinG;
+    QLabel *lblG;
     QSlider *slideG;
     QHBoxLayout *horizontalLayout_6;
     QSpinBox *spinB;
+    QLabel *label_3;
     QSlider *slideB;
-    QWidget *tabCS;
-    QWidget *tab_7;
-    QWidget *tab_8;
-    QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *resetColorButton;
+    QSpacerItem *horizontalSpacer_2;
+    QWidget *tabCS;
+    QWidget *tab_8;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -69,7 +87,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(783, 728);
+        MainWindow->resize(620, 658);
         actionFileOpen = new QAction(MainWindow);
         actionFileOpen->setObjectName(QStringLiteral("actionFileOpen"));
         QIcon icon;
@@ -123,6 +141,103 @@ public:
 
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabInfo = new QWidget();
+        tabInfo->setObjectName(QStringLiteral("tabInfo"));
+        verticalLayout_5 = new QVBoxLayout(tabInfo);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+
+        verticalLayout_5->addLayout(horizontalLayout_4);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        horizontalLayout_7->setSizeConstraint(QLayout::SetMaximumSize);
+        lblObjects = new QLabel(tabInfo);
+        lblObjects->setObjectName(QStringLiteral("lblObjects"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lblObjects->sizePolicy().hasHeightForWidth());
+        lblObjects->setSizePolicy(sizePolicy);
+        lblObjects->setMinimumSize(QSize(50, 0));
+        lblObjects->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout_7->addWidget(lblObjects);
+
+        lblObjCount = new QLabel(tabInfo);
+        lblObjCount->setObjectName(QStringLiteral("lblObjCount"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(lblObjCount->sizePolicy().hasHeightForWidth());
+        lblObjCount->setSizePolicy(sizePolicy1);
+        lblObjCount->setMinimumSize(QSize(40, 0));
+        lblObjCount->setCursor(QCursor(Qt::SizeVerCursor));
+        lblObjCount->setScaledContents(false);
+
+        horizontalLayout_7->addWidget(lblObjCount);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_3);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_7);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        LblMaterial = new QLabel(tabInfo);
+        LblMaterial->setObjectName(QStringLiteral("LblMaterial"));
+        sizePolicy1.setHeightForWidth(LblMaterial->sizePolicy().hasHeightForWidth());
+        LblMaterial->setSizePolicy(sizePolicy1);
+        LblMaterial->setMinimumSize(QSize(50, 0));
+        LblMaterial->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout_8->addWidget(LblMaterial);
+
+        lblMat = new QLabel(tabInfo);
+        lblMat->setObjectName(QStringLiteral("lblMat"));
+        sizePolicy1.setHeightForWidth(lblMat->sizePolicy().hasHeightForWidth());
+        lblMat->setSizePolicy(sizePolicy1);
+        lblMat->setMinimumSize(QSize(40, 0));
+
+        horizontalLayout_8->addWidget(lblMat);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_4);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_8);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        lblDensity = new QLabel(tabInfo);
+        lblDensity->setObjectName(QStringLiteral("lblDensity"));
+        sizePolicy1.setHeightForWidth(lblDensity->sizePolicy().hasHeightForWidth());
+        lblDensity->setSizePolicy(sizePolicy1);
+        lblDensity->setMinimumSize(QSize(50, 0));
+        lblDensity->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout_9->addWidget(lblDensity);
+
+        lblDensValue = new QLabel(tabInfo);
+        lblDensValue->setObjectName(QStringLiteral("lblDensValue"));
+        sizePolicy1.setHeightForWidth(lblDensValue->sizePolicy().hasHeightForWidth());
+        lblDensValue->setSizePolicy(sizePolicy1);
+        lblDensValue->setMinimumSize(QSize(40, 0));
+
+        horizontalLayout_9->addWidget(lblDensValue);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_5);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_9);
+
+        tabWidget->addTab(tabInfo, QString());
         tabColour = new QWidget();
         tabColour->setObjectName(QStringLiteral("tabColour"));
         verticalLayout_4 = new QVBoxLayout(tabColour);
@@ -131,11 +246,27 @@ public:
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         spinR = new QSpinBox(tabColour);
         spinR->setObjectName(QStringLiteral("spinR"));
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(spinR->sizePolicy().hasHeightForWidth());
+        spinR->setSizePolicy(sizePolicy2);
+        spinR->setMinimumSize(QSize(40, 0));
+        spinR->setMaximumSize(QSize(40, 20));
         spinR->setMinimum(0);
         spinR->setMaximum(255);
         spinR->setValue(0);
 
         horizontalLayout_5->addWidget(spinR);
+
+        lblR = new QLabel(tabColour);
+        lblR->setObjectName(QStringLiteral("lblR"));
+        sizePolicy1.setHeightForWidth(lblR->sizePolicy().hasHeightForWidth());
+        lblR->setSizePolicy(sizePolicy1);
+        lblR->setMinimumSize(QSize(35, 0));
+        lblR->setMaximumSize(QSize(35, 16777215));
+
+        horizontalLayout_5->addWidget(lblR);
 
         slideR = new QSlider(tabColour);
         slideR->setObjectName(QStringLiteral("slideR"));
@@ -151,9 +282,20 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         spinG = new QSpinBox(tabColour);
         spinG->setObjectName(QStringLiteral("spinG"));
+        spinG->setMinimumSize(QSize(40, 0));
+        spinG->setMaximumSize(QSize(40, 20));
         spinG->setMaximum(255);
 
         horizontalLayout_3->addWidget(spinG);
+
+        lblG = new QLabel(tabColour);
+        lblG->setObjectName(QStringLiteral("lblG"));
+        sizePolicy1.setHeightForWidth(lblG->sizePolicy().hasHeightForWidth());
+        lblG->setSizePolicy(sizePolicy1);
+        lblG->setMinimumSize(QSize(35, 0));
+        lblG->setMaximumSize(QSize(35, 16777215));
+
+        horizontalLayout_3->addWidget(lblG);
 
         slideG = new QSlider(tabColour);
         slideG->setObjectName(QStringLiteral("slideG"));
@@ -169,9 +311,20 @@ public:
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         spinB = new QSpinBox(tabColour);
         spinB->setObjectName(QStringLiteral("spinB"));
+        spinB->setMinimumSize(QSize(40, 0));
+        spinB->setMaximumSize(QSize(40, 20));
         spinB->setMaximum(255);
 
         horizontalLayout_6->addWidget(spinB);
+
+        label_3 = new QLabel(tabColour);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        sizePolicy1.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy1);
+        label_3->setMinimumSize(QSize(35, 0));
+        label_3->setMaximumSize(QSize(35, 16777215));
+
+        horizontalLayout_6->addWidget(label_3);
 
         slideB = new QSlider(tabColour);
         slideB->setObjectName(QStringLiteral("slideB"));
@@ -183,33 +336,30 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_6);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        resetColorButton = new QPushButton(tabColour);
+        resetColorButton->setObjectName(QStringLiteral("resetColorButton"));
+        resetColorButton->setMinimumSize(QSize(85, 0));
+
+        horizontalLayout_2->addWidget(resetColorButton);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_2);
+
         tabWidget->addTab(tabColour, QString());
         tabCS = new QWidget();
         tabCS->setObjectName(QStringLiteral("tabCS"));
         tabWidget->addTab(tabCS, QString());
-        tab_7 = new QWidget();
-        tab_7->setObjectName(QStringLiteral("tab_7"));
-        tabWidget->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
         tabWidget->addTab(tab_8, QString());
 
         verticalLayout->addWidget(tabWidget);
-
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        resetColorButton = new QPushButton(centralwidget);
-        resetColorButton->setObjectName(QStringLiteral("resetColorButton"));
-
-        horizontalLayout_2->addWidget(resetColorButton);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_2);
-
-
-        verticalLayout->addLayout(verticalLayout_3);
 
 
         verticalLayout_2->addLayout(verticalLayout);
@@ -217,7 +367,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 783, 21));
+        menubar->setGeometry(QRect(0, 0, 620, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menubar);
@@ -246,11 +396,20 @@ public:
         actionPrint->setText(QApplication::translate("MainWindow", "Print", nullptr));
         loadSTLButton->setText(QApplication::translate("MainWindow", "Load STL", nullptr));
         loadModelButton->setText(QApplication::translate("MainWindow", "Load Model", nullptr));
+        lblObjects->setText(QApplication::translate("MainWindow", "Objects", nullptr));
+        lblObjCount->setText(QString());
+        LblMaterial->setText(QApplication::translate("MainWindow", "Material", nullptr));
+        lblMat->setText(QString());
+        lblDensity->setText(QApplication::translate("MainWindow", "Density", nullptr));
+        lblDensValue->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tabInfo), QApplication::translate("MainWindow", "Information", nullptr));
+        lblR->setText(QApplication::translate("MainWindow", "Red", nullptr));
+        lblG->setText(QApplication::translate("MainWindow", "Green", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Blue", nullptr));
+        resetColorButton->setText(QApplication::translate("MainWindow", "Reset Colors", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabColour), QApplication::translate("MainWindow", "Colour", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabCS), QApplication::translate("MainWindow", "Cross Section", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Page", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "Page", nullptr));
-        resetColorButton->setText(QApplication::translate("MainWindow", "Reset Colors", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
