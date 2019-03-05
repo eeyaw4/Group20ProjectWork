@@ -1,23 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <array>
-#include <vector>
-
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     // standard call to setup Qt UI (same as previously)
     ui->setupUi( this );
 
     renderer = vtkSmartPointer<vtkRenderer>::New();
-    colors = vtkSmartPointer<vtkNamedColors>::New();
+    colours = vtkSmartPointer<vtkNamedColors>::New();
 
     // Now need to create a VTK render window and link it to the QtVTK widget
     ui->qvtkWidget->SetRenderWindow( renderWindow );
 
     ui->qvtkWidget->GetRenderWindow()->AddRenderer( renderer );
 
-    renderer->SetBackground( colors->GetColor3d("Silver").GetData() );
+    renderer->SetBackground( colours->GetColor3d("Silver").GetData() );
 
     // Setup the renderers's camera
     renderer->ResetCamera();
@@ -38,7 +35,15 @@ void MainWindow::loadModel(string fileName)
 {
     Model Data;
 
-    Data.readFile(fileName);
+    try
+    {
+        Data.readFile(fileName);
+    }
+    catch(string& error)
+    {
+        QMessageBox::critical(this,tr("Error"),tr(error.c_str()));
+        return;
+    }
 
 
 
@@ -49,7 +54,18 @@ void MainWindow::loadModel(string fileName)
         vector<vector<float>> points = Data.cellVector;
 
         Data.getMaterialData(Data.cellMaterial);
-        vector<float> c = Data.materialRGB;
+        vector<float> c;
+
+        try
+        {
+            c = getRGB(Data.materialColour);
+        }
+        catch(string& error)
+        {
+
+            QMessageBox::critical(this,tr("Error"),tr(error.c_str()));
+            return;
+        }
 
         if(shape == "p")
         {
@@ -64,7 +80,7 @@ void MainWindow::loadModel(string fileName)
             HexRender(points,c);
         }
 
-        shapeColors.push_back(c);
+        shapeColours.push_back(c);
     }
 
        for(vtkSmartPointer<vtkActor> l : actors)
@@ -89,7 +105,7 @@ void MainWindow::stlRender(QString fileName)
       actor->SetMapper(mapper);
 
       vector<float> c = {0,0,0};
-      shapeColors.push_back(c);
+      shapeColours.push_back(c);
 
       actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
@@ -218,7 +234,32 @@ void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
       actors.push_back(actor);
 }
 
-void MainWindow::resetColors(void)
+vector<float> MainWindow::getRGB(string c)
+{
+    vector<float> RGB;
+
+    regex pattern("#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})");
+    smatch match;
+    if(regex_match(c, match, pattern))
+    {
+        float r = stoul(match[1].str(), nullptr, 16);
+        float g = stoul(match[2].str(), nullptr, 16);
+        float b = stoul(match[3].str(), nullptr, 16);
+
+        RGB.push_back(r/255.0);
+        RGB.push_back(g/255.0);
+        RGB.push_back(b/255.0);
+
+        return RGB;
+    }
+    else
+    {
+        throw string("Error reading materials\nPlease check model file and reload");
+    }
+
+}
+
+void MainWindow::resetColours(void)
 {
     ui->lineEditR->setText("0");
     ui->lineEditG->setText("0");
@@ -234,7 +275,7 @@ void MainWindow::resetColors(void)
 
     for (int i = 0; i < actors.size(); i++)
     {
-        vector<float> c = shapeColors[i];
+        vector<float> c = shapeColours[i];
         actors[i]->GetProperty()->SetColor( c[0],c[1],c[2] );
     }
     ui->qvtkWidget->GetRenderWindow()->Render();
@@ -291,7 +332,7 @@ void MainWindow::on_loadSTLButton_clicked()
     }
 
     actors.clear();
-    shapeColors.clear();
+    shapeColours.clear();
 
     QString file = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("STL Files(*.stl)"));
 
@@ -302,7 +343,7 @@ void MainWindow::on_loadSTLButton_clicked()
 
     stlRender(file);
 
-    resetColors();
+    resetColours();
 }
 
 void MainWindow::on_loadModelButton_clicked()
@@ -313,7 +354,7 @@ void MainWindow::on_loadModelButton_clicked()
     }
 
     actors.clear();
-    shapeColors.clear();
+    shapeColours.clear();
 
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("Model Files(*.mod)"));
 
@@ -326,10 +367,10 @@ void MainWindow::on_loadModelButton_clicked()
 
     loadModel(file);
 
-    resetColors();
+    resetColours();
 }
 
-void MainWindow::on_resetColorButton_clicked()
+void MainWindow::on_resetColourButton_clicked()
 {
-    resetColors();
+    resetColours();
 }

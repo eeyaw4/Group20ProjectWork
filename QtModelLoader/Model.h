@@ -33,7 +33,6 @@ public:
 	int materialDensity;
 	string materialColour;
 	string materialName;
-        vector<float> materialRGB;
 
 	int vertexID;
 	vector<float> vertexXYZ;
@@ -47,7 +46,7 @@ public:
 	float cellWeight;
 
 	Model();
-	~Model();
+        ~Model();
 
 	void readFile(string fileName);
 	void writeToFile(string str);

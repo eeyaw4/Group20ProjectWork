@@ -32,22 +32,6 @@ string Material::getMaterialColour()
     return colour;
 }
 
-vector<float> Material::getRGB()
-{
-    vector<float> RGB;
-    int rI,gI,bI;
-
-    stringstream(colour.substr(0,2)) >> hex >> rI;
-    stringstream(colour.substr(2,2)) >> hex >> gI;
-    stringstream(colour.substr(4,2)) >> hex >> bI;
-
-    RGB.push_back(rI/255.0);
-    RGB.push_back(gI/255.0);
-    RGB.push_back(bI/255.0);
-
-    return RGB;
-}
-
 // Returns the name saved to the Material class
 string Material::getMaterialName()
 {

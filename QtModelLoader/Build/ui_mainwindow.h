@@ -53,7 +53,7 @@ public:
     QLineEdit *lineEditB;
     QSlider *sliderB;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *resetColorButton;
+    QPushButton *resetColourButton;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -172,10 +172,10 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        resetColorButton = new QPushButton(centralwidget);
-        resetColorButton->setObjectName(QStringLiteral("resetColorButton"));
+        resetColourButton = new QPushButton(centralwidget);
+        resetColourButton->setObjectName(QStringLiteral("resetColourButton"));
 
-        horizontalLayout_2->addWidget(resetColorButton);
+        horizontalLayout_2->addWidget(resetColourButton);
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
@@ -215,7 +215,7 @@ public:
         actionPrint->setText(QApplication::translate("MainWindow", "Print", nullptr));
         loadSTLButton->setText(QApplication::translate("MainWindow", "Load STL", nullptr));
         loadModelButton->setText(QApplication::translate("MainWindow", "Load Model", nullptr));
-        resetColorButton->setText(QApplication::translate("MainWindow", "Reset Colors", nullptr));
+        resetColourButton->setText(QApplication::translate("MainWindow", "Reset Colours", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

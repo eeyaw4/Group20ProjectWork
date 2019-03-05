@@ -25,7 +25,6 @@ public:
     int getMaterialDensity();
     string getMaterialColour();
     string getMaterialName();
-    vector<float> getRGB();
 };
 
 #endif

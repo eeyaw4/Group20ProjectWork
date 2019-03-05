@@ -135,9 +135,9 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QPushButton" name="resetColorButton">
+           <widget class="QPushButton" name="resetColourButton">
             <property name="text">
-             <string>Reset Colors</string>
+             <string>Reset Colours</string>
             </property>
            </widget>
           </item>

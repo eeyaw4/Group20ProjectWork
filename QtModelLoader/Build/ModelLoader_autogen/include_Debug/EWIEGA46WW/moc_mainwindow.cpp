@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[9];
-    char stringdata0[173];
+    char stringdata0[174];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,7 +39,7 @@ QT_MOC_LITERAL(4, 45, 23), // "on_sliderG_valueChanged"
 QT_MOC_LITERAL(5, 69, 23), // "on_sliderB_valueChanged"
 QT_MOC_LITERAL(6, 93, 24), // "on_loadSTLButton_clicked"
 QT_MOC_LITERAL(7, 118, 26), // "on_loadModelButton_clicked"
-QT_MOC_LITERAL(8, 145, 27) // "on_resetColorButton_clicked"
+QT_MOC_LITERAL(8, 145, 28) // "on_resetColourButton_clicked"
 
     },
     "MainWindow\0on_sliderR_valueChanged\0\0"
@@ -47,7 +47,7 @@ QT_MOC_LITERAL(8, 145, 27) // "on_resetColorButton_clicked"
     "on_sliderB_valueChanged\0"
     "on_loadSTLButton_clicked\0"
     "on_loadModelButton_clicked\0"
-    "on_resetColorButton_clicked"
+    "on_resetColourButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -94,7 +94,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_sliderB_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_loadSTLButton_clicked(); break;
         case 4: _t->on_loadModelButton_clicked(); break;
-        case 5: _t->on_resetColorButton_clicked(); break;
+        case 5: _t->on_resetColourButton_clicked(); break;
         default: ;
         }
     }

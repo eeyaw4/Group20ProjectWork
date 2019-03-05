@@ -70,7 +70,6 @@ void Model::getMaterialData(int id)
 	materialDensity = mVector[id].getMaterialDensity();
 	materialColour = mVector[id].getMaterialColour();
 	materialName = mVector[id].getMaterialName();
-        materialRGB = mVector[id].getRGB();
 }
 
 // Sets the vertex variables to data from the selected vVector Vertex depending on the id passed to the function
@@ -181,13 +180,13 @@ void Model::readFile(string fileName)
 		switch (str[0])
 		{
 		case 'm':
-			readMaterial(str);
+                        readMaterial(str);
 			break;
 		case 'v':
-			readVertices(str);
+                        readVertices(str);
 			break;
 		case 'c':
-			readCell(str);
+                        readCell(str);
 			break;
 		}
 	}
@@ -213,7 +212,7 @@ void Model::readMaterial(string str)
 	}
 	else
 	{
-		cout << "Error Reading Material" << endl;
+                throw string("Error reading materials\nPlease check model file and reload");
 	}
 }
 
@@ -236,7 +235,7 @@ void Model::readVertices(string str)
 	}
 	else
 	{
-		cout << "Error Reading Vertices" << endl;
+                throw string("Error reading verticies\nPlease check model file and reload");
 	}
 }
 
@@ -254,16 +253,56 @@ void Model::readCell(string str)
 		c.material = material;
 		c.materialClass = mVector[material];
 
+                int num = 0;
+                int numP;
+                bool found;
+
 		while (iss >> point)
 		{
-			c.vertices.push_back(vVector[point].getVertexVector());
-			c.verticesID.push_back(point);
+                    found = false;
+
+                    for(int i = 0; i < vVector.size(); i++)
+                    {
+                        if(point == i)
+                        {
+                            c.vertices.push_back(vVector[point].getVertexVector());
+                            c.verticesID.push_back(point);
+                            num++;
+                            found = true;
+                        }
+                    }
+
+                    if(found == false)
+                    {
+                        throw string("Invalid vertex found\nPlease check model file and reload");
+                    }
+
 		}
 
-		cVector.push_back(c);
+                if(shape == "t")
+                {
+                    numP = 4;
+                }
+                else if(shape == "p")
+                {
+                    numP = 5;
+                }
+                else if(shape == "h")
+                {
+                    numP = 8;
+                }
+
+                if(num == numP)
+                {
+                    cVector.push_back(c);
+                }
+                else
+                {
+                        throw string("Error reading cells\nPlease check model file and reload");
+                }
 	}
-	else
+        else
 	{
-		cout << "Error Reading Cells" << endl;
-	}
+                throw string("Error reading cells\nPlease check model file and reload");
+        }
 }
