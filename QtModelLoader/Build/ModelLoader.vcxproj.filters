@@ -1,38 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\main.cpp">
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\mainwindow.cpp">
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\qrc_icons.cpp">
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\ModelLoader_autogen\mocs_compilation.cpp">
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Build\qrc_icons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Build\ModelLoader_autogen\mocs_compilation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\mainwindow.h">
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Build\ui_mainwindow.h">
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Cell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Build\ui_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\mainwindow.ui" />
-    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\Icons\icons.qrc" />
-    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Group20ProjectWork\QtModelLoader\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\mainwindow.ui" />
+    <CustomBuild Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\Icons\icons.qrc" />
+    <CustomBuild Include="C:\Users\tyler\Group20ProjectWork\QtModelLoader\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{A27FBCA8-CB39-309F-9938-ACBBC149EC31}</UniqueIdentifier>
+      <UniqueIdentifier>{4C38C00C-38EF-3567-90F5-CAB81A9AF78B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{2D21DCA9-9A0B-3BCC-BD8B-578248FEA231}</UniqueIdentifier>
+      <UniqueIdentifier>{8F43D8B8-31C8-3927-9E2C-0E820952468F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

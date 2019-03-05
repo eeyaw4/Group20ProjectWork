@@ -41,6 +41,14 @@ add_executable( ModelLoader MACOSX_BUNDLE
 				main.cpp mainwindow.cpp 
 				mainwindow.h 
 				mainwindow.ui
+				Cell.cpp
+				Cell.h
+				Material.cpp
+				Material.h
+				Model.cpp
+				Model.h
+				Vertex.cpp
+				Vertex.h
 				${UI_Srcs}
 				${QRC_Srcs}
 				)

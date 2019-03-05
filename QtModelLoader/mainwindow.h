@@ -14,8 +14,24 @@
 #include <vtkNamedColors.h>
 #include <vtkNew.h>
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkPyramid.h>
+#include <vtkTetra.h>
+#include <vtkHexahedron.h>
+#include <vtkUnstructuredGrid.h>
+#include <vtkSTLReader.h>
+#include <vtkPolyDataMapper.h>
+
+#include <vector>
+#include <string>
 
 #include <QMainWindow>
+#include <QString>
+#include <QFileDialog>
+#include <QMessageBox>
+
+#include <Model.h>
+
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -29,9 +45,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    vtkSmartPointer<vtkActor> actor;
+    vector<vtkSmartPointer<vtkActor>> actors;
     vtkSmartPointer<vtkNamedColors> colors;
     vtkSmartPointer<vtkRenderer> renderer;
+    vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
 
     float colourR = 0;
     float colourG = 0;
@@ -39,14 +56,26 @@ public:
 
 
 private slots:
-    void on_sliderR_sliderMoved(int position);
+    void on_slideR_valueChanged(int position);
 
-    void on_sliderG_sliderMoved(int position);
+    void on_slideG_valueChanged(int position);
 
-    void on_sliderB_sliderMoved(int position);
+    void on_slideB_valueChanged(int position);
+
+    void on_loadSTLButton_clicked();
+
+    void on_loadModelButton_clicked();
+
+    void on_resetColorButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    void PyramidRender(vector<vector<float>> position);
+    void TetRender(vector<vector<float>> pos);
+    void HexRender(vector<vector<float>> pos);
+    void stlRender(QString filename);
+    void loadModel(string filename);
+    void resetColors(void);
 };
 
 #endif // MAINWINDOW_H
