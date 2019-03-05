@@ -44,6 +44,7 @@ public:
 	vector<float> cellCOG;
 	float cellVolume;
 	float cellWeight;
+        int countNum;
 
 	Model();
         ~Model();

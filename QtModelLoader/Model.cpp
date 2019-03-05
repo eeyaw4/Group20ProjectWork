@@ -175,6 +175,7 @@ void Model::readFile(string fileName)
 		cerr << "Unable to find MOD file";
 		exit(1);
 	}
+        countNum = 0;
 	while (getline(dataFile, str))
 	{
 		switch (str[0])
@@ -224,11 +225,12 @@ void Model::readVertices(string str)
 	float x, y, z;
 	istringstream iss(str);
 	Vertex v;
-        int countNum = 0;
 
         if (iss >> type >> id >> x >> y >> z)
 	{
 		v.id = id;
+                cout << id << endl;
+                cout << countNum << endl;
                 if(countNum != id)
                 {
                     throw string("Error reading verticies\nPlease check model file and reload");
@@ -243,21 +245,6 @@ void Model::readVertices(string str)
 	{
                 throw string("Error reading verticies\nPlease check model file and reload");
 	}
-
-        int amount = 0;
-
-        /*while(iss >> x)
-        {
-            v.xyz.push_back(x);
-            amount++;
-            vVector.push_back(v);
-            cout << x << endl;
-        }
-
-        if(amount != 3)
-        {
-            throw string("Error reading verticies\nPlease check model file and reload");
-        }*/
         vVector.push_back(v);
 
 }
