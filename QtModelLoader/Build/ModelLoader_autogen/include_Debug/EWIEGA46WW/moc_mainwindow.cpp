@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.11.2. It"
+#error "This file was generated using the moc from 5.11.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[13];
-    char stringdata0[241];
+    char stringdata0[242];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,18 +39,18 @@ QT_MOC_LITERAL(4, 44, 22), // "on_slideG_valueChanged"
 QT_MOC_LITERAL(5, 67, 22), // "on_slideB_valueChanged"
 QT_MOC_LITERAL(6, 90, 24), // "on_loadSTLButton_clicked"
 QT_MOC_LITERAL(7, 115, 26), // "on_loadModelButton_clicked"
-QT_MOC_LITERAL(8, 142, 27), // "on_resetColorButton_clicked"
-QT_MOC_LITERAL(9, 170, 21), // "on_spinR_valueChanged"
-QT_MOC_LITERAL(10, 192, 4), // "arg1"
-QT_MOC_LITERAL(11, 197, 21), // "on_spinG_valueChanged"
-QT_MOC_LITERAL(12, 219, 21) // "on_spinB_valueChanged"
+QT_MOC_LITERAL(8, 142, 28), // "on_resetColourButton_clicked"
+QT_MOC_LITERAL(9, 171, 21), // "on_spinR_valueChanged"
+QT_MOC_LITERAL(10, 193, 4), // "arg1"
+QT_MOC_LITERAL(11, 198, 21), // "on_spinG_valueChanged"
+QT_MOC_LITERAL(12, 220, 21) // "on_spinB_valueChanged"
 
     },
     "MainWindow\0on_slideR_valueChanged\0\0"
     "position\0on_slideG_valueChanged\0"
     "on_slideB_valueChanged\0on_loadSTLButton_clicked\0"
     "on_loadModelButton_clicked\0"
-    "on_resetColorButton_clicked\0"
+    "on_resetColourButton_clicked\0"
     "on_spinR_valueChanged\0arg1\0"
     "on_spinG_valueChanged\0on_spinB_valueChanged"
 };
@@ -105,7 +105,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_slideB_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_loadSTLButton_clicked(); break;
         case 4: _t->on_loadModelButton_clicked(); break;
-        case 5: _t->on_resetColorButton_clicked(); break;
+        case 5: _t->on_resetColourButton_clicked(); break;
         case 6: _t->on_spinR_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->on_spinG_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 8: _t->on_spinB_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;

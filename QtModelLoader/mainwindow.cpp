@@ -7,14 +7,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         ui->setupUi( this );
 
         renderer = vtkSmartPointer<vtkRenderer>::New();
-        colors = vtkSmartPointer<vtkNamedColors>::New();
+        colours = vtkSmartPointer<vtkNamedColors>::New();
 
         // Now need to create a VTK render window and link it to the QtVTK widget
         ui->qvtkWidget->SetRenderWindow( renderWindow );
 
         ui->qvtkWidget->GetRenderWindow()->AddRenderer( renderer );
 
-        renderer->SetBackground( colors->GetColor3d("Silver").GetData() );
+        renderer->SetBackground( colours->GetColor3d("Silver").GetData() );
 
         // Setup the renderers's camera
         renderer->ResetCamera();
@@ -66,16 +66,18 @@ void MainWindow::loadModel(string fileName)
 
         if(shape == "p")
         {
-            PyramidRender(points);
+            PyramidRender(points,c);
         }
         else if(shape == "t")
         {
-            TetRender(points);
+            TetRender(points,c);
         }
         else if(shape == "h")
         {
-            HexRender(points);
+            HexRender(points,c);
         }
+
+        shapeColours.push_back(c);
     }
 
     int count = 0;
@@ -120,7 +122,7 @@ void MainWindow::stlRender(QString fileName)
       ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
-void MainWindow::PyramidRender(vector<vector<float>> pos)
+void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 
@@ -158,7 +160,7 @@ void MainWindow::PyramidRender(vector<vector<float>> pos)
     actors.push_back(actor);
 }
 
-void MainWindow::TetRender(vector<vector<float>> pos)
+void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 
@@ -189,7 +191,7 @@ void MainWindow::TetRender(vector<vector<float>> pos)
     actors.push_back(actor);
 }
 
-void MainWindow::HexRender(vector<vector<float>> pos)
+void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
 {
       // Create the points.
       vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -259,8 +261,12 @@ vector<float> MainWindow::getRGB(string c)
 
 }
 
-void MainWindow::resetColors(void)
+void MainWindow::resetColours(void)
 {
+    ui->spinR->setValue(0);
+    ui->spinG->setValue(0);
+    ui->spinB->setValue(0);
+
     ui->slideR->setValue(0);
     ui->slideG->setValue(0);
     ui->slideB->setValue(0);
@@ -269,9 +275,10 @@ void MainWindow::resetColors(void)
     colourG = 0;
     colourB = 0;
 
-    for(vtkSmartPointer<vtkActor> l : actors)
+    for (int i = 0; i < actors.size(); i++)
     {
-        l->GetProperty()->SetColor( colourR,colourG,colourB );
+        vector<float> c = shapeColours[i];
+        actors[i]->GetProperty()->SetColor( c[0],c[1],c[2] );
     }
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
@@ -321,6 +328,7 @@ void MainWindow::on_loadSTLButton_clicked()
     }
 
     actors.clear();
+    shapeColours.clear();
 
     QString file = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("STL Files(*.stl)"));
 
@@ -331,7 +339,7 @@ void MainWindow::on_loadSTLButton_clicked()
 
     stlRender(file);
 
-    resetColors();
+    resetColours();
 }
 
 void MainWindow::on_loadModelButton_clicked()
@@ -342,6 +350,7 @@ void MainWindow::on_loadModelButton_clicked()
     }
 
     actors.clear();
+    shapeColours.clear();
 
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("Model Files(*.mod)"));
 
@@ -354,12 +363,12 @@ void MainWindow::on_loadModelButton_clicked()
 
     loadModel(file);
 
-    resetColors();
+    resetColours();
 }
 
-void MainWindow::on_resetColorButton_clicked()
+void MainWindow::on_resetColourButton_clicked()
 {
-    resetColors();
+    resetColours();
 }
 
 void MainWindow::on_spinR_valueChanged(int value)

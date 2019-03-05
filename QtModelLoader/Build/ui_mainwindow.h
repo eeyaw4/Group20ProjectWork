@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.2
+** Created by: Qt User Interface Compiler version 5.11.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -75,7 +75,7 @@ public:
     QLabel *label_3;
     QSlider *slideB;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *resetColorButton;
+    QPushButton *resetColourButton;
     QSpacerItem *horizontalSpacer_2;
     QWidget *tabCS;
     QWidget *tab_8;
@@ -338,11 +338,11 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        resetColorButton = new QPushButton(tabColour);
-        resetColorButton->setObjectName(QStringLiteral("resetColorButton"));
-        resetColorButton->setMinimumSize(QSize(85, 0));
+        resetColourButton = new QPushButton(tabColour);
+        resetColourButton->setObjectName(QStringLiteral("resetColourButton"));
+        resetColourButton->setMinimumSize(QSize(85, 0));
 
-        horizontalLayout_2->addWidget(resetColorButton);
+        horizontalLayout_2->addWidget(resetColourButton);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -381,7 +381,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -406,7 +406,7 @@ public:
         lblR->setText(QApplication::translate("MainWindow", "Red", nullptr));
         lblG->setText(QApplication::translate("MainWindow", "Green", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Blue", nullptr));
-        resetColorButton->setText(QApplication::translate("MainWindow", "Reset Colors", nullptr));
+        resetColourButton->setText(QApplication::translate("MainWindow", "Reset Colours", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabColour), QApplication::translate("MainWindow", "Colour", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabCS), QApplication::translate("MainWindow", "Cross Section", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "Page", nullptr));

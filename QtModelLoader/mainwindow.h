@@ -52,9 +52,11 @@ public:
     ~MainWindow();
 
     vector<vtkSmartPointer<vtkActor>> actors;
-    vtkSmartPointer<vtkNamedColors> colors;
+    vtkSmartPointer<vtkNamedColors> colours;
     vtkSmartPointer<vtkRenderer> renderer;
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
+
+    vector<vector<float>> shapeColours;
 
     float colourR = 0;
     float colourG = 0;
@@ -72,7 +74,7 @@ private slots:
 
     void on_loadModelButton_clicked();
 
-    void on_resetColorButton_clicked();
+    void on_resetColourButton_clicked();
 
     void on_spinR_valueChanged(int arg1);
 
@@ -82,12 +84,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    void PyramidRender(vector<vector<float>> position);
-    void TetRender(vector<vector<float>> pos);
-    void HexRender(vector<vector<float>> pos);
+    void PyramidRender(vector<vector<float>> position,vector<float> c);
+    void TetRender(vector<vector<float>> pos,vector<float> c);
+    void HexRender(vector<vector<float>> pos,vector<float> c);
     void stlRender(QString filename);
     void loadModel(string filename);
-    void resetColors(void);
+    void resetColours(void);
     vector<float> getRGB(string c);
 };
 
