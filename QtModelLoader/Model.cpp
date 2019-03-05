@@ -224,19 +224,42 @@ void Model::readVertices(string str)
 	float x, y, z;
 	istringstream iss(str);
 	Vertex v;
-	if (iss >> type >> id >> x >> y >> z)
+        int countNum = 0;
+
+        if (iss >> type >> id >> x >> y >> z)
 	{
 		v.id = id;
-		v.xyz.push_back(x);
-		v.xyz.push_back(y);
-		v.xyz.push_back(z);
+                if(countNum != id)
+                {
+                    throw string("Error reading verticies\nPlease check model file and reload");
+                }
 
-		vVector.push_back(v);
+                v.xyz.push_back(x);
+                v.xyz.push_back(y);
+                v.xyz.push_back(z);
+                countNum++;
 	}
-	else
+        else if(!(iss >> type >> id >> x >> y >> z))
 	{
                 throw string("Error reading verticies\nPlease check model file and reload");
 	}
+
+        int amount = 0;
+
+        /*while(iss >> x)
+        {
+            v.xyz.push_back(x);
+            amount++;
+            vVector.push_back(v);
+            cout << x << endl;
+        }
+
+        if(amount != 3)
+        {
+            throw string("Error reading verticies\nPlease check model file and reload");
+        }*/
+        vVector.push_back(v);
+
 }
 
 // Reads all data from the a line passed to the function into a Cell class which is stored in the cVector vector
