@@ -88,6 +88,9 @@ void MainWindow::stlRender(QString fileName)
       vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
       actor->SetMapper(mapper);
 
+      vector<float> c = {0,0,0};
+      shapeColors.push_back(c);
+
       actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
       // Add the actor to the scene
