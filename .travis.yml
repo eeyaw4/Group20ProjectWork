@@ -25,8 +25,8 @@ addons:
 script:
     - mkdir QtModelLoader/Build
     - cd QtModelLoader/Build
-    - cmake ..
-    - make
+    - cmake -DCMAKE_PREFIX_PATH="C:\VTK\MSVC2017_64;C:\Qt\5.9.1\msvc2017_64" -G"Visual Studio 15 2017 Win64" ..
+    - msbuild ModelLoader.sln
 # After successfully building and testing your software we give Doxygen the
 # instruction to scan the code for docstrings and generate the html output.
 # The bulk of these instructions is encapsulated in a script.
