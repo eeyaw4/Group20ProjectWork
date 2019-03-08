@@ -93,6 +93,9 @@ void MainWindow::loadModel(string fileName)
 
     buttonsOn();
     ui->lblObjCount->setText(QString::number(count));
+    ui->checkShrink->setEnabled(true);
+
+    renderer->ResetCamera();
 
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
@@ -106,12 +109,6 @@ void MainWindow::stlRender(QString fileName)
       vtkSmartPointer<vtkPolyDataMapper> mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
       mapper->SetInputConnection(reader->GetOutputPort());
 
-      /*vtkSmartPointer<vtkShrinkFilter> shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
-      shrinkFilter->SetShrinkFactor(1);
-      shrinkFilter->SetInputConnection( reader->GetOutputPort() );
-      shrinks.push_back(shrinkFilter);
-      mapper->SetInputConnection( shrinkFilter->GetOutputPort() );*/
-
       vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
       actor->SetMapper(mapper);
 
@@ -122,7 +119,6 @@ void MainWindow::stlRender(QString fileName)
 
       // Add the actor to the scene
       actors.push_back(actor);
-
 
       int count = 0;
 
@@ -138,6 +134,10 @@ void MainWindow::stlRender(QString fileName)
       ui->lblMat->setText(" ");
       ui->lblDensValue->setText(" ");
       ui->lblWeightValue->setText(" ");
+      ui->checkShrink->setEnabled(false);
+      ui->checkShrink->setChecked(false);
+
+      renderer->ResetCamera();
 
       ui->qvtkWidget->GetRenderWindow()->Render();
 }
@@ -355,6 +355,9 @@ void MainWindow::buttonsOff(void)
 
     ui->slideShrink->setEnabled(false);
     ui->slideShrink->setValue(0);
+
+    ui->checkShrink->setEnabled(false);
+    ui->checkShrink->setChecked(false);
 
     ui->lblShrink->setNum(1);
 }
