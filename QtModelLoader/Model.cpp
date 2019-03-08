@@ -106,6 +106,16 @@ vector<float> Model::calcModelCenter()
         return center;
 }
 
+float Model::getModelWeight()
+{
+    totalWeight = 0;
+    for (int i = 0; i < cVector.size(); i++)
+    {
+        totalWeight = totalWeight + cVector[i].getWeight();
+    }
+    return totalWeight;
+}
+
 // Writes all of the data from the mVector, vVector and cVector vectors to a file passed to the function
 void Model::writeToFile(string str)
 {

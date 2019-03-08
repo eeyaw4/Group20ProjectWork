@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
         renderer->SetBackground( colours->GetColor3d("Silver").GetData() );
 
+        buttonsOff();
+
         // Setup the renderers's camera
         renderer->ResetCamera();
         renderer->GetActiveCamera()->Azimuth(-10);
@@ -52,6 +54,7 @@ void MainWindow::loadModel(string fileName)
         vector<float> c;
         ui->lblMat->setText(QString::fromStdString(Data.materialName));
         ui->lblDensValue->setText(QString::number(Data.materialDensity));
+        ui->lblWeightValue->setText(QString::number(Data.getModelWeight()));
 
         try
         {
@@ -82,19 +85,20 @@ void MainWindow::loadModel(string fileName)
 
     int count = 0;
 
-       for(vtkSmartPointer<vtkActor> l : actors)
+    for(vtkSmartPointer<vtkActor> l : actors)
     {
         renderer->AddActor(l);
         count++;
     }
 
+    buttonsOn();
     ui->lblObjCount->setText(QString::number(count));
+
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
 void MainWindow::stlRender(QString fileName)
 {
-      vtkSmartPointer<vtkSTLReader> reader = vtkSmartPointer<vtkSTLReader>::New();
       reader->SetFileName(fileName.toLatin1().data());
       reader->Update();
 
@@ -102,13 +106,23 @@ void MainWindow::stlRender(QString fileName)
       vtkSmartPointer<vtkPolyDataMapper> mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
       mapper->SetInputConnection(reader->GetOutputPort());
 
+      /*vtkSmartPointer<vtkShrinkFilter> shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
+      shrinkFilter->SetShrinkFactor(1);
+      shrinkFilter->SetInputConnection( reader->GetOutputPort() );
+      shrinks.push_back(shrinkFilter);
+      mapper->SetInputConnection( shrinkFilter->GetOutputPort() );*/
+
       vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
       actor->SetMapper(mapper);
+
+      vector<float> c = {0,0,0};
+      shapeColours.push_back(c);
 
       actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
       // Add the actor to the scene
       actors.push_back(actor);
+
 
       int count = 0;
 
@@ -118,7 +132,13 @@ void MainWindow::stlRender(QString fileName)
           count++;
       }
 
+      buttonsOn();
       ui->lblObjCount->setText(QString::number(count));
+
+      ui->lblMat->setText(" ");
+      ui->lblDensValue->setText(" ");
+      ui->lblWeightValue->setText(" ");
+
       ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
@@ -141,13 +161,19 @@ void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
     vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
     cells->InsertNextCell (pyramid);
 
-    vtkSmartPointer<vtkUnstructuredGrid> ug = vtkSmartPointer<vtkUnstructuredGrid>::New();
-    ug->SetPoints(points);
-    ug->InsertNextCell(pyramid->GetCellType(),pyramid->GetPointIds());
+    vtkSmartPointer<vtkUnstructuredGrid> uGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
+    uGrid->SetPoints(points);
+    uGrid->InsertNextCell(pyramid->GetCellType(),pyramid->GetPointIds());
 
     // Create a mapper that will hold the geometry in a format suitable for rendering
     vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-     mapper->SetInputData(ug);
+    mapper->SetInputData(uGrid);
+
+    vtkSmartPointer<vtkShrinkFilter> shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
+    shrinkFilter->SetShrinkFactor(1);
+    shrinkFilter->AddInputDataObject(0,uGrid);
+    shrinks.push_back(shrinkFilter);
+    mapper->SetInputConnection( shrinkFilter->GetOutputPort());
 
     // Create an actor that is used to set the properties for rendering and place it in the window
     vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
@@ -170,15 +196,21 @@ void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
     }
 
     // Method 1
-    vtkSmartPointer<vtkUnstructuredGrid> unstructuredGrid1 = vtkSmartPointer<vtkUnstructuredGrid>::New();
-    unstructuredGrid1->SetPoints(points);
+    vtkSmartPointer<vtkUnstructuredGrid> uGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
+    uGrid->SetPoints(points);
 
     vtkIdType ptIds[] = {0, 1, 2, 3};
-    unstructuredGrid1->InsertNextCell( VTK_TETRA, 4, ptIds );
+    uGrid->InsertNextCell( VTK_TETRA, 4, ptIds );
 
     // Create a mapper1 that will hold the geometry in a format suitable for rendering
     vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-    mapper->SetInputData(unstructuredGrid1);
+    mapper->SetInputData(uGrid);
+
+    vtkSmartPointer<vtkShrinkFilter> shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
+    shrinkFilter->SetShrinkFactor(1);
+    shrinkFilter->AddInputDataObject(0,uGrid);
+    shrinks.push_back(shrinkFilter);
+    mapper->SetInputConnection( shrinkFilter->GetOutputPort());
 
     // Create an actor that is used to set the properties for rendering and place it in the window
     vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
@@ -225,6 +257,12 @@ void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
       // Visualize.
       vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
       mapper->SetInputData(uGrid);
+
+      vtkSmartPointer<vtkShrinkFilter> shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
+      shrinkFilter->SetShrinkFactor(1);
+      shrinkFilter->AddInputDataObject(0,uGrid);
+      shrinks.push_back(shrinkFilter);
+      mapper->SetInputConnection( shrinkFilter->GetOutputPort());
 
       vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
       actor->SetMapper(mapper);
@@ -280,14 +318,51 @@ void MainWindow::resetColours(void)
         vector<float> c = shapeColours[i];
         actors[i]->GetProperty()->SetColor( c[0],c[1],c[2] );
     }
+    renderer->SetBackground( colours->GetColor3d("Silver").GetData() );
     ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
+void MainWindow::shrinkFilterUpdate(int value)
+{
+        for(int i = 0;i < shrinks.size();i++)
+        {
+            shrinks[i]->SetShrinkFactor((float) (100 - value)/100);
+            ui->lblShrink->setNum((float) (100 - value)/100);
+            shrinks[i]->Update();
+        }
+        ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
+void MainWindow::buttonsOn(void)
+{
+    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setTabEnabled(1, true);
+    ui->tabWidget->setTabEnabled(2, true);
+    ui->tabWidget->setTabEnabled(3, true);
+
+    ui->slideShrink->setEnabled(false);
+    ui->slideShrink->setValue(0);
+
+    ui->lblShrink->setNum(1);
+}
+
+void MainWindow::buttonsOff(void)
+{
+    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setTabEnabled(1, false);
+    ui->tabWidget->setTabEnabled(2, false);
+    ui->tabWidget->setTabEnabled(3, false);
+
+    ui->slideShrink->setEnabled(false);
+    ui->slideShrink->setValue(0);
+
+    ui->lblShrink->setNum(1);
 }
 
 void MainWindow::on_slideR_valueChanged(int position)
 {
     colourR = float(position)/100;
     ui->spinR->setValue(position);
-
     for(vtkSmartPointer<vtkActor> l : actors)
     {
         l->GetProperty()->SetColor( colourR,colourG,colourB );
@@ -300,7 +375,6 @@ void MainWindow::on_slideG_valueChanged(int position)
 {
     colourG = float(position)/100;
     ui->spinG->setValue(position);
-
     for(vtkSmartPointer<vtkActor> l : actors)
     {
         l->GetProperty()->SetColor( colourR,colourG,colourB );
@@ -329,6 +403,7 @@ void MainWindow::on_loadSTLButton_clicked()
 
     actors.clear();
     shapeColours.clear();
+    shrinks.clear();
 
     QString file = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("STL Files(*.stl)"));
 
@@ -351,6 +426,7 @@ void MainWindow::on_loadModelButton_clicked()
 
     actors.clear();
     shapeColours.clear();
+    shrinks.clear();
 
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("Model Files(*.mod)"));
 
@@ -406,4 +482,66 @@ void MainWindow::on_spinB_valueChanged(int value)
         l->GetProperty()->SetColor( colourR,colourG,colourB );
     }
     ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
+
+void MainWindow::on_btnModelColour_clicked()
+{
+    QColor color = QColorDialog::getColor(Qt::green,this);
+
+        if(color.isValid()) {
+            int red, blue, green;
+            color.getRgb(&red, &green, &blue);
+            colourR = (float)(red / 100);
+            colourG = (float)(green / 100);
+            colourB = (float)(blue / 100);
+
+            ui->slideR->setValue(red);
+            ui->slideG->setValue(green);
+            ui->slideB->setValue(blue);
+
+            for(vtkSmartPointer<vtkActor> l : actors)
+            {
+                l->GetProperty()->SetColor( colourR,colourG,colourB );
+            }
+            ui->qvtkWidget->GetRenderWindow()->Render();
+        }
+}
+
+void MainWindow::on_btnBGColour_clicked()
+{
+    QColor color = QColorDialog::getColor(Qt::green,this);
+
+        if(color.isValid())
+        {
+            int red, blue, green;
+            color.getRgb(&red, &green, &blue);
+            renderer->SetBackground((float)(red / 100),(float)(green / 100),(float)(blue / 100));
+            ui->qvtkWidget->GetRenderWindow()->Render();
+        }
+}
+
+void MainWindow::on_checkShrink_stateChanged(int arg1)
+{
+    ui->slideShrink->setValue(0);
+    ui->lblShrink->setNum(0);
+    shrinkFilterUpdate(0);
+    if(ui->checkShrink->isChecked() == false)
+    {
+        ui->slideShrink->setEnabled(false);
+    }
+    else if(ui->checkShrink->isChecked() == true)
+    {
+        ui->slideShrink->setEnabled(true);
+    }
+}
+
+void MainWindow::on_slideShrink_sliderReleased()
+{
+    shrinkFilterUpdate(ui->slideShrink->value());
+}
+
+void MainWindow::on_checkCS_stateChanged(int arg1)
+{
+
 }

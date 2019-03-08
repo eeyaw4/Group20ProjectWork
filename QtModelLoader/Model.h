@@ -34,6 +34,8 @@ public:
         string materialColour;
         string materialName;
 
+        float totalWeight;
+
         int vertexID;
         vector<float> vertexXYZ;
 
@@ -53,6 +55,7 @@ public:
         void writeToFile(string str);
 
         vector<float> calcModelCenter();
+        float getModelWeight(void);
 
         void displayMaterial();
         void displayVertices();

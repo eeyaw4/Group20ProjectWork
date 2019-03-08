@@ -20,6 +20,9 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkSTLReader.h>
 #include <vtkPolyDataMapper.h>
+#include <vtkPlane.h>
+#include <vtkClipDataSet.h>
+#include <vtkShrinkFilter.h>
 
 #include <array>
 #include <vector>
@@ -30,6 +33,9 @@
 #include <QMainWindow>
 #include <QString>
 #include <QFileDialog>
+#include <QColorDialog>
+#include <QColor>
+#include <QPalette>
 #include <QMessageBox>
 
 #include <Model.h>
@@ -52,6 +58,7 @@ public:
     ~MainWindow();
 
     vector<vtkSmartPointer<vtkActor>> actors;
+    vector<vtkSmartPointer<vtkShrinkFilter>> shrinks;
     vtkSmartPointer<vtkNamedColors> colours;
     vtkSmartPointer<vtkRenderer> renderer;
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
@@ -61,6 +68,8 @@ public:
     float colourR = 0;
     float colourG = 0;
     float colourB = 0;
+
+    vtkSmartPointer<vtkSTLReader> reader = vtkSmartPointer<vtkSTLReader>::New();
 
 
 private slots:
@@ -82,6 +91,17 @@ private slots:
 
     void on_spinB_valueChanged(int arg1);
 
+    void on_btnModelColour_clicked();
+
+    void on_btnBGColour_clicked();
+
+    void on_checkCS_stateChanged(int arg1);
+
+
+    void on_slideShrink_sliderReleased();
+
+    void on_checkShrink_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     void PyramidRender(vector<vector<float>> position,vector<float> c);
@@ -90,7 +110,11 @@ private:
     void stlRender(QString filename);
     void loadModel(string filename);
     void resetColours(void);
+    void shrinkFilterUpdate(int value);
     vector<float> getRGB(string c);
+    void buttonsOn(void);
+    void buttonsOff(void);
+
 };
 
 #endif // MAINWINDOW_H
