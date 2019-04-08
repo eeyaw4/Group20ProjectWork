@@ -1,5 +1,13 @@
+// mainwindow.cpp
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+/** @file
+* This file contains all functions used in the mainwindow.cpp
+*/
+/** Brief description
+* Details all functions that are required to make the application run
+*/
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
