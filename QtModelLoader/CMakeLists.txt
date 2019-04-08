@@ -36,19 +36,14 @@ qt5_add_resources( QRC_Srcs ${ICONS} )
 find_package( VTK REQUIRED )
 include( ${VTK_USE_FILE} )
 
+add_subdirectory(LibraryCode)
+include_directories(LibraryCode)
+
 # Define the executable output and its sources
 add_executable( ModelLoader MACOSX_BUNDLE
 				main.cpp mainwindow.cpp 
 				mainwindow.h 
 				mainwindow.ui
-				Cell.cpp
-				Cell.h
-				Material.cpp
-				Material.h
-				Model.cpp
-				Model.h
-				Vertex.cpp
-				Vertex.h
 				${UI_Srcs}
 				${QRC_Srcs}
 				)
@@ -58,3 +53,5 @@ target_link_libraries( ModelLoader Qt5::Widgets )
 
 # Tell CMake that the executable depends on the VTK libraries
 target_link_libraries( ModelLoader ${VTK_LIBRARIES} )
+
+target_link_libraries( ModelLoader ModelLib )
