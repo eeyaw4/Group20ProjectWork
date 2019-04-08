@@ -33,4 +33,4 @@ script:
     - cd build
     - cmake ..
     - make
-    - make ModelLibTest
+    - make test
