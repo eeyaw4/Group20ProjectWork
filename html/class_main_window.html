@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,6 +90,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MainWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
@@ -101,9 +103,8 @@ Inheritance diagram for MainWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a> (QWidget *parent=0)</td></tr>
-<tr class="memdesc:a8b244be8b7b7db1b08de2a2acb9409db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief description This description will hopefully be picked up on by doxygen. <br/></td></tr>
+<tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a> (QWidget *parent=0)</td></tr>
+<tr class="memdesc:a8b244be8b7b7db1b08de2a2acb9409db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief description This description will hopefully be picked up on by doxygen.  <a href="#a8b244be8b7b7db1b08de2a2acb9409db">More...</a><br/></td></tr>
 <tr class="separator:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -129,8 +130,7 @@ vtkNew<br class="typebreak"/>
 <tr class="memitem:ad5bb5307fbb045d0d469ac19679bfc8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5bb5307fbb045d0d469ac19679bfc8a"></a>
 vector&lt; vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shapeColours</b></td></tr>
 <tr class="separator:ad5bb5307fbb045d0d469ac19679bfc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f193c7b944f6c0850030ae012fbcac1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f193c7b944f6c0850030ae012fbcac1"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>colourR</b> = 0</td></tr>
+<tr class="memitem:a9f193c7b944f6c0850030ae012fbcac1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9f193c7b944f6c0850030ae012fbcac1">colourR</a> = 0</td></tr>
 <tr class="separator:a9f193c7b944f6c0850030ae012fbcac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78acf3db19ede6d27755b09f2d03b113"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78acf3db19ede6d27755b09f2d03b113"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>colourG</b> = 0</td></tr>
@@ -142,6 +142,56 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>colourB</b> = 0</td>
 vtkSmartPointer&lt; vtkSTLReader &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>reader</b> = vtkSmartPointer&lt;vtkSTLReader&gt;::New()</td></tr>
 <tr class="separator:af9de6c5cd3d77a5ae9be169f06152607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class containing ... </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::MainWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Brief description This description will hopefully be picked up on by doxygen. </p>
+<p>Contructor. This fuctiobn does ,,, </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>is a pointer to... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9f193c7b944f6c0850030ae012fbcac1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainWindow::colourR = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this holds ... </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/eeyaw4/Group20ProjectWork/QtModelLoader/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
 <li>/home/travis/build/eeyaw4/Group20ProjectWork/QtModelLoader/<a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
