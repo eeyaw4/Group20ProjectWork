@@ -1,7 +1,7 @@
 /** @file
-* This file contains the declarations of all exported functions.
+* This file contains the declarations of all functionsused in main.cpp.
 */
-/** Brief description
+/** \brief Brief description
 * This description will hopefully be picked up on by doxygen
 */
 
