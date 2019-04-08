@@ -4,10 +4,13 @@
 /** \brief Brief description
 * This description will hopefully be picked up on by doxygen
 */
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/** Contructor.
+  * This fuctiobn does ,,,
+  * @param parent is a pointer to...
+  */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     // standard call to setup Qt UI (same as previously)

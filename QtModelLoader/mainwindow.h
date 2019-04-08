@@ -49,6 +49,9 @@ namespace Ui {
 class MainWindow;
 }
 
+
+/** Class containing ...
+*/
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -65,7 +68,7 @@ public:
 
     vector<vector<float>> shapeColours;
 
-    float colourR = 0;
+    float colourR = 0;						/**< this holds ... */
     float colourG = 0;
     float colourB = 0;
 
