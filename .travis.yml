@@ -13,6 +13,7 @@ env:
     - GH_REPO_NAME: Group20ProjectWork
     - DOXYFILE: "$TRAVIS_BUILD_DIR/QtModelLoader/Doxyfile"
     - GH_REPO_REF: github.com/eeyaw4/Group20ProjectWork
+
 # The virtual machines created by Travis do not by default have doxygen
 # installed. This is fortunately not difficult on a Debian flavoured Linux
 # system.
