@@ -25,7 +25,7 @@ addons:
             - graphviz
             
 script:
-    - cd QtModelLoader\LibraryCode
+    - cd QtModelLoader/LibraryCode
     - mkdir build
     - cd build
     - cmake ..
