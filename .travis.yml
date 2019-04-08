@@ -11,7 +11,7 @@ branches:
 env:
   global:
     - GH_REPO_NAME: Group20ProjectWork
-    - DOXYFILE: "$TRAVIS_BUILD_DIR/QtModelLoader/Doxyfile"
+    - DOXYFILE: "$TRAVIS_BUILD_DIR/Doxyfile"
     - GH_REPO_REF: github.com/eeyaw4/Group20ProjectWork
 
 # The virtual machines created by Travis do not by default have doxygen
