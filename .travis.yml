@@ -25,17 +25,12 @@ addons:
             - graphviz
             
 script:
+    - doxygen Doxyfile
+    - cd $TRAVIS_BUILD_DIR
+    - chmod +x generateDocumentationAndDeploy.sh
+    - ./generateDocumentationAndDeploy.sh
     - cd QtModelLoader/LibraryCode
     - mkdir build
     - cd build
     - cmake ..
-    - make
-    - make ModelLibTest
-    - cd ..
-    - cd ..
-    - doxygen Doxyfile
-
-after_success:
-    - cd $TRAVIS_BUILD_DIR
-    - chmod +x generateDocumentationAndDeploy.sh
-    - ./generateDocumentationAndDeploy.sh
+    - make test
