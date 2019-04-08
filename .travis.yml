@@ -22,8 +22,7 @@ addons:
     apt:
         packages:
             - doxygen
-            - graphviz
-            
+            - graphviz            
 script:
     - doxygen Doxyfile
     - cd $TRAVIS_BUILD_DIR
