@@ -25,11 +25,14 @@ addons:
             - graphviz
             
 script:
+    - cd QtModelLoader\LibraryCode
     - mkdir build
     - cd build
     - cmake ..
     - make
-    - make test
+    - make ModelLibTest
+    - cd ..
+    - cd ..
     - doxygen Doxyfile
 
 after_success:
