@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
-  ['material',['Material',['../class_material.html',1,'']]],
-  ['model',['Model',['../class_model.html',1,'']]]
+  ['benchmarklooper',['BenchmarkLooper',['../class_catch_1_1_benchmark_looper.html',1,'Catch']]],
+  ['binaryexpr',['BinaryExpr',['../class_catch_1_1_binary_expr.html',1,'Catch']]]
 ];

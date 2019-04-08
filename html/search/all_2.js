@@ -1,4 +1,15 @@
 var searchData=
 [
-  ['news',['NEWS',['../md__home_travis_build_eeyaw4__group20_project_work__n_e_w_s.html',1,'']]]
+  ['capturer',['Capturer',['../class_catch_1_1_capturer.html',1,'Catch']]],
+  ['casedstring',['CasedString',['../struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string.html',1,'Catch::Matchers::StdString']]],
+  ['casesensitive',['CaseSensitive',['../struct_catch_1_1_case_sensitive.html',1,'Catch']]],
+  ['catch_5fglobal_5fnamespace_5fdummy',['Catch_global_namespace_dummy',['../struct_catch__global__namespace__dummy.html',1,'']]],
+  ['cell',['Cell',['../class_cell.html',1,'']]],
+  ['chunkgenerator',['ChunkGenerator',['../class_catch_1_1_generators_1_1_chunk_generator.html',1,'Catch::Generators']]],
+  ['colourr',['colourR',['../class_main_window.html#a9f193c7b944f6c0850030ae012fbcac1',1,'MainWindow']]],
+  ['combine',['combine',['../struct_catch_1_1combine.html',1,'Catch']]],
+  ['containselementmatcher',['ContainsElementMatcher',['../struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.html',1,'Catch::Matchers::Vector']]],
+  ['containsmatcher',['ContainsMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.html',1,'Catch::Matchers::StdString']]],
+  ['containsmatcher',['ContainsMatcher',['../struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.html',1,'Catch::Matchers::Vector']]],
+  ['counts',['Counts',['../struct_catch_1_1_counts.html',1,'Catch']]]
 ];
