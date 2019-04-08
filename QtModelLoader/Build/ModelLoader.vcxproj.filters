@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Cell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\qrc_icons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\ModelLoader_autogen\mocs_compilation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Cell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Build\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\mainwindow.ui" />
+    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\Icons\icons.qrc" />
+    <CustomBuild Include="C:\Users\pc\Documents\Year 2\Computer Group Project\Model Loader\QtModelLoader\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0CF48BDE-8B2F-39E7-B2FA-40D7905B9A32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{034E2DFC-6866-3823-AE4E-25027A5A57A2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
