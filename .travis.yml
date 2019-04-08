@@ -27,12 +27,8 @@ before_install:
     - sudo apt-get update
 install:
     - sudo apt-get install qt58base qt58svg qt58charts-no-lgpl qt58xmlpatterns
-    - source /opt/qt58/bin/qt58-env.sh
 script:
-    - mkdir QtModelLoader/Build
-    - cd QtModelLoader/Build
-    - cmake ..
-    - make
+
 # After successfully building and testing your software we give Doxygen the
 # instruction to scan the code for docstrings and generate the html output.
 # The bulk of these instructions is encapsulated in a script.
