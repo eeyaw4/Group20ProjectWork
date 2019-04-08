@@ -5,7 +5,8 @@
 /** @file
 * This file contains all functions used in the mainwindow.cpp
 */
-/** Brief description
+
+/** @Brief description
 * Details all functions that are required to make the application run
 */
 
