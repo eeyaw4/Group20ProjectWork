@@ -11,3 +11,8 @@ add_library( ModelLib
 				Vertex.h
 				Material.cpp
 				Material.h)
+				
+add_executable( ModelLibTest test.cpp tests.cpp)
+target_link_libraries (ModelLibTest ModelLib)
+
+add_test(ModelLibTest ModelLibTest)

@@ -25,6 +25,11 @@ addons:
             - graphviz
             
 script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+    - make test
     - doxygen Doxyfile
 
 after_success:
