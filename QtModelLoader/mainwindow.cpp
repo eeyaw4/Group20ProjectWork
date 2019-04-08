@@ -1,5 +1,8 @@
 /** @file
-* This file contains all functions used in the mainwindow.cpp
+* This file contains the declarations of all exported functions.
+*/
+/** Brief description
+* This description will hopefully be picked up on by doxygen
 */
 
 #include "mainwindow.h"

@@ -1,13 +1,16 @@
-/** @file
-* This file contains all functions used in the main.cpp
-*/
-
 // main.cpp-------------------------------------------------------------------
 #include <QApplication>
 #include <QSurfaceFormat>
 #include <QVTKOpenGLWidget.h>
 
 #include "mainwindow.h"
+
+/** @file
+* This file contains the declarations of all exported functions.
+*/
+/** Brief description
+* This description will hopefully be picked up on by doxygen
+*/
 
 int main( int argc, char** argv )
 {
