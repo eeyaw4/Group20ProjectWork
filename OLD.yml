@@ -10,7 +10,7 @@ branches:
 # the generated documentation.
 env:
   global:
-    - GH_REPO_NAME: H62PEP-week1
+    - GH_REPO_NAME: QtModelLoader
     - DOXYFILE: "$TRAVIS_BUILD_DIR/QtModelLoader/Doxyfile"
     - GH_REPO_REF: github.com/eeyaw4/Group20ProjectWork
 # The virtual machines created by Travis do not by default have doxygen
@@ -21,6 +21,15 @@ addons:
         packages:
             - doxygen
             - graphviz
+# Finally we define the script that Travis will run every time code is submitted
+# to the repository.
+before_install:
+    - sudo add-apt-repository ppa:beineri/opt-qt58-trusty -y
+    - sudo apt-get update
+install:
+    - sudo apt-get install qt58base qt58svg qt58charts-no-lgpl qt58xmlpatterns
+script:
+
 # After successfully building and testing your software we give Doxygen the
 # instruction to scan the code for docstrings and generate the html output.
 # The bulk of these instructions is encapsulated in a script.
