@@ -1,3 +1,7 @@
+/** @file
+* This file contains all functions used in the main.cpp
+*/
+
 // main.cpp-------------------------------------------------------------------
 #include <QApplication>
 #include <QSurfaceFormat>
