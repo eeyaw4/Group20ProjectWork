@@ -1,28 +1,38 @@
 #include "Vertex.h"
 
-// Vertex class constructor
+/**
+ * Vertex class constructor
+ */
 Vertex::~Vertex()
 {
 }
 
-// Vertex class deconstructor
+/**
+ * Vertex class deconstructor
+ */
 Vertex::Vertex()
 {
 }
 
-// Returns the VertexVector xyz saved to the vertex class
+/**
+ * Returns the VertexVector xyz saved to the vertex class
+ */
 vector<float> Vertex::getVertexVector()
 {
 	return xyz;
 }
 
-// Returns the VertexID saved to the vertex class
+/**
+ * Returns the VertexID saved to the vertex class
+ */
 int Vertex::getVertexID()
 {
 	return id;
 }
 
-// Adds a vector to the current vector stored in the Vertex class
+/**
+ * Adds a vector to the current vector stored in the Vertex class
+ */
 vector<float> Vertex::operator+(vector<float> v)
 {
 	vector<float> result;
@@ -37,7 +47,9 @@ vector<float> Vertex::operator+(vector<float> v)
 	return result;
 }
 
-// Subtracts a vector to the current vector stored in the Vertex class
+/**
+ * Subtracts a vector to the current vector stored in the Vertex class
+ */
 vector<float> Vertex::operator-(vector<float> v)
 {
 	vector<float> result;
@@ -52,7 +64,9 @@ vector<float> Vertex::operator-(vector<float> v)
 	return result;
 }
 
-// Calculates the scalar product
+/**
+ * Calculates the scalar producs
+ */
 float Vertex::operator*(vector<float> v)
 {
 	vector<float> result;
@@ -70,7 +84,9 @@ float Vertex::operator*(vector<float> v)
 	return final;
 }
 
-// Calculates the vector product
+/**
+ * Calculates the vector product
+ */
 vector<float> Vertex::operator/(vector<float> v)
 {
 	vector<float> result;
@@ -85,7 +101,9 @@ vector<float> Vertex::operator/(vector<float> v)
 	return result;
 }
 
-// Multiplies the stored vector by a float
+/**
+ * Multiplies the stored vector by a float
+ */
 vector<float> Vertex::timesByNum(float n)
 {
 	vector<float> result;
@@ -100,7 +118,9 @@ vector<float> Vertex::timesByNum(float n)
 	return result;
 }
 
-// Divides the stored vector by a float
+/**
+ * Divides the stored vector by a float
+ */
 vector<float> Vertex::divideByNum(float n)
 {
 	vector<float> result;
@@ -115,7 +135,9 @@ vector<float> Vertex::divideByNum(float n)
 	return result;
 }
 
-// Prints out stored vector id and coordinates
+/**
+ * Prints out stored vector id and coordinates
+ */
 void Vertex::print() {
 	cout << id << "[" << xyz[0] << "," << xyz[1] << "," << xyz[2] << "]" << endl;
 }

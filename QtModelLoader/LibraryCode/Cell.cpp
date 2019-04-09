@@ -1,44 +1,62 @@
 #include "Cell.h"
 
-// Cell class constructor
+/**
+ * Cell class constructor
+ */
 Cell::Cell() {
 }
 
-// Cell class deconstructor
+/**
+ * Cell class deconstructor
+ */
 Cell::~Cell() {
 }
 
-// Returns the id saved to the Cell class
+/**
+ * Returns the id saved to the Cell class
+ */
 int Cell::getCellID() {
 	return id;
 }
 
-// Returns the shape saved to the Cell class
+/**
+ *  Returns the shape saved to the Cell class
+ */
 string Cell::getCellShape() {
     return shape;
 }
 
-// Returns the material saved to the Cell class
+/**
+ * Returns the material saved to the Cell class
+ */
 int Cell::getCellMaterial() {
     return material;
 }
 
-// Returns the material class saved to the Cell class
-	Material Cell::getCellMaterialClass() {
+/**
+ * Returns the material class saved to the Cell class
+ */
+Material Cell::getCellMaterialClass() {
 	return materialClass;
 }
 
-// Returns the vertices' coordinates as a 2d array saved to the Cell class
+/**
+ * Returns the vertices' coordinates as a 2d array saved to the Cell class
+ */
 vector<vector<float>> Cell::getCellVertices() {
     return vertices;
 }
 
-// returns the ID of the vertex
+/**
+ * Returns the ID of the vertex
+ */
 vector<int> Cell::getCellVerticesID() {
 	return verticesID;
 }
 
-// Takes an average of each vertex coordinate and outputs the centre of the model
+/**
+ * Takes an average of each vertex coordinate and outputs the centre of the model
+ */
 vector<float> Cell::getCentreOfGravity() {
     int count = 0;
     if (shape == "t") {
@@ -52,7 +70,9 @@ vector<float> Cell::getCentreOfGravity() {
     return centreOfGravity;
 }
 
-// Calculates the centre of gravity using the number of vertices on the model
+/**
+ * Calculates the centre of gravity using the number of vertices on the model
+ */
 vector<float> Cell::calcCentreOfGravity(int count) {
     float Total[3] = {0};
     vector<float> xyz;
@@ -72,7 +92,9 @@ vector<float> Cell::calcCentreOfGravity(int count) {
     return xyz;
 }
 
-// Calculates the volume of the model by what shape it has
+/**
+ * Calculates the volume of the model by what shape it has
+ */
 float Cell::getVolume() {
     if (shape == "t") {
         volume = calcTetrahedronVolume();
@@ -84,18 +106,18 @@ float Cell::getVolume() {
     return volume;
 }
 
-// Calculates volume of a tetrahedron
-float Cell::calcTetrahedronVolume() {
-/* To calculate the volume of a tetrahedron:
- * V = 1/6 * |((A - D) * (B - D)) . (C - D)|
+/**
+ * Calculates volume of a tetrahedron
+ *
+ *  V = 1/6 * |((A - D) * (B - D)) . (C - D)|
+ *
+ * (x4-x1)[(y2-y1)(z3-z1) - (z2-z1)(y3-y1)] +
+ * (y4-y1)[(z2-z1)(x3-x1) - (x2-x1)(z3-z1)] +
+ * (z4-z1)[(x2-x1)(y3-y1) - (y2-y1)(x3-x1)]
+ * _______________________________________
+ *                   6
  */
-    /*
-     * (x4-x1)[(y2-y1)(z3-z1) - (z2-z1)(y3-y1)] +
-     * (y4-y1)[(z2-z1)(x3-x1) - (x2-x1)(z3-z1)] +
-     * (z4-z1)[(x2-x1)(y3-y1) - (y2-y1)(x3-x1)]
-     * _______________________________________
-     *                   6
-     */
+float Cell::calcTetrahedronVolume() {
     Vertex A, B, C, D;
     // Variable to store base area
     float total;
@@ -117,16 +139,17 @@ float Cell::calcTetrahedronVolume() {
     return volume;
 }
 
-// Calculates volume of a hexahedron using pyramids
+/**
+ * Calculate hexahedron volume from 3 pyramids about the same apex
+ *
+ * Hexahedron 0,1,2,3,4,5,6,7 Apex 7
+ * Pyramid 1: 0,1,2,3,7
+ * Pyramid 2: 0,1,4,5,7
+ * Pyramid 3: 1,2,5,6,7
+ * Add volumes together
+ */
 float Cell::calcHexahedronVolume()
 {
-    /* Calculate hexahedron volume from 3 pyramids about the same apex
-     * Hexahedron 0,1,2,3,4,5,6,7 Apex 7
-     * Pyramid 1: 0,1,2,3,7
-     * Pyramid 2: 0,1,4,5,7
-     * Pyramid 3: 1,2,5,6,7
-     * Add volumes together
-     */
     Cell P;
     float volume = 0;
     for (int i = 0; i < 4; i++)
@@ -147,16 +170,16 @@ float Cell::calcHexahedronVolume()
     return volume;
 }
 
-// Calculates volume of 5 vertex
+/** To calculate the volume of a pyramid:
+ * Volume of 2 tetrahedrons of either side of a common apex
+ *
+ * Pyramid 0, 1, 2, 3, 4, apex at 4
+ * Tetrahedron 1: 0, 1, 3, 4
+ * Tetrahedron 2: 1, 2, 3, 4
+ * Add volumes together
+*/
 float Cell::calcPyramidVolume()
 {
-    /* To calculate the volume of a pyramid:
-     * Volume of 2 tetrahedrons of either side of the apex
-     * Pyramid 0, 1, 2, 3, 4, apex at 4
-     * Tetrahedron 1: 0, 1, 3, 4
-     * Tetrahedron 2: 1, 2, 3, 4
-     * Add volumes together
-    */
     float volume = 0;
     Cell T;
     T.vertices.push_back(vertices[0]);
@@ -172,10 +195,14 @@ float Cell::calcPyramidVolume()
     return volume;
 }
 
-// Uses volume to calculate the weight of the model
+/**
+ * Uses volume to calculate the weight of the model
+ *
+ * Weight = Density x Volume
+ */
 float Cell::getWeight()
 {
-    /*  Weight = Density x Volume */
+
     float density = (float)materialClass.getMaterialDensity();
     float volume = this->getVolume();
     float weight = volume * density;

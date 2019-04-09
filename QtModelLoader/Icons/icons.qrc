@@ -5,7 +5,14 @@
     <file>fileopen.png</file>
     <file>filesave.png</file>
     <file>print.png</file>
-
+	<file>Folder-icon.png</file>
+	<file>Folder-Add.ico</file>
+	
+	<!-- Editing -->
+	<file>colours.png</file>
+	<file>Objects.ico</file>
+	<file>Cross section</file>
+	
     <!-- Help -->
     <file>help.png</file>
   </qresource>

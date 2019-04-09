@@ -1,15 +1,15 @@
 /** @file
 * This file contains the declarations of all functionsused in main.cpp.
 */
-/** \brief Brief description
-* This description will hopefully be picked up on by doxygen
+/** \brief Mainwindow
+* This file handles all functions used by the UI interactions and the VTK display
 */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-/** Contructor.
-  * This fuctiobn does ,,,
-  * @param parent is a pointer to...
+/**
+  * Constructor
+  * Initialises the VTK components and the UI
   */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -34,11 +34,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         renderer->GetActiveCamera()->Elevation(-20);
 }
 
+/**
+ * Deconstructor
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/**
+ * Load a model from the proprietry format
+ */
 void MainWindow::loadModel(string fileName)
 {
     Model Data;
@@ -110,6 +116,9 @@ void MainWindow::loadModel(string fileName)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * load a model from an STL format
+ */
 void MainWindow::stlRender(QString fileName)
 {
       reader->SetFileName(fileName.toLatin1().data());
@@ -152,6 +161,11 @@ void MainWindow::stlRender(QString fileName)
       ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * Displays pyramid from vectors
+ * @param pos - a 2d vector array storing the XYZ coordinates of each point in the shape
+ * @param c - stores Cell data
+ */
 void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -196,6 +210,11 @@ void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
     actors.push_back(actor);
 }
 
+/**
+ * Displays Tetrahedron from vectors
+ * @param pos - a 2d vector array storing the XYZ coordinates of each point in the shape
+ * @param c - stores Cell data
+ */
 void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
 {
     vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -233,6 +252,11 @@ void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
     actors.push_back(actor);
 }
 
+/**
+ * Displays Hexahedron from vectors
+ * @param pos - a 2d vector array storing the XYZ coordinates of each point in the shape
+ * @param c - stores Cell data
+ */
 void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
 {
       // Create the points.
@@ -284,6 +308,11 @@ void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
       actors.push_back(actor);
 }
 
+/**
+ * Fetches the RGB values of a colour
+ * @param c - Colour of the material of the model
+ * @return - returns colour value
+ */
 vector<float> MainWindow::getRGB(string c)
 {
     vector<float> RGB;
@@ -309,6 +338,10 @@ vector<float> MainWindow::getRGB(string c)
 
 }
 
+/**
+ * Resets colours to default value
+ * Either material colours or default value
+ */
 void MainWindow::resetColours(void)
 {
     ui->spinR->setValue(0);
@@ -332,6 +365,10 @@ void MainWindow::resetColours(void)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * Applies shrink filter
+ * @param value - %age based value of intensity of the filter
+ */
 void MainWindow::shrinkFilterUpdate(int value)
 {
         for(int i = 0;i < shrinks.size();i++)
@@ -343,6 +380,9 @@ void MainWindow::shrinkFilterUpdate(int value)
         ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * @brief Allows aspects of the UI to be interacted with
+ */
 void MainWindow::buttonsOn(void)
 {
     ui->tabWidget->setCurrentIndex(0);
@@ -356,6 +396,9 @@ void MainWindow::buttonsOn(void)
     ui->lblShrink->setNum(1);
 }
 
+/**
+ * @brief Prevents aspects of the UI to be interacted with
+ */
 void MainWindow::buttonsOff(void)
 {
     ui->tabWidget->setCurrentIndex(0);
@@ -372,6 +415,10 @@ void MainWindow::buttonsOff(void)
     ui->lblShrink->setNum(1);
 }
 
+/**
+ * @brief Changes colour of model when slider is changed
+ * @param position - 0-255 value of red
+ */
 void MainWindow::on_slideR_valueChanged(int position)
 {
     colourR = float(position)/100;
@@ -384,6 +431,10 @@ void MainWindow::on_slideR_valueChanged(int position)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * @brief Changes colour of model when slider is changed
+ * @param position - 0-255 value of green
+ */
 void MainWindow::on_slideG_valueChanged(int position)
 {
     colourG = float(position)/100;
@@ -395,6 +446,10 @@ void MainWindow::on_slideG_valueChanged(int position)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * @brief Changes colour of model when slider is changed
+ * @param position - 0-255 value of blue
+ */
 void MainWindow::on_slideB_valueChanged(int position)
 {
     colourB = float(position)/100;
@@ -407,6 +462,9 @@ void MainWindow::on_slideB_valueChanged(int position)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * @brief Opens dialog box to search for STL file and loads it
+ */
 void MainWindow::on_loadSTLButton_clicked()
 {
     for(vtkSmartPointer<vtkActor> l : actors)
@@ -430,6 +488,9 @@ void MainWindow::on_loadSTLButton_clicked()
     resetColours();
 }
 
+/**
+ * @brief Opens dialog box to search for proprietry model file and loads it
+ */
 void MainWindow::on_loadModelButton_clicked()
 {
     for(vtkSmartPointer<vtkActor> l : actors)
@@ -455,11 +516,18 @@ void MainWindow::on_loadModelButton_clicked()
     resetColours();
 }
 
+/**
+ * @brief Restores default colours when button is clicked
+ */
 void MainWindow::on_resetColourButton_clicked()
 {
     resetColours();
 }
 
+/**
+ * @brief Changes colour of model when text box is changed
+ * @param value - 0-255 value of red
+ */
 void MainWindow::on_spinR_valueChanged(int value)
 {
     ui->slideR->setValue(value);
@@ -472,6 +540,10 @@ void MainWindow::on_spinR_valueChanged(int value)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+/**
+ * @brief Changes colour of model when text box is changed
+ * @param value - 0-255 value of green
+ */
 void MainWindow::on_spinG_valueChanged(int value)
 {
     ui->slideG->setValue(value);
@@ -484,7 +556,10 @@ void MainWindow::on_spinG_valueChanged(int value)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
-
+/**
+ * @brief Changes colour of model when text box is changed
+ * @param value - 0-255 value of blue
+ */
 void MainWindow::on_spinB_valueChanged(int value)
 {
     ui->slideB->setValue(value);
@@ -497,14 +572,16 @@ void MainWindow::on_spinB_valueChanged(int value)
     ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
-
+/**
+ * @brief Changes colour of model based on a pop-out window selector
+ */
 void MainWindow::on_btnModelColour_clicked()
 {
     QColor color = QColorDialog::getColor(Qt::green,this);
 
         if(color.isValid()) {
             int red, blue, green;
-            color.getRgb(&red, &green, &blue);
+            color.getRGB(&red, &green, &blue);
             colourR = (float)(red / 100);
             colourG = (float)(green / 100);
             colourB = (float)(blue / 100);
@@ -521,6 +598,9 @@ void MainWindow::on_btnModelColour_clicked()
         }
 }
 
+/**
+ * @brief Changes colour of Background based on pop-out window selector
+ */
 void MainWindow::on_btnBGColour_clicked()
 {
     QColor color = QColorDialog::getColor(Qt::green,this);
@@ -528,12 +608,16 @@ void MainWindow::on_btnBGColour_clicked()
         if(color.isValid())
         {
             int red, blue, green;
-            color.getRgb(&red, &green, &blue);
+            color.getRGB(&red, &green, &blue);
             renderer->SetBackground((float)(red / 100),(float)(green / 100),(float)(blue / 100));
             ui->qvtkWidget->GetRenderWindow()->Render();
         }
 }
 
+/**
+ * @brief Toggles use of shrink filter from a check box
+ * @param arg1 - State of checkbox
+ */
 void MainWindow::on_checkShrink_stateChanged(int arg1)
 {
     ui->slideShrink->setValue(0);
@@ -549,12 +633,10 @@ void MainWindow::on_checkShrink_stateChanged(int arg1)
     }
 }
 
+/**
+ * @brief Applies %age of shrink filter based on slider value
+ */
 void MainWindow::on_slideShrink_sliderReleased()
 {
     shrinkFilterUpdate(ui->slideShrink->value());
-}
-
-void MainWindow::on_checkCS_stateChanged(int arg1)
-{
-
 }

@@ -50,7 +50,8 @@ class MainWindow;
 }
 
 
-/** Class containing ...
+/** Class containing Mainwindow settings, with values for global variables required by different functions
+ * and aspects of the UI
 */
 class MainWindow : public QMainWindow
 {
@@ -68,9 +69,9 @@ public:
 
     vector<vector<float>> shapeColours;
 
-    float colourR = 0;						/**< this holds ... */
-    float colourG = 0;
-    float colourB = 0;
+    float colourR = 0;						/**< This holds the RGB value of red */
+    float colourG = 0;                                          /**< This holds the RGB value of green */
+    float colourB = 0;                                          /**< This holds the RGB value of blue */
 
     vtkSmartPointer<vtkSTLReader> reader = vtkSmartPointer<vtkSTLReader>::New();
 
@@ -100,10 +101,7 @@ private slots:
 
     void on_checkCS_stateChanged(int arg1);
 
-
     void on_slideShrink_sliderReleased();
-
-    void on_checkShrink_stateChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

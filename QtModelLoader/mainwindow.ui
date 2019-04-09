@@ -712,21 +712,44 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionFileOpen"/>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>Open</string>
+     </property>
+     <addaction name="actionLoad_STL_File"/>
+     <addaction name="actionLoad_Model_File"/>
+    </widget>
+    <addaction name="menuOpen"/>
     <addaction name="actionFileSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
+   </widget>
+   <widget class="QMenu" name="menuShape">
+    <property name="title">
+     <string>Shape</string>
+    </property>
+    <widget class="QMenu" name="menuColour">
+     <property name="title">
+      <string>Colour</string>
+     </property>
+     <addaction name="actionModel_Colour"/>
+     <addaction name="actionBackground_Colour"/>
+    </widget>
+    <widget class="QMenu" name="menuFilters">
+     <property name="title">
+      <string>Filters</string>
+     </property>
+     <addaction name="actionShrink_Filter"/>
+    </widget>
+    <addaction name="actionInformation"/>
+    <addaction name="menuColour"/>
+    <addaction name="actionCross"/>
+    <addaction name="menuFilters"/>
    </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuShape"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionFileOpen">
-   <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
-   </property>
-   <property name="text">
-    <string>Open</string>
-   </property>
-  </action>
   <action name="actionFileSave">
    <property name="icon">
     <iconset resource="Icons/icons.qrc">
@@ -736,22 +759,70 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionHelp">
+  <action name="actionCross_Section">
    <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/help.png</normaloff>:/Icons/help.png</iconset>
+    <iconset>
+     <normaloff>Icons/Cross section.png</normaloff>Icons/Cross section.png</iconset>
    </property>
    <property name="text">
-    <string>Help</string>
+    <string>Cross Section</string>
+   </property>
+  </action>
+  <action name="actionFilters">
+   <property name="text">
+    <string>Filters</string>
+   </property>
+  </action>
+  <action name="actionInformation">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Objects.ico</normaloff>Icons/Objects.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Information</string>
+   </property>
+  </action>
+  <action name="actionCross">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Cross section.png</normaloff>Icons/Cross section.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cross Section</string>
    </property>
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/print.png</normaloff>:/Icons/print.png</iconset>
+    <iconset>
+     <normaloff>Icons/print.png</normaloff>Icons/print.png</iconset>
    </property>
    <property name="text">
     <string>Print</string>
+   </property>
+  </action>
+  <action name="actionModel_Colour">
+   <property name="text">
+    <string>Model Colour</string>
+   </property>
+  </action>
+  <action name="actionBackground_Colour">
+   <property name="text">
+    <string>Background Colour</string>
+   </property>
+  </action>
+  <action name="actionShrink_Filter">
+   <property name="text">
+    <string>Shrink Filter</string>
+   </property>
+  </action>
+  <action name="actionLoad_STL_File">
+   <property name="text">
+    <string>Load STL File</string>
+   </property>
+  </action>
+  <action name="actionLoad_Model_File">
+   <property name="text">
+    <string>Load Model File</string>
    </property>
   </action>
  </widget>
