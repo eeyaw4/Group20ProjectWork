@@ -581,7 +581,7 @@ void MainWindow::on_btnModelColour_clicked()
 
         if(color.isValid()) {
             int red, blue, green;
-            color.getRGB(&red, &green, &blue);
+            color.getRgb(&red, &green, &blue);
             colourR = (float)(red / 100);
             colourG = (float)(green / 100);
             colourB = (float)(blue / 100);
@@ -608,7 +608,7 @@ void MainWindow::on_btnBGColour_clicked()
         if(color.isValid())
         {
             int red, blue, green;
-            color.getRGB(&red, &green, &blue);
+            color.getRgb(&red, &green, &blue);
             renderer->SetBackground((float)(red / 100),(float)(green / 100),(float)(blue / 100));
             ui->qvtkWidget->GetRenderWindow()->Render();
         }
@@ -639,4 +639,9 @@ void MainWindow::on_checkShrink_stateChanged(int arg1)
 void MainWindow::on_slideShrink_sliderReleased()
 {
     shrinkFilterUpdate(ui->slideShrink->value());
+}
+
+void MainWindow::on_checkCS_stateChanged(int arg1)
+{
+
 }

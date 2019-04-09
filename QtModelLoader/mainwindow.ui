@@ -30,7 +30,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QVTKOpenGLWidget" name="qvtkWidget">
+       <widget class="QVTKOpenGLWidget" name="qvtkWidget" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -716,6 +716,10 @@
      <property name="title">
       <string>Open</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
+     </property>
      <addaction name="actionLoad_STL_File"/>
      <addaction name="actionLoad_Model_File"/>
     </widget>
@@ -732,12 +736,20 @@
      <property name="title">
       <string>Colour</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
+     </property>
      <addaction name="actionModel_Colour"/>
      <addaction name="actionBackground_Colour"/>
     </widget>
     <widget class="QMenu" name="menuFilters">
      <property name="title">
       <string>Filters</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
      </property>
      <addaction name="actionShrink_Filter"/>
     </widget>
@@ -762,7 +774,7 @@
   <action name="actionCross_Section">
    <property name="icon">
     <iconset>
-     <normaloff>Icons/Cross section.png</normaloff>Icons/Cross section.png</iconset>
+     <normaloff>:/Icons/Cross section.png</normaloff>:/Icons/Cross section.png</iconset>
    </property>
    <property name="text">
     <string>Cross Section</string>
@@ -776,7 +788,7 @@
   <action name="actionInformation">
    <property name="icon">
     <iconset>
-     <normaloff>Icons/Objects.ico</normaloff>Icons/Objects.ico</iconset>
+     <normaloff>:/Icons/Objects.ico</normaloff>:/Icons/Objects.ico</iconset>
    </property>
    <property name="text">
     <string>Information</string>
@@ -785,7 +797,7 @@
   <action name="actionCross">
    <property name="icon">
     <iconset>
-     <normaloff>Icons/Cross section.png</normaloff>Icons/Cross section.png</iconset>
+     <normaloff>:/Icons/Cross section.png</normaloff>:/Icons/Cross section.png</iconset>
    </property>
    <property name="text">
     <string>Cross Section</string>
@@ -794,7 +806,7 @@
   <action name="actionPrint">
    <property name="icon">
     <iconset>
-     <normaloff>Icons/print.png</normaloff>Icons/print.png</iconset>
+     <normaloff>:/Icons/print.png</normaloff>:/Icons/print.png</iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -829,8 +841,8 @@
  <customwidgets>
   <customwidget>
    <class>QVTKOpenGLWidget</class>
-   <extends>QOpenGLWidget</extends>
-   <header>qvtkopenglwidget.h</header>
+   <extends>QWidget</extends>
+   <header>QVTKOpenGLWidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>

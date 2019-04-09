@@ -103,6 +103,8 @@ private slots:
 
     void on_slideShrink_sliderReleased();
 
+    void on_checkShrink_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     void PyramidRender(vector<vector<float>> position,vector<float> c);

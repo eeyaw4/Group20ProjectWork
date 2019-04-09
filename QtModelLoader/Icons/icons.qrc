@@ -8,10 +8,12 @@
 	<file>Folder-icon.png</file>
 	<file>Folder-Add.ico</file>
 	
+	
 	<!-- Editing -->
 	<file>colours.png</file>
 	<file>Objects.ico</file>
-	<file>Cross section</file>
+	<file>Cross section.png</file>
+	<file>filter.png</file>
 	
     <!-- Help -->
     <file>help.png</file>
