@@ -2,6 +2,7 @@ var searchData=
 [
   ['on_5fbtnbgcolour_5fclicked',['on_btnBGColour_clicked',['../class_main_window.html#a661e714cf0fcac5cc3cb9b37202d8fbf',1,'MainWindow']]],
   ['on_5fbtnmodelcolour_5fclicked',['on_btnModelColour_clicked',['../class_main_window.html#ae3155bfdbc6215d4a7605a5786acbb1c',1,'MainWindow']]],
+  ['on_5fcheckshrink_5fstatechanged',['on_checkShrink_stateChanged',['../class_main_window.html#a7f4b99b98ecbfacaaed517a6e4bb40be',1,'MainWindow']]],
   ['on_5floadmodelbutton_5fclicked',['on_loadModelButton_clicked',['../class_main_window.html#a1c3ccddad7f99d3124964dec9c8651a4',1,'MainWindow']]],
   ['on_5floadstlbutton_5fclicked',['on_loadSTLButton_clicked',['../class_main_window.html#afa2e37389833d248802051bd15722760',1,'MainWindow']]],
   ['on_5fresetcolourbutton_5fclicked',['on_resetColourButton_clicked',['../class_main_window.html#a409affcb190a68001079feb5765176be',1,'MainWindow']]],
