@@ -141,6 +141,12 @@ vector&lt; vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign=
 <tr class="separator:a78acf3db19ede6d27755b09f2d03b113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5505e9377603c33e070841fef2707cfc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5505e9377603c33e070841fef2707cfc">colourB</a> = 0</td></tr>
 <tr class="separator:a5505e9377603c33e070841fef2707cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230c7bd256bb761cb4559df8f5376f54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a230c7bd256bb761cb4559df8f5376f54"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>modFileLoaded</b> = false</td></tr>
+<tr class="separator:a230c7bd256bb761cb4559df8f5376f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bfbb067684eabd3b3e17cd5d3d2fefb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bfbb067684eabd3b3e17cd5d3d2fefb"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>modelFile</b></td></tr>
+<tr class="separator:a9bfbb067684eabd3b3e17cd5d3d2fefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9de6c5cd3d77a5ae9be169f06152607"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9de6c5cd3d77a5ae9be169f06152607"></a>
 vtkSmartPointer&lt; vtkSTLReader &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>reader</b> = vtkSmartPointer&lt;vtkSTLReader&gt;::New()</td></tr>
 <tr class="separator:af9de6c5cd3d77a5ae9be169f06152607"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,9 +191,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a661e714cf0fcac5cc3cb9b37202d8fbf">on_btnBGColour_clicked</a> ()</td></tr>
 <tr class="memdesc:a661e714cf0fcac5cc3cb9b37202d8fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes colour of Background based on pop-out window selector. <br/></td></tr>
 <tr class="separator:a661e714cf0fcac5cc3cb9b37202d8fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2be88312ebe15da4fee6884bc322cf53"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2be88312ebe15da4fee6884bc322cf53"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_checkCS_stateChanged</b> (int arg1)</td></tr>
-<tr class="separator:a2be88312ebe15da4fee6884bc322cf53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd6066ffdd7482ee28a8f1775f09273"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6dd6066ffdd7482ee28a8f1775f09273"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a6dd6066ffdd7482ee28a8f1775f09273">on_slideShrink_sliderReleased</a> ()</td></tr>
 <tr class="memdesc:a6dd6066ffdd7482ee28a8f1775f09273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies age of shrink filter based on slider value. <br/></td></tr>
@@ -195,6 +198,36 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a7f4b99b98ecbfacaaed517a6e4bb40be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7f4b99b98ecbfacaaed517a6e4bb40be">on_checkShrink_stateChanged</a> (int arg1)</td></tr>
 <tr class="memdesc:a7f4b99b98ecbfacaaed517a6e4bb40be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles use of shrink filter from a check box.  <a href="#a7f4b99b98ecbfacaaed517a6e4bb40be">More...</a><br/></td></tr>
 <tr class="separator:a7f4b99b98ecbfacaaed517a6e4bb40be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3270e2e1ba17bc18067b8dc66869292e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3270e2e1ba17bc18067b8dc66869292e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionLoad_STL_File_triggered</b> ()</td></tr>
+<tr class="separator:a3270e2e1ba17bc18067b8dc66869292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6702ec6155f3fc7ecae7b2622bb41a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc6702ec6155f3fc7ecae7b2622bb41a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionLoad_Model_File_triggered</b> ()</td></tr>
+<tr class="separator:abc6702ec6155f3fc7ecae7b2622bb41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e8b512c269106a2f2e152cf949b5ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85e8b512c269106a2f2e152cf949b5ee"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionFileSave_triggered</b> ()</td></tr>
+<tr class="separator:a85e8b512c269106a2f2e152cf949b5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19630fdbc2200629fc062e63503c1ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19630fdbc2200629fc062e63503c1ca5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionInformation_triggered</b> ()</td></tr>
+<tr class="separator:a19630fdbc2200629fc062e63503c1ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41654f30b1c099e05965d0d354968b82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41654f30b1c099e05965d0d354968b82"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionModel_Colour_triggered</b> ()</td></tr>
+<tr class="separator:a41654f30b1c099e05965d0d354968b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff7aa78589a2bf68de58320edccc7b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adff7aa78589a2bf68de58320edccc7b7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionBackground_Colour_triggered</b> ()</td></tr>
+<tr class="separator:adff7aa78589a2bf68de58320edccc7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af544f44c73e8aab48b660423001a51b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af544f44c73e8aab48b660423001a51b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionCross_triggered</b> ()</td></tr>
+<tr class="separator:af544f44c73e8aab48b660423001a51b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198d435d98be0009c5f307188525ba70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a198d435d98be0009c5f307188525ba70"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_actionShrink_Filter_triggered</b> ()</td></tr>
+<tr class="separator:a198d435d98be0009c5f307188525ba70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4317c2c82922b1d4d9cc53dd05a9f890"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4317c2c82922b1d4d9cc53dd05a9f890"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_checkClip_stateChanged</b> (int arg1)</td></tr>
+<tr class="separator:a4317c2c82922b1d4d9cc53dd05a9f890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccdd4dea00494404aa1931e71ef39fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ccdd4dea00494404aa1931e71ef39fa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_slideClip_sliderMoved</b> (int position)</td></tr>
+<tr class="separator:a7ccdd4dea00494404aa1931e71ef39fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
