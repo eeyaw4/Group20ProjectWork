@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>9</y>
+      <y>0</y>
       <width>641</width>
       <height>541</height>
      </rect>
@@ -78,7 +78,7 @@
     <addaction name="actionBackground_colour"/>
     <addaction name="separator"/>
     <addaction name="actionCross_Section"/>
-    <addaction name="actionmeasure"/>
+    <addaction name="actionFilter"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -96,7 +96,7 @@
    <addaction name="actioncolour"/>
    <addaction name="actionBackground_colour"/>
    <addaction name="actionCross_Section"/>
-   <addaction name="actionmeasure"/>
+   <addaction name="actionFilter"/>
    <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -110,18 +110,6 @@
    </property>
    <property name="toolTip">
     <string>Add model</string>
-   </property>
-  </action>
-  <action name="actionmeasure">
-   <property name="icon">
-    <iconset resource="resources.qrc">
-     <normaloff>:/images/icon/Measure icon.png</normaloff>:/images/icon/Measure icon.png</iconset>
-   </property>
-   <property name="text">
-    <string>Measure</string>
-   </property>
-   <property name="toolTip">
-    <string>Measurements</string>
    </property>
   </action>
   <action name="actionCross_Section">
@@ -167,6 +155,15 @@
    </property>
    <property name="text">
     <string>Save</string>
+   </property>
+  </action>
+  <action name="actionFilter">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/icon/filter.png</normaloff>:/images/icon/filter.png</iconset>
+   </property>
+   <property name="text">
+    <string>Filter</string>
    </property>
   </action>
  </widget>

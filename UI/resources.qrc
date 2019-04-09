@@ -7,5 +7,6 @@
         <file>icon/colours.png</file>
         <file>icon/Save.ico</file>
         <file>icon/Objects.ico</file>
+        <file>icon/filter.png</file>
     </qresource>
 </RCC>
