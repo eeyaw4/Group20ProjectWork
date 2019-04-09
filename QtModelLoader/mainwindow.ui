@@ -717,7 +717,7 @@
       <string>Open</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="Icons/icons.qrc">
        <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
      </property>
      <addaction name="actionLoad_STL_File"/>
@@ -725,8 +725,6 @@
     </widget>
     <addaction name="menuOpen"/>
     <addaction name="actionFileSave"/>
-    <addaction name="separator"/>
-    <addaction name="actionPrint"/>
    </widget>
    <widget class="QMenu" name="menuShape">
     <property name="title">
@@ -737,7 +735,7 @@
       <string>Colour</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="Icons/icons.qrc">
        <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
      </property>
      <addaction name="actionModel_Colour"/>
@@ -748,10 +746,11 @@
       <string>Filters</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="Icons/icons.qrc">
        <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
      </property>
      <addaction name="actionShrink_Filter"/>
+     <addaction name="actionCross_Section_Filter"/>
     </widget>
     <addaction name="actionInformation"/>
     <addaction name="menuColour"/>
@@ -773,7 +772,7 @@
   </action>
   <action name="actionCross_Section">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/Cross section.png</normaloff>:/Icons/Cross section.png</iconset>
    </property>
    <property name="text">
@@ -787,7 +786,7 @@
   </action>
   <action name="actionInformation">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/Objects.ico</normaloff>:/Icons/Objects.ico</iconset>
    </property>
    <property name="text">
@@ -796,7 +795,7 @@
   </action>
   <action name="actionCross">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/Cross section.png</normaloff>:/Icons/Cross section.png</iconset>
    </property>
    <property name="text">
@@ -805,7 +804,7 @@
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/print.png</normaloff>:/Icons/print.png</iconset>
    </property>
    <property name="text">
@@ -813,28 +812,57 @@
    </property>
   </action>
   <action name="actionModel_Colour">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
+   </property>
    <property name="text">
     <string>Model Colour</string>
    </property>
   </action>
   <action name="actionBackground_Colour">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
+   </property>
    <property name="text">
     <string>Background Colour</string>
    </property>
   </action>
   <action name="actionShrink_Filter">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
+   </property>
    <property name="text">
     <string>Shrink Filter</string>
    </property>
   </action>
   <action name="actionLoad_STL_File">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
+   </property>
    <property name="text">
     <string>Load STL File</string>
    </property>
   </action>
   <action name="actionLoad_Model_File">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
+   </property>
    <property name="text">
     <string>Load Model File</string>
+   </property>
+  </action>
+  <action name="actionCross_Section_Filter">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cross Section Filter</string>
    </property>
   </action>
  </widget>
