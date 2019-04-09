@@ -122,6 +122,10 @@ vector&lt; vtkSmartPointer<br class="typebreak"/>
 vector&lt; vtkSmartPointer<br class="typebreak"/>
 &lt; vtkShrinkFilter &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shrinks</b></td></tr>
 <tr class="separator:a02ee8856359d0195a638616572235e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac312009301095a118de6614ddfcfd0dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac312009301095a118de6614ddfcfd0dd"></a>
+vector&lt; vtkSmartPointer<br class="typebreak"/>
+&lt; vtkClipDataSet &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>clipFilters</b></td></tr>
+<tr class="separator:ac312009301095a118de6614ddfcfd0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc5e5907e4c37592740ac760888c9190"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc5e5907e4c37592740ac760888c9190"></a>
 vtkSmartPointer&lt; vtkNamedColors &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>colours</b></td></tr>
 <tr class="separator:abc5e5907e4c37592740ac760888c9190"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +136,9 @@ vtkSmartPointer&lt; vtkRenderer &gt;&#160;</td><td class="memItemRight" valign="
 vtkNew<br class="typebreak"/>
 &lt; vtkGenericOpenGLRenderWindow &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>renderWindow</b></td></tr>
 <tr class="separator:a7a944a6de69f310dca8e660df2e4fc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f98e98f0629360d56c2fc95aa7cf74"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9f98e98f0629360d56c2fc95aa7cf74"></a>
+vtkSmartPointer&lt; vtkPlane &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>planeLeft</b></td></tr>
+<tr class="separator:ac9f98e98f0629360d56c2fc95aa7cf74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5bb5307fbb045d0d469ac19679bfc8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5bb5307fbb045d0d469ac19679bfc8a"></a>
 vector&lt; vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shapeColours</b></td></tr>
 <tr class="separator:ad5bb5307fbb045d0d469ac19679bfc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,9 +267,9 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a6ba016c8938b57abb3fbab81cf6bafc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ef4d77beccf642d6a0b1883721d416c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0ef4d77beccf642d6a0b1883721d416c">shrinkFilterUpdate</a> (int value)</td></tr>
 <tr class="separator:a0ef4d77beccf642d6a0b1883721d416c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e51d42d9c5bba9b840e23a938a0897a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e51d42d9c5bba9b840e23a938a0897a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ClippingUpdate</b> (int value)</td></tr>
-<tr class="separator:a7e51d42d9c5bba9b840e23a938a0897a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666ea412ce5e0b08a48feb5284be9ba3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a666ea412ce5e0b08a48feb5284be9ba3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clipFilterUpdate</b> (int x, int y, int z)</td></tr>
+<tr class="separator:a666ea412ce5e0b08a48feb5284be9ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae94499010d8a03727877dbb714f09b8a"><td class="memItemLeft" align="right" valign="top">vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae94499010d8a03727877dbb714f09b8a">getRGB</a> (string c)</td></tr>
 <tr class="separator:ae94499010d8a03727877dbb714f09b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaedb9ce0f1f0671b588f2bf216748ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaaedb9ce0f1f0671b588f2bf216748ed"></a>
