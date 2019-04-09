@@ -1,6 +1,7 @@
 # .travis.ylm
 # Modified travis script that generates and submits doxygen documentation
-sudo: false
+sudo: required
+# sudo: false
 language: cpp
 branches:
     except:
