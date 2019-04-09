@@ -1,3 +1,5 @@
+#include "catch.hpp"
+
 #include "Model.h"
 
 int main()
