@@ -4,7 +4,7 @@ bool testFail = false;
 
 int main()
 {
-	/*Model testModel;
+	Model testModel;
 	testModel.readFile("../ExampleModel1.MOD");
 	
 	vector<float> testVector;
@@ -33,7 +33,7 @@ int main()
 	{
 		testFail = true;
 	}	
-	else if (testModel.vertexID != 6 )
+	/* else if (testModel.vertexID != 6 )
 	{
 		testFail = true;
 	}
