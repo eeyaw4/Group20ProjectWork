@@ -15,9 +15,9 @@ var searchData=
   ['matcheruntypedbase',['MatcherUntypedBase',['../class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.html',1,'Catch::Matchers::Impl']]],
   ['matchexpr',['MatchExpr',['../class_catch_1_1_match_expr.html',1,'Catch']]],
   ['matchnotof',['MatchNotOf',['../struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.html',1,'Catch::Matchers::Impl']]],
-  ['material',['Material',['../class_material.html',1,'']]],
+  ['material',['Material',['../class_material.html',1,'Material'],['../class_material.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()']]],
   ['messagebuilder',['MessageBuilder',['../struct_catch_1_1_message_builder.html',1,'Catch']]],
   ['messageinfo',['MessageInfo',['../struct_catch_1_1_message_info.html',1,'Catch']]],
   ['messagestream',['MessageStream',['../struct_catch_1_1_message_stream.html',1,'Catch']]],
-  ['model',['Model',['../class_model.html',1,'']]]
+  ['model',['Model',['../class_model.html',1,'Model'],['../class_model.html#ae3b375de5f6df4faf74a95d64748e048',1,'Model::Model()']]]
 ];

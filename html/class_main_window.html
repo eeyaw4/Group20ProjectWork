@@ -104,8 +104,10 @@ Inheritance diagram for MainWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a> (QWidget *parent=0)</td></tr>
-<tr class="memdesc:a8b244be8b7b7db1b08de2a2acb9409db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief description This description will hopefully be picked up on by doxygen.  <a href="#a8b244be8b7b7db1b08de2a2acb9409db">More...</a><br/></td></tr>
+<tr class="memdesc:a8b244be8b7b7db1b08de2a2acb9409db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mainwindow This file handles all functions used by the UI interactions and the VTK display.  <a href="#a8b244be8b7b7db1b08de2a2acb9409db">More...</a><br/></td></tr>
 <tr class="separator:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -132,18 +134,16 @@ vector&lt; vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign=
 <tr class="separator:ad5bb5307fbb045d0d469ac19679bfc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f193c7b944f6c0850030ae012fbcac1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9f193c7b944f6c0850030ae012fbcac1">colourR</a> = 0</td></tr>
 <tr class="separator:a9f193c7b944f6c0850030ae012fbcac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78acf3db19ede6d27755b09f2d03b113"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78acf3db19ede6d27755b09f2d03b113"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>colourG</b> = 0</td></tr>
+<tr class="memitem:a78acf3db19ede6d27755b09f2d03b113"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a78acf3db19ede6d27755b09f2d03b113">colourG</a> = 0</td></tr>
 <tr class="separator:a78acf3db19ede6d27755b09f2d03b113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5505e9377603c33e070841fef2707cfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5505e9377603c33e070841fef2707cfc"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>colourB</b> = 0</td></tr>
+<tr class="memitem:a5505e9377603c33e070841fef2707cfc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5505e9377603c33e070841fef2707cfc">colourB</a> = 0</td></tr>
 <tr class="separator:a5505e9377603c33e070841fef2707cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9de6c5cd3d77a5ae9be169f06152607"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9de6c5cd3d77a5ae9be169f06152607"></a>
 vtkSmartPointer&lt; vtkSTLReader &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>reader</b> = vtkSmartPointer&lt;vtkSTLReader&gt;::New()</td></tr>
 <tr class="separator:af9de6c5cd3d77a5ae9be169f06152607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class containing ... </p>
+<div class="textblock"><p>Class containing Mainwindow settings, with values for global variables required by different functions and aspects of the UI </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
 <div class="memitem">
@@ -167,18 +167,54 @@ vtkSmartPointer&lt; vtkSTLReader &gt;&#160;</td><td class="memItemRight" valign=
 </table>
 </div><div class="memdoc">
 
-<p>Brief description This description will hopefully be picked up on by doxygen. </p>
-<p>Contructor. This fuctiobn does ,,, </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>is a pointer to... </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Mainwindow This file handles all functions used by the UI interactions and the VTK display. </p>
+<p>Constructor Initialises the VTK components and the UI </p>
+
+</div>
+</div>
+<a class="anchor" id="ae98d00a93bc118200eeef9f9bba1dba7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::~MainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Deconstructor </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a5505e9377603c33e070841fef2707cfc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainWindow::colourB = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This holds the RGB value of blue </p>
+
+</div>
+</div>
+<a class="anchor" id="a78acf3db19ede6d27755b09f2d03b113"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MainWindow::colourG = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This holds the RGB value of green </p>
+
+</div>
+</div>
 <a class="anchor" id="a9f193c7b944f6c0850030ae012fbcac1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +224,7 @@ vtkSmartPointer&lt; vtkSTLReader &gt;&#160;</td><td class="memItemRight" valign=
         </tr>
       </table>
 </div><div class="memdoc">
-<p>this holds ... </p>
+<p>This holds the RGB value of red </p>
 
 </div>
 </div>
