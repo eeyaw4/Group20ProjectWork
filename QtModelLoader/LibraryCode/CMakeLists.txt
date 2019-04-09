@@ -15,7 +15,7 @@ add_library( ModelLib
 				Material.cpp
 				Material.h)
 				
-add_executable( ModelLibTest test.cpp)
+add_executable( ModelLibTest catchTest.cpp codeTest.cpp)
 target_link_libraries (ModelLibTest ModelLib)
 
 add_test(ModelLibTest ModelLibTest)

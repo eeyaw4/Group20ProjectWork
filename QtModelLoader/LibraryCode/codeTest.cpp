@@ -4,7 +4,7 @@
 TEST_CASE( "Model Library Test", "[ModelClass]" ) {
 	SECTION ("Loading A Material From The Model File"){
 		Model testModel;
-		testModel.readFile("../ExampleModel1.MOD");
+		testModel.readFile("../ExampleModel1.mod");
 
 		testModel.getMaterialData(0);
 
@@ -16,7 +16,7 @@ TEST_CASE( "Model Library Test", "[ModelClass]" ) {
 
 	SECTION ("Loading A Vertex From The Model File"){
 		Model testModel;
-		testModel.readFile("../ExampleModel1.MOD");
+		testModel.readFile("../ExampleModel1.mod");
 
 		testModel.getVertexData(6);
 
@@ -32,7 +32,7 @@ TEST_CASE( "Model Library Test", "[ModelClass]" ) {
 
 	SECTION ("Loading A Cell From The Model File"){
 		Model testModel;
-		testModel.readFile("../ExampleModel1.MOD");
+		testModel.readFile("../ExampleModel1.mod");
 
 		testModel.getCellData(1);
 

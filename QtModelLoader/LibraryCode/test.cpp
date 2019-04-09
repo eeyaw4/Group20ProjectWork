@@ -5,7 +5,7 @@ bool testFail = false;
 int main()
 {
 	Model testModel;
-	testModel.readFile("../ExampleModel1.MOD");
+	testModel.readFile("../ExampleModel1.mod");
 	
 	vector<float> testVector;
 
