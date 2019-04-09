@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['operator_2a',['operator*',['../class_vertex.html#a60ef7cc740179fdedd799e3c33e1ae56',1,'Vertex']]],
-  ['operator_2b',['operator+',['../class_vertex.html#a3d7a2061cb84533246e0ac10dbbfa6b4',1,'Vertex']]],
-  ['operator_2d',['operator-',['../class_vertex.html#a0ec3f48eaa967890730896b56ec7df22',1,'Vertex']]],
-  ['operator_2f',['operator/',['../class_vertex.html#a66c572e76fec0eb461a7573c5b375a00',1,'Vertex']]]
+  ['_7ecell',['~Cell',['../class_cell.html#a9fa559f7a28e2b4336c6879ca09304d8',1,'Cell']]],
+  ['_7emainwindow',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
+  ['_7ematerial',['~Material',['../class_material.html#a2c19452d71f54075df8f5405b03129f4',1,'Material']]],
+  ['_7emodel',['~Model',['../class_model.html#ad6ebd2062a0b823db841a0b88baac4c0',1,'Model']]],
+  ['_7evertex',['~Vertex',['../class_vertex.html#ad7a0ce588b7f688dc4488a0f567d9155',1,'Vertex']]]
 ];

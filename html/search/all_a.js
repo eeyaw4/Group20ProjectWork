@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['news',['NEWS',['../md__home_travis_build_eeyaw4__group20_project_work__n_e_w_s.html',1,'']]],
-  ['nameandtags',['NameAndTags',['../struct_catch_1_1_name_and_tags.html',1,'Catch']]],
-  ['noncopyable',['NonCopyable',['../class_catch_1_1_non_copyable.html',1,'Catch']]],
-  ['not_5fthis_5fone',['not_this_one',['../struct_catch_1_1not__this__one.html',1,'Catch']]]
+  ['writetofile',['writeToFile',['../class_model.html#a799f0c1454d2c40ff01284f86f237495',1,'Model']]]
 ];

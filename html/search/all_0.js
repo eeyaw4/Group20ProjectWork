@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['always_5ffalse',['always_false',['../struct_catch_1_1always__false.html',1,'Catch']]],
-  ['append',['append',['../struct_catch_1_1append.html',1,'Catch']]],
-  ['append_3c_20l1_3c_20e1_2e_2e_2e_3e_2c_20l2_3c_20e2_2e_2e_2e_3e_20_3e',['append&lt; L1&lt; E1...&gt;, L2&lt; E2...&gt; &gt;',['../struct_catch_1_1append_3_01_l1_3_01_e1_8_8_8_4_00_01_l2_3_01_e2_8_8_8_4_01_4.html',1,'Catch']]],
-  ['append_3c_20l1_3c_20e1_2e_2e_2e_3e_2c_20l2_3c_20e2_2e_2e_2e_3e_2c_20rest_2e_2e_2e_3e',['append&lt; L1&lt; E1...&gt;, L2&lt; E2...&gt;, Rest...&gt;',['../struct_catch_1_1append_3_01_l1_3_01_e1_8_8_8_4_00_01_l2_3_01_e2_8_8_8_4_00_01_rest_8_8_8_4.html',1,'Catch']]],
-  ['approx',['Approx',['../class_catch_1_1_detail_1_1_approx.html',1,'Catch::Detail']]],
-  ['as',['as',['../struct_catch_1_1_generators_1_1as.html',1,'Catch::Generators']]],
-  ['assertionhandler',['AssertionHandler',['../class_catch_1_1_assertion_handler.html',1,'Catch']]],
-  ['assertioninfo',['AssertionInfo',['../struct_catch_1_1_assertion_info.html',1,'Catch']]],
-  ['assertionreaction',['AssertionReaction',['../struct_catch_1_1_assertion_reaction.html',1,'Catch']]],
-  ['autoreg',['AutoReg',['../struct_catch_1_1_auto_reg.html',1,'Catch']]]
+  ['calccentreofgravity',['calcCentreOfGravity',['../class_cell.html#a7a99634a346e6d23ce39f243897d46f2',1,'Cell']]],
+  ['calchexahedronvolume',['calcHexahedronVolume',['../class_cell.html#a1d067589346ea5b8862d24e01d353bb5',1,'Cell']]],
+  ['calcmodelcenter',['calcModelCenter',['../class_model.html#a0a17ef222209ab00b7ddeaa5280b24b0',1,'Model']]],
+  ['calcpyramidvolume',['calcPyramidVolume',['../class_cell.html#acb9b1467d58a7f211e8ff6bf453406e2',1,'Cell']]],
+  ['calctetrahedronvolume',['calcTetrahedronVolume',['../class_cell.html#acd5812d82e6b7145eba6e044e6fcd511',1,'Cell']]],
+  ['cell',['Cell',['../class_cell.html',1,'Cell'],['../class_cell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell::Cell()']]],
+  ['colourb',['colourB',['../class_main_window.html#a5505e9377603c33e070841fef2707cfc',1,'MainWindow']]],
+  ['colourg',['colourG',['../class_main_window.html#a78acf3db19ede6d27755b09f2d03b113',1,'MainWindow']]],
+  ['colourr',['colourR',['../class_main_window.html#a9f193c7b944f6c0850030ae012fbcac1',1,'MainWindow']]]
 ];
