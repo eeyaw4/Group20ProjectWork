@@ -2,3 +2,8 @@
 set PATH=%PATH%;C:\Qt\5.11.1\msvc2017_64\bin;C:\VTK\MSVC2017\bin
 cmake -DCMAKE_PREFIX_PATH="C:\VTK\MSVC2017_64;C:\Qt\5.9.1\msvc2017_64" -G"Visual Studio 15 2017 Win64" ..
 msbuild ModelLoader.sln
+
+Create Installer:
+
+cmake -G "Visual Studio 15 2017 Win64" -D CMAKE_INSTALL_PREFIX=C:/InstallDirectory/ ..
+cmake --build . --target package

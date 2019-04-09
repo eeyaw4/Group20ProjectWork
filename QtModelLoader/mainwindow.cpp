@@ -26,6 +26,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
         renderer->SetBackground( colours->GetColor3d("Silver").GetData() );
 
+        planeLeft = vtkSmartPointer<vtkPlane>::New();
+        planeLeft->SetOrigin(1000.0, 0.0, 0.0);
+        planeLeft->SetNormal(-1.0, 0.0, 0.0);
+
         buttonsOff();
 
         // Setup the renderers's camera
@@ -154,6 +158,8 @@ void MainWindow::stlRender(QString fileName)
       ui->lblWeightValue->setText(" ");
       ui->checkShrink->setEnabled(false);
       ui->checkShrink->setChecked(false);
+      ui->checkBoxClip->setEnabled(false);
+      ui->checkBoxClip->setChecked(false);
 
       renderer->ResetCamera();
 
@@ -196,12 +202,17 @@ void MainWindow::PyramidRender(vector<vector<float>> pos,vector<float> c)
     shrinkFilter->SetShrinkFactor(1);
     shrinkFilter->AddInputDataObject(0,uGrid);
     shrinks.push_back(shrinkFilter);
-    mapper->SetInputConnection( shrinkFilter->GetOutputPort());
+
+    vtkSmartPointer<vtkClipDataSet> clipFilter = vtkSmartPointer<vtkClipDataSet>::New();
+    clipFilter->SetInputConnection( shrinkFilter->GetOutputPort() ) ;
+    clipFilter->SetClipFunction( planeLeft.Get() );
+    clipFilters.push_back(clipFilter);
+
+    mapper->SetInputConnection( clipFilter->GetOutputPort());
 
     // Create an actor that is used to set the properties for rendering and place it in the window
     vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
     actor->SetMapper(mapper);
-    actor->GetProperty()->EdgeVisibilityOn();
 
     actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
@@ -238,12 +249,17 @@ void MainWindow::TetRender(vector<vector<float>> pos,vector<float> c)
     shrinkFilter->SetShrinkFactor(1);
     shrinkFilter->AddInputDataObject(0,uGrid);
     shrinks.push_back(shrinkFilter);
-    mapper->SetInputConnection( shrinkFilter->GetOutputPort());
+
+    vtkSmartPointer<vtkClipDataSet> clipFilter = vtkSmartPointer<vtkClipDataSet>::New();
+    clipFilter->SetInputConnection( shrinkFilter->GetOutputPort() ) ;
+    clipFilter->SetClipFunction( planeLeft.Get() );
+    clipFilters.push_back(clipFilter);
+
+    mapper->SetInputConnection( clipFilter->GetOutputPort());
 
     // Create an actor that is used to set the properties for rendering and place it in the window
     vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
     actor->SetMapper(mapper);
-    actor->GetProperty()->EdgeVisibilityOn();
 
     actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
@@ -295,11 +311,16 @@ void MainWindow::HexRender(vector<vector<float>> pos,vector<float> c)
       shrinkFilter->SetShrinkFactor(1);
       shrinkFilter->AddInputDataObject(0,uGrid);
       shrinks.push_back(shrinkFilter);
-      mapper->SetInputConnection( shrinkFilter->GetOutputPort());
+
+      vtkSmartPointer<vtkClipDataSet> clipFilter = vtkSmartPointer<vtkClipDataSet>::New();
+      clipFilter->SetInputConnection( shrinkFilter->GetOutputPort() ) ;
+      clipFilter->SetClipFunction( planeLeft.Get() );
+      clipFilters.push_back(clipFilter);
+
+      mapper->SetInputConnection( clipFilter->GetOutputPort());
 
       vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
       actor->SetMapper(mapper);
-      actor->GetProperty()->EdgeVisibilityOn();
 
       actor->GetProperty()->SetColor( colourR,colourG,colourB );
 
@@ -369,17 +390,6 @@ void MainWindow::resetColours(void)
  * @param value - %age based value of intensity of the filter
  */
 void MainWindow::shrinkFilterUpdate(int value)
-{
-        for(int i = 0;i < shrinks.size();i++)
-        {
-            shrinks[i]->SetShrinkFactor((float) (100 - value)/100);
-            ui->lblShrink->setNum((float) (100 - value)/100);
-            shrinks[i]->Update();
-        }
-        ui->qvtkWidget->GetRenderWindow()->Render();
-}
-
-void MainWindow::ClippingUpdate(int value)
 {
         for(int i = 0;i < shrinks.size();i++)
         {
@@ -736,34 +746,73 @@ void MainWindow::on_checkBoxClip_stateChanged(int arg1)
     }
 }
 
+void MainWindow::clipFilterUpdate(int x,int y,int z)
+{
+    ui->spinBoxClipX->setValue(x);
+    ui->spinBoxClipY->setValue(y);
+    ui->spinBoxClipZ->setValue(z);
+    ui->sliderClipX->setValue(x);
+    ui->sliderClipY->setValue(y);
+    ui->sliderClipZ->setValue(z);
+
+    if(x != 0)
+    {
+        planeLeft->SetNormal(-1.0, 0.0, 0.0);
+    }
+    else if(y != 0)
+    {
+        planeLeft->SetNormal(0.0, -1.0, 0.0);
+    }
+    else if(z != 0)
+    {
+        planeLeft->SetNormal(0.0, 0.0, -1.0);
+    }
+
+    float positionX = (100 - x - 50.0);
+    float positionY = (100 - y - 50.0);
+    float positionZ = (100 - z - 50.0);
+
+    float planePositionX = (positionX/100.0) * 2;
+    float planePositionY = (positionY/100.0) * 2;
+    float planePositionZ = (positionZ/100.0) * 2;
+
+    planeLeft->SetOrigin(planePositionX, planePositionY, planePositionZ);
+
+    for(int i = 0;i < clipFilters.size();i++)
+    {
+        clipFilters[i]->Update();
+    }
+    ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
 void MainWindow::on_sliderClipX_sliderMoved(int position)
 {
-    ui->spinBoxClipX->setValue(position);
+    clipFilterUpdate(position,(float)0,(float)0);
 }
 
 void MainWindow::on_sliderClipY_sliderMoved(int position)
 {
-    ui->spinBoxClipY->setValue(position);
+    clipFilterUpdate((float)0,position,(float)0);
 }
 
 void MainWindow::on_sliderClipZ_sliderMoved(int position)
 {
-    ui->spinBoxClipZ->setValue(position);
+    clipFilterUpdate((float)0,(float)0,position);
 }
 
 void MainWindow::on_spinBoxClipX_valueChanged(int value)
 {
-    ui->sliderClipX->setValue(value);
+    clipFilterUpdate(value,(float)0,(float)0);
 }
 
 void MainWindow::on_spinBoxClipY_valueChanged(int value)
 {
-    ui->sliderClipY->setValue(value);
+    clipFilterUpdate((float)0,value,(float)0);
 }
 
 void MainWindow::on_spinBoxClipZ_valueChanged(int value)
 {
-    ui->sliderClipZ->setValue(value);
+    clipFilterUpdate((float)0,(float)0,value);
 }
 
 void MainWindow::on_actionLoad_STL_File_triggered()

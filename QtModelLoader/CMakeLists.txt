@@ -55,3 +55,15 @@ target_link_libraries( ModelLoader Qt5::Widgets )
 target_link_libraries( ModelLoader ${VTK_LIBRARIES} )
 
 target_link_libraries( ModelLoader ModelLib )
+
+install(TARGETS ModelLoader ModelLib
+RUNTIME DESTINATION bin
+LIBRARY DESTINATION lib
+ARCHIVE DESTINATION lib/static)
+
+if(WIN32)
+	set(CPACK_GENERATOR "NSIS")
+else()
+	set(CPACK_GENERATOR "ZIP")
+endif()
+include(CPack)

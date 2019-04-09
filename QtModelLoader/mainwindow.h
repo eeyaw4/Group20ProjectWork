@@ -63,9 +63,11 @@ public:
 
     vector<vtkSmartPointer<vtkActor>> actors;
     vector<vtkSmartPointer<vtkShrinkFilter>> shrinks;
+    vector<vtkSmartPointer<vtkClipDataSet>> clipFilters;
     vtkSmartPointer<vtkNamedColors> colours;
     vtkSmartPointer<vtkRenderer> renderer;
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
+    vtkSmartPointer<vtkPlane> planeLeft;
 
     vector<vector<float>> shapeColours;
 
@@ -145,7 +147,7 @@ private:
     void loadModel(string filename);
     void resetColours(void);
     void shrinkFilterUpdate(int value);
-    void ClippingUpdate(int value);
+    void clipFilterUpdate(int x,int y,int z);
     vector<float> getRGB(string c);
     void buttonsOn(void);
     void buttonsOff(void);
