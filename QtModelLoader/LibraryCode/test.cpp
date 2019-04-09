@@ -4,7 +4,7 @@ bool testFail = false;
 
 int main()
 {
-	Model testModel;
+	/*Model testModel;
 	testModel.readFile("../ExampleModel1.MOD");
 	
 	vector<float> testVector;
@@ -52,7 +52,7 @@ int main()
 	else if (testModel.cellMaterial != 1)
 	{
 		testFail = true;
-	}	
+	}	*/
 	
 	if (testFail == false)
 	{
