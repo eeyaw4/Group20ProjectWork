@@ -122,9 +122,19 @@ private slots:
 
     void on_actionShrink_Filter_triggered();
 
-    void on_checkClip_stateChanged(int arg1);
+    void on_checkBoxClip_stateChanged(int arg1);
 
-    void on_slideClip_sliderMoved(int position);
+    void on_sliderClipX_sliderMoved(int position);
+
+    void on_sliderClipY_sliderMoved(int position);
+
+    void on_sliderClipZ_sliderMoved(int position);
+
+    void on_spinBoxClipX_valueChanged(int value);
+
+    void on_spinBoxClipY_valueChanged(int value);
+
+    void on_spinBoxClipZ_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
@@ -135,6 +145,7 @@ private:
     void loadModel(string filename);
     void resetColours(void);
     void shrinkFilterUpdate(int value);
+    void ClippingUpdate(int value);
     vector<float> getRGB(string c);
     void buttonsOn(void);
     void buttonsOff(void);

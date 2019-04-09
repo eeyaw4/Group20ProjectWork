@@ -109,7 +109,6 @@ void MainWindow::loadModel(string fileName)
 
     buttonsOn();
     ui->lblObjCount->setText(QString::number(count));
-    ui->checkShrink->setEnabled(true);
 
     renderer->ResetCamera();
 
@@ -404,7 +403,27 @@ void MainWindow::buttonsOn(void)
     ui->slideShrink->setEnabled(false);
     ui->slideShrink->setValue(0);
 
+    ui->checkShrink->setEnabled(true);
+    ui->checkShrink->setChecked(false);
+
     ui->lblShrink->setNum(1);
+
+    ui->sliderClipX->setEnabled(false);
+    ui->sliderClipY->setEnabled(false);
+    ui->sliderClipZ->setEnabled(false);
+    ui->sliderClipX->setValue(0);
+    ui->sliderClipY->setValue(0);
+    ui->sliderClipZ->setValue(0);
+
+    ui->spinBoxClipX->setEnabled(false);
+    ui->spinBoxClipY->setEnabled(false);
+    ui->spinBoxClipZ->setEnabled(false);
+    ui->spinBoxClipX->setValue(0);
+    ui->spinBoxClipY->setValue(0);
+    ui->spinBoxClipZ->setValue(0);
+
+    ui->checkBoxClip->setEnabled(true);
+    ui->checkBoxClip->setChecked(false);
 
     ui->actionFileSave->setEnabled(true);
     ui->actionInformation->setEnabled(true);
@@ -430,6 +449,23 @@ void MainWindow::buttonsOff(void)
     ui->checkShrink->setChecked(false);
 
     ui->lblShrink->setNum(1);
+
+    ui->sliderClipX->setEnabled(false);
+    ui->sliderClipY->setEnabled(false);
+    ui->sliderClipZ->setEnabled(false);
+    ui->sliderClipX->setValue(0);
+    ui->sliderClipY->setValue(0);
+    ui->sliderClipZ->setValue(0);
+
+    ui->spinBoxClipX->setEnabled(false);
+    ui->spinBoxClipY->setEnabled(false);
+    ui->spinBoxClipZ->setEnabled(false);
+    ui->spinBoxClipX->setValue(0);
+    ui->spinBoxClipY->setValue(0);
+    ui->spinBoxClipZ->setValue(0);
+
+    ui->checkBoxClip->setEnabled(false);
+    ui->checkBoxClip->setChecked(false);
 
     ui->actionFileSave->setEnabled(false);
     ui->actionInformation->setEnabled(false);
@@ -670,14 +706,64 @@ void MainWindow::on_slideShrink_sliderReleased()
     shrinkFilterUpdate(ui->slideShrink->value());
 }
 
-void MainWindow::on_checkClip_stateChanged(int arg1)
+void MainWindow::on_checkBoxClip_stateChanged(int arg1)
 {
+    ui->spinBoxClipX->setValue(0);
+    ui->spinBoxClipY->setValue(0);
+    ui->spinBoxClipZ->setValue(0);
+    ui->sliderClipX->setValue(0);
+    ui->sliderClipY->setValue(0);
+    ui->sliderClipZ->setValue(0);
 
+    //ClippingFilterUpdate(0);
+    if(ui->checkBoxClip->isChecked() == false)
+    {
+        ui->sliderClipX->setEnabled(false);
+        ui->sliderClipY->setEnabled(false);
+        ui->sliderClipZ->setEnabled(false);
+        ui->spinBoxClipX->setEnabled(false);
+        ui->spinBoxClipY->setEnabled(false);
+        ui->spinBoxClipZ->setEnabled(false);
+    }
+    else if(ui->checkBoxClip->isChecked() == true)
+    {
+        ui->sliderClipX->setEnabled(true);
+        ui->sliderClipY->setEnabled(true);
+        ui->sliderClipZ->setEnabled(true);
+        ui->spinBoxClipX->setEnabled(true);
+        ui->spinBoxClipY->setEnabled(true);
+        ui->spinBoxClipZ->setEnabled(true);
+    }
 }
 
-void MainWindow::on_slideClip_sliderMoved(int position)
+void MainWindow::on_sliderClipX_sliderMoved(int position)
 {
+    ui->spinBoxClipX->setValue(position);
+}
 
+void MainWindow::on_sliderClipY_sliderMoved(int position)
+{
+    ui->spinBoxClipY->setValue(position);
+}
+
+void MainWindow::on_sliderClipZ_sliderMoved(int position)
+{
+    ui->spinBoxClipZ->setValue(position);
+}
+
+void MainWindow::on_spinBoxClipX_valueChanged(int value)
+{
+    ui->sliderClipX->setValue(value);
+}
+
+void MainWindow::on_spinBoxClipY_valueChanged(int value)
+{
+    ui->sliderClipY->setValue(value);
+}
+
+void MainWindow::on_spinBoxClipZ_valueChanged(int value)
+{
+    ui->sliderClipZ->setValue(value);
 }
 
 void MainWindow::on_actionLoad_STL_File_triggered()
