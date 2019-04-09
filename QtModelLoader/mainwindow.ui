@@ -124,7 +124,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <property name="tabBarAutoHide">
          <bool>false</bool>
@@ -641,14 +641,35 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QCheckBox" name="checkCS">
-            <property name="text">
-             <string>Apply Cross Section</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QCheckBox" name="checkClip">
+              <property name="text">
+               <string>CheckBox</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slideClip">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblClip">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -750,7 +771,6 @@
        <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
      </property>
      <addaction name="actionShrink_Filter"/>
-     <addaction name="actionCross_Section_Filter"/>
     </widget>
     <addaction name="actionInformation"/>
     <addaction name="menuColour"/>
@@ -768,20 +788,6 @@
    </property>
    <property name="text">
     <string>Save</string>
-   </property>
-  </action>
-  <action name="actionCross_Section">
-   <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/Cross section.png</normaloff>:/Icons/Cross section.png</iconset>
-   </property>
-   <property name="text">
-    <string>Cross Section</string>
-   </property>
-  </action>
-  <action name="actionFilters">
-   <property name="text">
-    <string>Filters</string>
    </property>
   </action>
   <action name="actionInformation">
@@ -802,18 +808,9 @@
     <string>Cross Section</string>
    </property>
   </action>
-  <action name="actionPrint">
-   <property name="icon">
-    <iconset resource="Icons/icons.qrc">
-     <normaloff>:/Icons/print.png</normaloff>:/Icons/print.png</iconset>
-   </property>
-   <property name="text">
-    <string>Print</string>
-   </property>
-  </action>
   <action name="actionModel_Colour">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
    </property>
    <property name="text">
@@ -822,7 +819,7 @@
   </action>
   <action name="actionBackground_Colour">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/colours.png</normaloff>:/Icons/colours.png</iconset>
    </property>
    <property name="text">
@@ -831,7 +828,7 @@
   </action>
   <action name="actionShrink_Filter">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
    </property>
    <property name="text">
@@ -840,7 +837,7 @@
   </action>
   <action name="actionLoad_STL_File">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
    </property>
    <property name="text">
@@ -849,20 +846,11 @@
   </action>
   <action name="actionLoad_Model_File">
    <property name="icon">
-    <iconset>
+    <iconset resource="Icons/icons.qrc">
      <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
    </property>
    <property name="text">
     <string>Load Model File</string>
-   </property>
-  </action>
-  <action name="actionCross_Section_Filter">
-   <property name="icon">
-    <iconset>
-     <normaloff>:/Icons/filter.png</normaloff>:/Icons/filter.png</iconset>
-   </property>
-   <property name="text">
-    <string>Cross Section Filter</string>
    </property>
   </action>
  </widget>

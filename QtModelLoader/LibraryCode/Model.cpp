@@ -146,7 +146,7 @@ void Model::writeToFile(string str)
         file.open(str);
         if (!file)
         {
-                cerr << "Unable to find create file";
+                cerr << "Unable to find/create file";
                 exit(1);
         }
 

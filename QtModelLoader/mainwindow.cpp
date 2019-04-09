@@ -380,6 +380,17 @@ void MainWindow::shrinkFilterUpdate(int value)
         ui->qvtkWidget->GetRenderWindow()->Render();
 }
 
+void MainWindow::ClippingUpdate(int value)
+{
+        for(int i = 0;i < shrinks.size();i++)
+        {
+            shrinks[i]->SetShrinkFactor((float) (100 - value)/100);
+            ui->lblShrink->setNum((float) (100 - value)/100);
+            shrinks[i]->Update();
+        }
+        ui->qvtkWidget->GetRenderWindow()->Render();
+}
+
 /**
  * @brief Allows aspects of the UI to be interacted with
  */
@@ -394,6 +405,12 @@ void MainWindow::buttonsOn(void)
     ui->slideShrink->setValue(0);
 
     ui->lblShrink->setNum(1);
+
+    ui->actionFileSave->setEnabled(true);
+    ui->actionInformation->setEnabled(true);
+    ui->actionCross->setEnabled(true);
+    ui->menuColour->setEnabled(true);
+    ui->menuFilters->setEnabled(true);
 }
 
 /**
@@ -413,6 +430,12 @@ void MainWindow::buttonsOff(void)
     ui->checkShrink->setChecked(false);
 
     ui->lblShrink->setNum(1);
+
+    ui->actionFileSave->setEnabled(false);
+    ui->actionInformation->setEnabled(false);
+    ui->actionCross->setEnabled(false);
+    ui->menuColour->setEnabled(false);
+    ui->menuFilters->setEnabled(false);
 }
 
 /**
@@ -476,6 +499,8 @@ void MainWindow::on_loadSTLButton_clicked()
     shapeColours.clear();
     shrinks.clear();
 
+    modFileLoaded = false;
+
     QString file = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("STL Files(*.stl)"));
 
     if(file == NULL)
@@ -502,6 +527,8 @@ void MainWindow::on_loadModelButton_clicked()
     shapeColours.clear();
     shrinks.clear();
 
+    modFileLoaded = false;
+
     QString path = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("Model Files(*.mod)"));
 
     if(path == NULL)
@@ -509,11 +536,13 @@ void MainWindow::on_loadModelButton_clicked()
         return;
     }
 
-    string file = path.toStdString();
+    modelFile = path.toStdString();
 
-    loadModel(file);
+    loadModel(modelFile);
 
     resetColours();
+
+    modFileLoaded = true;
 }
 
 /**
@@ -641,7 +670,82 @@ void MainWindow::on_slideShrink_sliderReleased()
     shrinkFilterUpdate(ui->slideShrink->value());
 }
 
-void MainWindow::on_checkCS_stateChanged(int arg1)
+void MainWindow::on_checkClip_stateChanged(int arg1)
 {
 
+}
+
+void MainWindow::on_slideClip_sliderMoved(int position)
+{
+
+}
+
+void MainWindow::on_actionLoad_STL_File_triggered()
+{
+    on_loadSTLButton_clicked();
+}
+
+void MainWindow::on_actionLoad_Model_File_triggered()
+{
+    on_loadModelButton_clicked();
+}
+
+void MainWindow::on_actionFileSave_triggered()
+{
+    if(modFileLoaded == false)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Model Not Found","Please load a MOD model");
+        messageBox.setFixedSize(500,200);
+        return;
+    }
+
+    QString file = QFileDialog::getSaveFileName(this, tr("Save As File"), "./", tr("MOD Files(*.mod)"));
+
+    if(file == NULL)
+    {
+        return;
+    }
+
+    Model Data;
+
+    try
+    {
+        Data.readFile(modelFile);
+    }
+    catch(string& error)
+    {
+        QMessageBox::critical(this,tr("Error"),tr(error.c_str()));
+        return;
+    }
+
+    string fileName = file.toUtf8().constData();
+    Data.writeToFile(fileName);
+}
+
+void MainWindow::on_actionInformation_triggered()
+{
+    ui->tabWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_actionModel_Colour_triggered()
+{
+    ui->tabWidget->setCurrentIndex(1);
+    on_btnModelColour_clicked();
+}
+
+void MainWindow::on_actionBackground_Colour_triggered()
+{
+    ui->tabWidget->setCurrentIndex(1);
+    on_btnBGColour_clicked();
+}
+
+void MainWindow::on_actionCross_triggered()
+{
+    ui->tabWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_actionShrink_Filter_triggered()
+{
+    ui->tabWidget->setCurrentIndex(3);
 }

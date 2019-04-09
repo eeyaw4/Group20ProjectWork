@@ -73,6 +73,9 @@ public:
     float colourG = 0;                                          /**< This holds the RGB value of green */
     float colourB = 0;                                          /**< This holds the RGB value of blue */
 
+    bool modFileLoaded = false;
+    string modelFile;
+
     vtkSmartPointer<vtkSTLReader> reader = vtkSmartPointer<vtkSTLReader>::New();
 
 
@@ -99,11 +102,29 @@ private slots:
 
     void on_btnBGColour_clicked();
 
-    void on_checkCS_stateChanged(int arg1);
-
     void on_slideShrink_sliderReleased();
 
     void on_checkShrink_stateChanged(int arg1);
+
+    void on_actionLoad_STL_File_triggered();
+
+    void on_actionLoad_Model_File_triggered();
+
+    void on_actionFileSave_triggered();
+
+    void on_actionInformation_triggered();
+
+    void on_actionModel_Colour_triggered();
+
+    void on_actionBackground_Colour_triggered();
+
+    void on_actionCross_triggered();
+
+    void on_actionShrink_Filter_triggered();
+
+    void on_checkClip_stateChanged(int arg1);
+
+    void on_slideClip_sliderMoved(int position);
 
 private:
     Ui::MainWindow *ui;
