@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['news',['NEWS',['../md__home_travis_build_eeyaw4__group20_project_work__n_e_w_s.html',1,'']]]
+  ['hexrender',['HexRender',['../class_main_window.html#a5f09420c2073a2a8bf37880d2105a8da',1,'MainWindow']]]
 ];

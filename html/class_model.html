@@ -85,6 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Model Class Reference</div>  </div>
@@ -174,6 +176,21 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>cellWeight</b></td><
 <tr class="memitem:a0d52ae35432d3efbccd7153be1c6ea4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d52ae35432d3efbccd7153be1c6ea4f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>countNum</b></td></tr>
 <tr class="separator:a0d52ae35432d3efbccd7153be1c6ea4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a07733c79c2aa014c6040579e8837eec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a07733c79c2aa014c6040579e8837eec2">readMaterial</a> (string str)</td></tr>
+<tr class="separator:a07733c79c2aa014c6040579e8837eec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2be7de8ceb0ca4add986a28ad6aa9e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac2be7de8ceb0ca4add986a28ad6aa9e7">readVertices</a> (string str)</td></tr>
+<tr class="separator:ac2be7de8ceb0ca4add986a28ad6aa9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f880fb75bb1699b4252a257ea63acae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a5f880fb75bb1699b4252a257ea63acae">readCell</a> (string str)</td></tr>
+<tr class="separator:a5f880fb75bb1699b4252a257ea63acae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a34fc1b6bcebf0d91a7be79ddb2cfe3a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34fc1b6bcebf0d91a7be79ddb2cfe3a9"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>str</b></td></tr>
+<tr class="separator:a34fc1b6bcebf0d91a7be79ddb2cfe3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae3b375de5f6df4faf74a95d64748e048"></a>
@@ -341,6 +358,31 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>countNum</b></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5f880fb75bb1699b4252a257ea63acae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::readCell </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads all data from the a line passed to the function into a <a class="el" href="class_cell.html">Cell</a> class which is stored in the cVector vector </p>
+
+</div>
+</div>
 <a class="anchor" id="aec7019509aab417d752ed91c951c0235"></a>
 <div class="memitem">
 <div class="memproto">
@@ -355,6 +397,56 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>countNum</b></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Reads all of the data from a file passed to the function and stores the data into the mVector, vVector and cVector vectors </p>
+
+</div>
+</div>
+<a class="anchor" id="a07733c79c2aa014c6040579e8837eec2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::readMaterial </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads all data from the a line passed to the function into a <a class="el" href="class_material.html">Material</a> class which is stored in the mVector vector </p>
+
+</div>
+</div>
+<a class="anchor" id="ac2be7de8ceb0ca4add986a28ad6aa9e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::readVertices </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads all data from the a line passed to the function into a <a class="el" href="class_vertex.html">Vertex</a> class which is stored in the vVector vector </p>
 
 </div>
 </div>

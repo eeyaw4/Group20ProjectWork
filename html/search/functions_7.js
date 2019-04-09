@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['timesbynum',['timesByNum',['../class_vertex.html#ae37b6d4ee36a1876468901044e24cc31',1,'Vertex']]]
+  ['on_5fbtnbgcolour_5fclicked',['on_btnBGColour_clicked',['../class_main_window.html#a661e714cf0fcac5cc3cb9b37202d8fbf',1,'MainWindow']]],
+  ['on_5fbtnmodelcolour_5fclicked',['on_btnModelColour_clicked',['../class_main_window.html#ae3155bfdbc6215d4a7605a5786acbb1c',1,'MainWindow']]],
+  ['on_5floadmodelbutton_5fclicked',['on_loadModelButton_clicked',['../class_main_window.html#a1c3ccddad7f99d3124964dec9c8651a4',1,'MainWindow']]],
+  ['on_5floadstlbutton_5fclicked',['on_loadSTLButton_clicked',['../class_main_window.html#afa2e37389833d248802051bd15722760',1,'MainWindow']]],
+  ['on_5fresetcolourbutton_5fclicked',['on_resetColourButton_clicked',['../class_main_window.html#a409affcb190a68001079feb5765176be',1,'MainWindow']]],
+  ['on_5fslideb_5fvaluechanged',['on_slideB_valueChanged',['../class_main_window.html#a5a904fc0cc97ffef3650e7e514fe83d1',1,'MainWindow']]],
+  ['on_5fslideg_5fvaluechanged',['on_slideG_valueChanged',['../class_main_window.html#a3bf65ff2b85febde013a4a768791d6f0',1,'MainWindow']]],
+  ['on_5fslider_5fvaluechanged',['on_slideR_valueChanged',['../class_main_window.html#a8d8d12ef1ce91521dcef70f44bbad976',1,'MainWindow']]],
+  ['on_5fslideshrink_5fsliderreleased',['on_slideShrink_sliderReleased',['../class_main_window.html#a6dd6066ffdd7482ee28a8f1775f09273',1,'MainWindow']]],
+  ['on_5fspinb_5fvaluechanged',['on_spinB_valueChanged',['../class_main_window.html#a55f4eb12d019f61f32ff17776db5ace5',1,'MainWindow']]],
+  ['on_5fsping_5fvaluechanged',['on_spinG_valueChanged',['../class_main_window.html#aa914f7c9a0b93213b32e3d347d072497',1,'MainWindow']]],
+  ['on_5fspinr_5fvaluechanged',['on_spinR_valueChanged',['../class_main_window.html#a3faa3c7dcf5d4c3b9ceb19536ea6de4d',1,'MainWindow']]],
+  ['operator_2a',['operator*',['../class_vertex.html#a60ef7cc740179fdedd799e3c33e1ae56',1,'Vertex']]],
+  ['operator_2b',['operator+',['../class_vertex.html#a3d7a2061cb84533246e0ac10dbbfa6b4',1,'Vertex']]],
+  ['operator_2d',['operator-',['../class_vertex.html#a0ec3f48eaa967890730896b56ec7df22',1,'Vertex']]],
+  ['operator_2f',['operator/',['../class_vertex.html#a66c572e76fec0eb461a7573c5b375a00',1,'Vertex']]]
 ];
