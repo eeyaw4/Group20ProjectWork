@@ -61,9 +61,20 @@ RUNTIME DESTINATION bin
 LIBRARY DESTINATION lib
 ARCHIVE DESTINATION lib/static)
 
+set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR})
+
 if(WIN32)
 	set(CPACK_GENERATOR "NSIS")
 else()
 	set(CPACK_GENERATOR "ZIP")
 endif()
 include(CPack)
+
+set(CMAKE_INSTALL_UCRT_LIBRARIES ON)
+
+#NSIS installer configuration
+set(CPACK_NSIS_CONTACT "Contact - Group 20 (Arron, TJ, Warrit, Anastasia)")
+set(CPACK_NSIS_PACKAGE_NAME "Model_Loader")
+set(CPACK_NSIS_DISPLAY_NAME "Group 20 Model Loader")
+
+install(DIRECTORY dll/ DESTINATION bin)
