@@ -8,9 +8,6 @@
 /** @file
 * This file contains the declarations of all functionsused in main.cpp.
 */
-/** \brief Brief description
-* This description will hopefully be picked up on by doxygen
-*/
 
 int main( int argc, char** argv )
 {
